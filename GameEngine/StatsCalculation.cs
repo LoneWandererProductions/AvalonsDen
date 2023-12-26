@@ -25,7 +25,7 @@ namespace GameEngine
         /// <returns>The <see cref="T:GameEngine.CharCharta" />.</returns>
         public CharCharta CalculateCharacterInformation(CharacterBiography biography)
         {
-            return new(biography);
+            return new CharCharta(biography);
         }
 
         /// <inheritdoc />
@@ -36,7 +36,7 @@ namespace GameEngine
         /// <returns>The <see cref="T:GameEngine.CharStatistics" />.</returns>
         public CharStatistics CalculateCharacterStatistics(CharacterBaseStats stats)
         {
-            return new(stats);
+            return new CharStatistics(stats);
         }
     }
 }

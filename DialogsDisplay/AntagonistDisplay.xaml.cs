@@ -11,7 +11,6 @@
 using System;
 using System.IO;
 using System.Windows;
-using CommonControls;
 using Debugger;
 using Imaging;
 
@@ -51,7 +50,7 @@ namespace DialogsDisplay
         {
             if (string.IsNullOrEmpty(_charInfo.Name)) return;
 
-            var details = new BiographyDetails(_charInfo) {Topmost = true};
+            var details = new BiographyDetails(_charInfo) { Topmost = true };
             details.ShowDialog();
         }
 

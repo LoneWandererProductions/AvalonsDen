@@ -127,7 +127,7 @@
         <ComboBox Grid.Column="4"
                   Grid.Row="28"
                   SelectedValue="{Binding Path= Position, Mode=TwoWay}"
-                  Name="CxbSlot"  />
+                  Name="CxbSlot" />
         <Label Content="Position" Grid.Column="2" Grid.Row="28" />
     </Grid>
 </UserControl>

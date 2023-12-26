@@ -549,7 +549,7 @@ namespace Renderer
 
                         //Dispatcher Class is Used for UI Elements
                         label.Dispatcher?.BeginInvoke(DispatcherPriority.Normal,
-                            (ThreadStart) (() => label.MouseDown += LabelClick_MouseDown));
+                            (ThreadStart)(() => label.MouseDown += LabelClick_MouseDown));
 
                         //we only need the last list, for interactions from the Outside, the Dictionary is just for speed Ups
                         _clickPoint.Add(label.Name, id);
@@ -621,11 +621,11 @@ namespace Renderer
                 var myCell = _imageDct[tile.Key];
 
                 //Dispatcher Class is used for UI Elements
-                myCell.Dispatcher?.BeginInvoke(DispatcherPriority.Normal, (ThreadStart) (() => myCell.Source = images));
+                myCell.Dispatcher?.BeginInvoke(DispatcherPriority.Normal, (ThreadStart)(() => myCell.Source = images));
 
                 //set image source
                 myCell.Dispatcher?.BeginInvoke(DispatcherPriority.Normal,
-                    (ThreadStart) (() => myCell.Source = images));
+                    (ThreadStart)(() => myCell.Source = images));
             }
         }
 
@@ -705,7 +705,7 @@ namespace Renderer
             myBitmapCell.Freeze();
             //set image source, Dispatcher Class is used for UI Elements
             myCell.Dispatcher?.BeginInvoke(DispatcherPriority.Normal,
-                (ThreadStart) (() => myCell.Source = myBitmapCell));
+                (ThreadStart)(() => myCell.Source = myBitmapCell));
         }
 
         /// <summary>
@@ -723,7 +723,7 @@ namespace Renderer
             myBitmapCell.Freeze();
             //set image source, Dispatcher Class is used for UI Elements
             myCell.Dispatcher?.BeginInvoke(DispatcherPriority.Normal,
-                (ThreadStart) (() => myCell.Source = myBitmapCell));
+                (ThreadStart)(() => myCell.Source = myBitmapCell));
         }
 
         /// <summary>

@@ -64,7 +64,7 @@ namespace Loader
         /// <returns>LoadUpCollection</returns>
         public static LoaderContainer LoadCampaign(string campaignName, string startMap)
         {
-            return new()
+            return new LoaderContainer
             {
                 CampaignName = campaignName,
                 MasterTileDictionary =

@@ -52,7 +52,7 @@ namespace DenSerializer
             try
             {
                 var xs = new XmlSerializer(typeof(List<DataItem>));
-                var lst = (List<DataItem>) xs.Deserialize(sr);
+                var lst = (List<DataItem>)xs.Deserialize(sr);
 
                 var tileNodeVector = new Dictionary<int, List<int>>();
 
@@ -110,7 +110,7 @@ namespace DenSerializer
 
             using var reader = new StringReader(serialized);
             using var stm = new XmlTextReader(reader);
-            return (T) serializer.ReadObject(stm);
+            return (T)serializer.ReadObject(stm);
         }
 
         /// <summary>

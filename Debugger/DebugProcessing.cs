@@ -38,10 +38,7 @@ namespace Debugger
         /// <param name="info">The information.</param>
         internal static void CreateLogFile(string error, ErCode lvl, string info)
         {
-            if (!_isActive)
-            {
-                return;
-            }
+            if (!_isActive) return;
 
             var message = CreateLogMessage(error, string.Empty, lvl, info);
             LogError(message, lvl);
@@ -62,10 +59,7 @@ namespace Debugger
         /// <param name="info">The information.</param>
         internal static void CreateLogFile<T>(string error, ErCode lvl, T obj, string info)
         {
-            if (!_isActive)
-            {
-                return;
-            }
+            if (!_isActive) return;
 
             var objectString = ConvertObjectXml.ConvertObjctXml(obj);
             var message = CreateLogMessage(error, objectString, lvl, info);
@@ -87,10 +81,7 @@ namespace Debugger
         /// <param name="info">The information.</param>
         internal static void CreateLogFile<T>(string error, ErCode lvl, IEnumerable<T> objLst, string info)
         {
-            if (!_isActive)
-            {
-                return;
-            }
+            if (!_isActive) return;
 
             var objectString = ConvertObjectXml.ConvertListXml(objLst);
             var message = CreateLogMessage(error, objectString, lvl, info);
@@ -115,10 +106,7 @@ namespace Debugger
         internal static void CreateLogFile<T, TU>(string error, ErCode lvl,
             Dictionary<T, TU> objectDictionary, string info)
         {
-            if (!_isActive)
-            {
-                return;
-            }
+            if (!_isActive) return;
 
             var objectString = ConvertObjectXml.ConvertDictionaryXml(objectDictionary);
             var message = CreateLogMessage(error, objectString, lvl, info);
@@ -172,9 +160,7 @@ namespace Debugger
 
             //Add Object if we deliver it
             if (!string.IsNullOrEmpty(objectString))
-            {
                 error = string.Concat(error, DebuggerResources.ObjectFormating, objectString);
-            }
 
             // Add Call Stack
             return string.Concat(error, Environment.NewLine, methods);
@@ -191,10 +177,7 @@ namespace Debugger
         private static void LogError(string message, ErCode lvl)
         {
             //we don't want to crash just because we exceed the Log
-            if (DebugLog.CurrentLog.Capacity < DebugLog.CurrentLog.Count)
-            {
-                DebugLog.CurrentLog.Clear();
-            }
+            if (DebugLog.CurrentLog.Capacity < DebugLog.CurrentLog.Count) DebugLog.CurrentLog.Clear();
 
             DebugLog.CurrentLog.Add(message);
 
@@ -203,15 +186,9 @@ namespace Debugger
              *  if someone issued the Dump Command so we add everything to the File.
              *  Of course we still Trace everything.
             */
-            if (lvl == 0 && !DebugRegister.IsDumpActive)
-            {
-                WriteFile(message);
-            }
+            if (lvl == 0 && !DebugRegister.IsDumpActive) WriteFile(message);
 
-            if (DebugRegister.IsDumpActive)
-            {
-                WriteFile(message);
-            }
+            if (DebugRegister.IsDumpActive) WriteFile(message);
 
             Trace.WriteLine(message);
         }

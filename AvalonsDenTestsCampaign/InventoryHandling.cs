@@ -65,7 +65,7 @@ namespace AvalonsDenTestsCampaign
             //generate a basic Inventory
             var inv = new PartyInventory
             {
-                PartyOverview = new Party {Gold = 100},
+                PartyOverview = new Party { Gold = 100 },
 
                 Carrying = new Dictionary<int, InventorySlot>
                 {

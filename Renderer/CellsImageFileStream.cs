@@ -10,7 +10,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Media.Imaging;
-using CommonControls;
 using Debugger;
 using ExtendedSystemObjects;
 using Imaging;

@@ -47,10 +47,7 @@ namespace Debugger
         /// <param name="e">The routed event arguments.</param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            if (DebugRegister.Config == null)
-            {
-                DebugRegister.ReadConfigFile();
-            }
+            if (DebugRegister.Config == null) DebugRegister.ReadConfigFile();
 
             DataContext = DebugRegister.Config;
             CombColorError.Color = DebugRegister.ErrorColor;

@@ -28,10 +28,7 @@ namespace Interpreter
             try
             {
                 using var reader = new StreamReader(filepath);
-                while (reader.ReadLine() is { } line)
-                {
-                    parts.Add(line);
-                }
+                while (reader.ReadLine() is { } line) parts.Add(line);
             }
             catch (IOException ex)
             {

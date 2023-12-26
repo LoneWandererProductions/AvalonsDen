@@ -73,20 +73,20 @@ namespace Renderer
             ////Initiate Buttons
             _clickId = new Dictionary<string, int>(6)
             {
-                {RendererResources.BtnIdle, 0},
-                {RendererResources.BtnTwo, 1},
-                {RendererResources.BtnThree, 2},
-                {RendererResources.BtnFour, 3},
-                {RendererResources.BtnFive, 4},
-                {RendererResources.BtnSix, 5},
-                {RendererResources.BtnMiddle, 6}
+                { RendererResources.BtnIdle, 0 },
+                { RendererResources.BtnTwo, 1 },
+                { RendererResources.BtnThree, 2 },
+                { RendererResources.BtnFour, 3 },
+                { RendererResources.BtnFive, 4 },
+                { RendererResources.BtnSix, 5 },
+                { RendererResources.BtnMiddle, 6 }
             };
 
             //Initiate Buttons
-            _lstBtn = new List<Button>(6) {ButtonTwo, ButtonThree, ButtonFour, ButtonFive, ButtonSix, ButtonMiddle};
+            _lstBtn = new List<Button>(6) { ButtonTwo, ButtonThree, ButtonFour, ButtonFive, ButtonSix, ButtonMiddle };
 
             //Initiate Images
-            _lstImg = new List<Image>(5) {ImageTwo, ImageThree, ImageFour, ImageFive, ImageSix};
+            _lstImg = new List<Image>(5) { ImageTwo, ImageThree, ImageFour, ImageFive, ImageSix };
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Renderer
         /// <param name="e">Event Details</param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var btn = (Button) sender;
+            var btn = (Button)sender;
             if (btn == null) return;
 
             var id = _clickId[btn.Name];
@@ -152,7 +152,7 @@ namespace Renderer
             for (var i = 0; i < items.Count; i++)
             {
                 //Load Tool-tip
-                var chartoolTip = new ToolTip {Content = items[i].Tooltip};
+                var chartoolTip = new ToolTip { Content = items[i].Tooltip };
                 ToolTipService.SetShowDuration(ButtonTwo, 2000);
 
                 //load Button, handle idle and middle button

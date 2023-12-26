@@ -63,8 +63,8 @@ namespace AvalonsDenTests
         {
             TransitionEngineRegister.TileDct = new Dictionary<int, Tile>
             {
-                {0, ResourcesTransitions.TileMaster},
-                {1, ResourcesTransitions.TileN}
+                { 0, ResourcesTransitions.TileMaster },
+                { 1, ResourcesTransitions.TileN }
             };
 
             var listTranstitions = TransitionEngineRegister.GetAllTransitions(0);
@@ -120,8 +120,8 @@ namespace AvalonsDenTests
         {
             TransitionEngineRegister.TileDct = new Dictionary<int, Tile>
             {
-                {0, ResourcesTransitions.TileMaster},
-                {2, ResourcesTransitions.TileNe}
+                { 0, ResourcesTransitions.TileMaster },
+                { 2, ResourcesTransitions.TileNe }
             };
 
             var listTranstitions = TransitionEngineRegister.GetAllTransitions(0);
@@ -181,8 +181,8 @@ namespace AvalonsDenTests
         {
             TransitionEngineRegister.TileDct = new Dictionary<int, Tile>
             {
-                {0, ResourcesTransitions.TileMaster},
-                {3, ResourcesTransitions.TileE}
+                { 0, ResourcesTransitions.TileMaster },
+                { 3, ResourcesTransitions.TileE }
             };
 
             var listTranstitions = TransitionEngineRegister.GetAllTransitions(0);
@@ -238,8 +238,8 @@ namespace AvalonsDenTests
         {
             TransitionEngineRegister.TileDct = new Dictionary<int, Tile>
             {
-                {0, ResourcesTransitions.TileMaster},
-                {4, ResourcesTransitions.TileSe}
+                { 0, ResourcesTransitions.TileMaster },
+                { 4, ResourcesTransitions.TileSe }
             };
 
             var listTranstitions = TransitionEngineRegister.GetAllTransitions(0);
@@ -299,8 +299,8 @@ namespace AvalonsDenTests
         {
             TransitionEngineRegister.TileDct = new Dictionary<int, Tile>
             {
-                {0, ResourcesTransitions.TileMaster},
-                {5, ResourcesTransitions.TileW}
+                { 0, ResourcesTransitions.TileMaster },
+                { 5, ResourcesTransitions.TileW }
             };
 
             var listTranstitions = TransitionEngineRegister.GetAllTransitions(0);
@@ -356,8 +356,8 @@ namespace AvalonsDenTests
         {
             TransitionEngineRegister.TileDct = new Dictionary<int, Tile>
             {
-                {0, ResourcesTransitions.TileMaster},
-                {6, ResourcesTransitions.TileSw}
+                { 0, ResourcesTransitions.TileMaster },
+                { 6, ResourcesTransitions.TileSw }
             };
 
             var listTranstitions = TransitionEngineRegister.GetAllTransitions(0);
@@ -417,8 +417,8 @@ namespace AvalonsDenTests
         {
             TransitionEngineRegister.TileDct = new Dictionary<int, Tile>
             {
-                {0, ResourcesTransitions.TileMaster},
-                {7, ResourcesTransitions.TileS}
+                { 0, ResourcesTransitions.TileMaster },
+                { 7, ResourcesTransitions.TileS }
             };
 
             var listTranstitions = TransitionEngineRegister.GetAllTransitions(0);
@@ -473,8 +473,8 @@ namespace AvalonsDenTests
         {
             TransitionEngineRegister.TileDct = new Dictionary<int, Tile>
             {
-                {0, ResourcesTransitions.TileMaster},
-                {8, ResourcesTransitions.TileNw}
+                { 0, ResourcesTransitions.TileMaster },
+                { 8, ResourcesTransitions.TileNw }
             };
 
             var listTranstitions = TransitionEngineRegister.GetAllTransitions(0);

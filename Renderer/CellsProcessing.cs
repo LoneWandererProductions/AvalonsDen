@@ -91,7 +91,7 @@ namespace Renderer
                 }
                 else
                 {
-                    var lst = new List<int> {tile};
+                    var lst = new List<int> { tile };
                     coordinateIdlayer.Add(point, lst);
                 }
             }
@@ -106,7 +106,7 @@ namespace Renderer
         /// <returns>Max layer we need to generate</returns>
         internal static int GetMaxLayer(Dictionary<int, Tile> tileDct)
         {
-            return tileDct.Select(tile => tile.Value.Layer).Concat(new[] {0}).Max();
+            return tileDct.Select(tile => tile.Value.Layer).Concat(new[] { 0 }).Max();
         }
 
         /// <summary>

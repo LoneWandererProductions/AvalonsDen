@@ -202,7 +202,7 @@ namespace DatabaseDriver
 
             var row = new TableSet
             {
-                Row = new List<string> {miscellaneous.Id.ToString(), DatabaseDriverResources.DbNameMiscellaneous}
+                Row = new List<string> { miscellaneous.Id.ToString(), DatabaseDriverResources.DbNameMiscellaneous }
             };
 
             //Insert into Master
@@ -211,7 +211,7 @@ namespace DatabaseDriver
             if (!check) return false;
 
             var data = _isqlUtil.ConvertToAttribute(miscellaneous);
-            row = new TableSet {Row = data};
+            row = new TableSet { Row = data };
 
             //Insert into Detail Table
             return _isql.InsertSingleRow(DatabaseDriverResources.DbNameMiscellaneous, row, true);
@@ -228,7 +228,7 @@ namespace DatabaseDriver
 
             var row = new TableSet
             {
-                Row = new List<string> {weapon.Id.ToString(), DatabaseDriverResources.DbNameWeapon}
+                Row = new List<string> { weapon.Id.ToString(), DatabaseDriverResources.DbNameWeapon }
             };
 
             //Insert into Master
@@ -237,7 +237,7 @@ namespace DatabaseDriver
             if (!check) return false;
 
             var data = _isqlUtil.ConvertToAttribute(weapon);
-            row = new TableSet {Row = data};
+            row = new TableSet { Row = data };
 
             //Insert into Detail Table
             return _isql.InsertSingleRow(DatabaseDriverResources.DbNameWeapon, row, true);
@@ -252,7 +252,8 @@ namespace DatabaseDriver
         {
             if (armor == null) return false;
 
-            var row = new TableSet {Row = new List<string> {armor.Id.ToString(), DatabaseDriverResources.DbNameArmor}};
+            var row = new TableSet
+                { Row = new List<string> { armor.Id.ToString(), DatabaseDriverResources.DbNameArmor } };
 
             //Insert into Master
             var check = _isql.InsertSingleRow(DatabaseDriverResources.DbNameMaster, row, true);
@@ -260,7 +261,7 @@ namespace DatabaseDriver
             if (!check) return false;
 
             var data = _isqlUtil.ConvertToAttribute(armor);
-            row = new TableSet {Row = data};
+            row = new TableSet { Row = data };
 
             //Insert into Detail Table
             return _isql.InsertSingleRow(DatabaseDriverResources.DbNameArmor, row, true);
@@ -278,7 +279,7 @@ namespace DatabaseDriver
             var name = DatabaseDriverResources.ImageDummy;
             if (!string.IsNullOrEmpty(images.ImagePath)) name = images.ImagePath;
 
-            var row = new TableSet {Row = new List<string> {images.IdImage.ToString(), name}};
+            var row = new TableSet { Row = new List<string> { images.IdImage.ToString(), name } };
 
             //Insert into Detail Table
             return _isql.InsertSingleRow(DatabaseDriverResources.DbImageTableName, row, true);
@@ -291,7 +292,7 @@ namespace DatabaseDriver
         /// <returns>List of Ids</returns>
         public List<int> GetIdsMasterTable(string tableName)
         {
-            var headers = new List<string> {DatabaseDriverResources.DbColumnId};
+            var headers = new List<string> { DatabaseDriverResources.DbColumnId };
             var tlbMaster = _isql.SimpleSelect(tableName, headers);
 
             var master = tlbMaster?.Row.ConvertAll(id => id.Row[0]);

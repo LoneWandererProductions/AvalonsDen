@@ -91,7 +91,7 @@ namespace ItemExchange
 
             for (var i = 0; i < height * weight; i++)
             {
-                var matrix = new LootingItemView {Amount = 0};
+                var matrix = new LootingItemView { Amount = 0 };
                 loot.Add(i, matrix);
             }
 
@@ -120,8 +120,8 @@ namespace ItemExchange
                 count++;
 
                 var cube = i >= row
-                    ? new Cube {XOne = i * cell + splitter, YOne = j * cell, Id = count}
-                    : new Cube {XOne = i * cell, YOne = j * cell, Id = count};
+                    ? new Cube { XOne = i * cell + splitter, YOne = j * cell, Id = count }
+                    : new Cube { XOne = i * cell, YOne = j * cell, Id = count };
 
                 Cubes.Add(string.Concat(LootResources.NameExtension, i, j), cube);
             }
@@ -202,7 +202,7 @@ namespace ItemExchange
         /// <returns>Id of the cube</returns>
         internal static int GetId(double x, double y)
         {
-            var name = GetCell((int) x, (int) y);
+            var name = GetCell((int)x, (int)y);
 
             if (string.IsNullOrEmpty(name)) return -1;
 

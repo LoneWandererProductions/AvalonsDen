@@ -11,10 +11,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 using CampaignDriver;
-using InterOp;
 using Debugger;
 using EventEngine;
 using GameEngine;
+using InterOp;
 using Renderer;
 using Resources;
 
@@ -62,7 +62,7 @@ namespace Campaigns
         /// <summary>
         ///     Global Keyboard Hook
         /// </summary>
-        private static InterOp.WinKeyStrokeListener _listener;
+        private static WinKeyStrokeListener _listener;
 
         /// <summary>
         ///     Load the Basics

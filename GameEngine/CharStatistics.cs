@@ -524,7 +524,7 @@ namespace GameEngine
         /// </summary>
         private void CalcSpirits()
         {
-            CalcSpirit = (int) Math.Round(_intelligence * _will * SpiritParam + _wisdom * WisdomParam);
+            CalcSpirit = (int)Math.Round(_intelligence * _will * SpiritParam + _wisdom * WisdomParam);
         }
 
         /// <summary>
@@ -532,7 +532,7 @@ namespace GameEngine
         /// </summary>
         private void CalcBodys()
         {
-            CalcBody = (int) Math.Round(_strength * _agility * BodyParam + _wisdom * WisdomParam);
+            CalcBody = (int)Math.Round(_strength * _agility * BodyParam + _wisdom * WisdomParam);
         }
 
         /// <summary>
@@ -540,7 +540,7 @@ namespace GameEngine
         /// </summary>
         private void Resistances()
         {
-            CalcResistance = (int) Math.Round(_strength * _will * ResistanceParam + _wisdom * WisdomParam);
+            CalcResistance = (int)Math.Round(_strength * _will * ResistanceParam + _wisdom * WisdomParam);
         }
 
         /// <summary>
@@ -548,7 +548,7 @@ namespace GameEngine
         /// </summary>
         private void Shielding()
         {
-            CalcShielding = (int) Math.Round(_intelligence * _will * ShieldingParam + _wisdom * WisdomParam);
+            CalcShielding = (int)Math.Round(_intelligence * _will * ShieldingParam + _wisdom * WisdomParam);
         }
 
         /// <summary>
@@ -556,7 +556,7 @@ namespace GameEngine
         /// </summary>
         private void HitChances()
         {
-            CalcHitChance = (int) Math.Round(_intelligence * _agility * 0.25);
+            CalcHitChance = (int)Math.Round(_intelligence * _agility * 0.25);
         }
 
         /// <summary>
@@ -564,7 +564,7 @@ namespace GameEngine
         /// </summary>
         private void CriticalChances()
         {
-            CalcCriticalChance = (int) Math.Round(_intelligence * _agility * 0.25);
+            CalcCriticalChance = (int)Math.Round(_intelligence * _agility * 0.25);
         }
 
         /// <summary>
@@ -572,7 +572,7 @@ namespace GameEngine
         /// </summary>
         private void Initiatives()
         {
-            CalcInitiative = (int) Math.Round(_wisdom * _intelligence * _agility * 0.25);
+            CalcInitiative = (int)Math.Round(_wisdom * _intelligence * _agility * 0.25);
         }
 
         /// <summary>
@@ -580,7 +580,7 @@ namespace GameEngine
         /// </summary>
         private void ActionPoints()
         {
-            CalcActionPoints = (int) Math.Round(_wisdom * _agility * _strength * 0.25);
+            CalcActionPoints = (int)Math.Round(_wisdom * _agility * _strength * 0.25);
         }
 
         /// <summary>
@@ -588,7 +588,7 @@ namespace GameEngine
         /// </summary>
         private void CarryingWeights()
         {
-            CalcCarryingWeight = (int) Math.Round(10 * _strength + _will * CarryingWeightParam);
+            CalcCarryingWeight = (int)Math.Round(10 * _strength + _will * CarryingWeightParam);
         }
 
         /// <summary>
@@ -619,13 +619,13 @@ namespace GameEngine
             switch (ClassType)
             {
                 case 0:
-                    return (int) Math.Round(_agility * _will * FocusParam + _wisdom * WisdomParam);
+                    return (int)Math.Round(_agility * _will * FocusParam + _wisdom * WisdomParam);
 
                 case 1:
-                    return (int) Math.Round(_strength * _will * RageParam + _wisdom * WisdomParam);
+                    return (int)Math.Round(_strength * _will * RageParam + _wisdom * WisdomParam);
 
                 case 2:
-                    return (int) Math.Round(_intelligence * _will * AetherParam + _wisdom * WisdomParam);
+                    return (int)Math.Round(_intelligence * _will * AetherParam + _wisdom * WisdomParam);
 
                 default:
                     return 0;

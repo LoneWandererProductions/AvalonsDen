@@ -118,9 +118,9 @@ namespace DialogsDisplay
             _dlgEngine.StartDialog();
 
             //Load into the Window
-            var dlgLine = new DlgLine {Line = _dlgEngine.DlgObject.BaseDialog.DialogLine};
+            var dlgLine = new DlgLine { Line = _dlgEngine.DlgObject.BaseDialog.DialogLine };
             //only get Active Dialogs
-            var dlgChoice = new DlgDisplay {DisplayDialog = _dlgEngine.GetChoiceDialog()};
+            var dlgChoice = new DlgDisplay { DisplayDialog = _dlgEngine.GetChoiceDialog() };
 
             //Load Character Biography
             LoadBiography(_dlgEngine.DlgObject.BaseDialog.CharacterId);
@@ -133,7 +133,7 @@ namespace DialogsDisplay
             if (string.IsNullOrEmpty(image)) return;
 
             //Load Images
-            var imgPath = new ImagePath {ImagePaths = image};
+            var imgPath = new ImagePath { ImagePaths = image };
             ReloadImages?.Invoke(null, imgPath);
         }
 
@@ -147,7 +147,7 @@ namespace DialogsDisplay
             //check if Condition
             if (!CheckCondition(SelectedItem.ConditionId))
             {
-                var dlgLine = new DlgLine {Line = DialogsDisplayResources.Condition};
+                var dlgLine = new DlgLine { Line = DialogsDisplayResources.Condition };
                 DialogText?.Invoke(null, dlgLine);
                 return;
             }
@@ -155,7 +155,7 @@ namespace DialogsDisplay
             //check if Condition, Careful! if you have a follow Up with an Display Window Trigger the Close Dialog!
             if (SelectedItem.EventId != -1)
             {
-                var id = new DialogInteractionEventArgs {EventId = SelectedItem.EventId};
+                var id = new DialogInteractionEventArgs { EventId = SelectedItem.EventId };
                 DialogInteraction.EventTrigger(id);
             }
 
@@ -218,9 +218,9 @@ namespace DialogsDisplay
             var displayText = string.Concat(SelectedItem.DialogLine, Environment.NewLine,
                 followup.BaseDialog.DialogLine);
 
-            var dlgLine = new DlgLine {Line = displayText};
-            var dlgChoice = new DlgDisplay {DisplayDialog = followup.ChoiceDialog};
-            var imgPath = new ImagePath {ImagePaths = followup.BaseDialog.BackgroundImage};
+            var dlgLine = new DlgLine { Line = displayText };
+            var dlgChoice = new DlgDisplay { DisplayDialog = followup.ChoiceDialog };
+            var imgPath = new ImagePath { ImagePaths = followup.BaseDialog.BackgroundImage };
 
             //Load Text
             DialogChoice?.Invoke(null, dlgChoice);
@@ -241,7 +241,7 @@ namespace DialogsDisplay
             var displayText = string.Concat(selectedItem.DialogLine, Environment.NewLine,
                 selectedItem.FollowUpDialog);
 
-            var dlgLine = new DlgLine {Line = displayText};
+            var dlgLine = new DlgLine { Line = displayText };
             DialogText?.Invoke(null, dlgLine);
 
             if (!SelectedItem.IsRepeatable) _dlgEngine.SetInactive(SelectedItem.MasterId, selectedItem.ChildId);
@@ -282,7 +282,7 @@ namespace DialogsDisplay
         /// <returns>A quick Dialog that plays in case something is broken or empty</returns>
         private static List<DialogObject> GetDummyDialogObject()
         {
-            return new()
+            return new List<DialogObject>
             {
                 DialogsDisplayResources.DialogStart,
                 DialogsDisplayResources.DialogEnd

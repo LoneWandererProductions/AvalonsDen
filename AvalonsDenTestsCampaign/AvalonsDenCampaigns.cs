@@ -252,14 +252,14 @@ namespace AvalonsDenTestsCampaign
         private static void GenerateCoordinatesId(string campaign, string map)
         {
             //Add CoordinatesId Start
-            var cid = new Dictionary<int, int> {{0, 0}};
+            var cid = new Dictionary<int, int> { { 0, 0 } };
 
             var path = Path.Combine(campaign, map);
 
             Serialize.SaveDctObjectToXml(cid, Path.ChangeExtension(path, ArtConst.CoordinatesIdExt));
 
             //Add CoordinatesId Target
-            cid = new Dictionary<int, int> {{0, 0}};
+            cid = new Dictionary<int, int> { { 0, 0 } };
 
             path = Path.Combine(campaign, TargetMap);
 
@@ -333,7 +333,7 @@ namespace AvalonsDenTestsCampaign
                 MapName = name,
                 Height = 1,
                 Length = 2,
-                Borders = new List<string> {"1|1|1|1|1|1", "1|0|0|1|1|1", "1|1|1|1|1|1"}
+                Borders = new List<string> { "1|1|1|1|1|1", "1|0|0|1|1|1", "1|1|1|1|1|1" }
             };
 
             var lst = new List<SerializeableKeyValuePair.KeyValuePair<int, int>>();

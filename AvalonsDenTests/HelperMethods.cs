@@ -68,7 +68,7 @@ namespace AvalonsDenTests
                 ZLayer = 1,
                 TileId = tileId
             };
-            var one = new List<Coordinates> {coordinate};
+            var one = new List<Coordinates> { coordinate };
             return one;
         }
 
@@ -88,12 +88,12 @@ namespace AvalonsDenTests
         /// <returns> Custom TileDictionary</returns>
         internal static Dictionary<int, Tile> InitiateMultiTileDct()
         {
-            return new()
+            return new Dictionary<int, Tile>
             {
-                {0, ResourcesTransitions.TileMasterMt},
-                {1, ResourcesTransitions.TileNmt1},
-                {2, ResourcesTransitions.TileNmt2},
-                {3, ResourcesTransitions.TileEmt}
+                { 0, ResourcesTransitions.TileMasterMt },
+                { 1, ResourcesTransitions.TileNmt1 },
+                { 2, ResourcesTransitions.TileNmt2 },
+                { 3, ResourcesTransitions.TileEmt }
             };
         }
 
@@ -103,17 +103,17 @@ namespace AvalonsDenTests
         /// <returns> Custom TileDictionary</returns>
         internal static Dictionary<int, Tile> InitiateTileDct()
         {
-            return new()
+            return new Dictionary<int, Tile>
             {
-                {0, ResourcesTransitions.TileMaster},
-                {1, ResourcesTransitions.TileN},
-                {2, ResourcesTransitions.TileNe},
-                {3, ResourcesTransitions.TileE},
-                {4, ResourcesTransitions.TileSe},
-                {5, ResourcesTransitions.TileW},
-                {6, ResourcesTransitions.TileSw},
-                {7, ResourcesTransitions.TileS},
-                {8, ResourcesTransitions.TileNw}
+                { 0, ResourcesTransitions.TileMaster },
+                { 1, ResourcesTransitions.TileN },
+                { 2, ResourcesTransitions.TileNe },
+                { 3, ResourcesTransitions.TileE },
+                { 4, ResourcesTransitions.TileSe },
+                { 5, ResourcesTransitions.TileW },
+                { 6, ResourcesTransitions.TileSw },
+                { 7, ResourcesTransitions.TileS },
+                { 8, ResourcesTransitions.TileNw }
             };
         }
 
@@ -123,10 +123,10 @@ namespace AvalonsDenTests
         /// <returns> Custom TileDictionary</returns>
         internal static Dictionary<int, Tile> InitiateTileDctSwCase()
         {
-            return new()
+            return new Dictionary<int, Tile>
             {
-                {0, ResourcesTransitions.TileMaster},
-                {6, ResourcesTransitions.TileSw}
+                { 0, ResourcesTransitions.TileMaster },
+                { 6, ResourcesTransitions.TileSw }
             };
         }
     }

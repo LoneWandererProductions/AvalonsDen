@@ -157,7 +157,7 @@ namespace DatabaseDriver
             var lst = row.Columns(0);
 
             var miscellaneous = new Miscellaneous();
-            return (Miscellaneous) _isqlUtil.FillObject(lst, miscellaneous);
+            return (Miscellaneous)_isqlUtil.FillObject(lst, miscellaneous);
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace DatabaseDriver
             var lst = row.Columns(0);
 
             var weapon = new Weapon();
-            return (Weapon) _isqlUtil.FillObject(lst, weapon);
+            return (Weapon)_isqlUtil.FillObject(lst, weapon);
         }
 
         /// <summary>
@@ -195,7 +195,7 @@ namespace DatabaseDriver
             var lst = row.Columns(0);
 
             var armor = new Armor();
-            return (Armor) _isqlUtil.FillObject(lst, armor);
+            return (Armor)_isqlUtil.FillObject(lst, armor);
         }
 
         /// <summary>
@@ -214,7 +214,7 @@ namespace DatabaseDriver
             var lst = row.Columns(0);
 
             var image = new Images();
-            return (Images) _isqlUtil.FillObject(lst, image);
+            return (Images)_isqlUtil.FillObject(lst, image);
         }
 
         /// <summary>

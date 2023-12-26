@@ -83,10 +83,7 @@ namespace SQLiteGui
         private TableSet ConvertItems()
         {
             var tbl = new TableSet();
-            if (DtGrdUpdate.ItemsSource is not IEnumerable<UpdateItem> data)
-            {
-                return tbl;
-            }
+            if (DtGrdUpdate.ItemsSource is not IEnumerable<UpdateItem> data) return tbl;
 
             tbl.Row.AddRange(from item in data select item.Value);
             return tbl;

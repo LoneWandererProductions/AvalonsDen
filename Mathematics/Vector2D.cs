@@ -151,7 +151,7 @@ namespace Mathematics
         /// </returns>
         public static double operator *(Vector2D first, Vector2D second)
         {
-            return (first.X * second.X) + (first.Y * second.Y);
+            return first.X * second.X + first.Y * second.Y;
         }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace Mathematics
         /// </returns>
         public double CrossProduct(Vector2D second)
         {
-            return (X * second.Y) - (Y * second.X);
+            return X * second.Y - Y * second.X;
         }
 
 
@@ -205,12 +205,12 @@ namespace Mathematics
         }
 
         /// <summary>
-        /// Converts to matrix.
+        ///     Converts to matrix.
         /// </summary>
         /// <returns>Vector transformed to Matrix</returns>
         public BaseMatrix ToMatrix()
         {
-            return new() { [0, 0] = X, [0, 1] = Y};
+            return new BaseMatrix { [0, 0] = X, [0, 1] = Y };
         }
     }
 }

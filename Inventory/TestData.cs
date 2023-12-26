@@ -81,7 +81,7 @@ namespace Inventory
 
             Inventory.Add(5, slot);
 
-            Character = new Dictionary<int, string> {{0, "Ed"}, {1, "Mike"}};
+            Character = new Dictionary<int, string> { { 0, "Ed" }, { 1, "Mike" } };
         }
     }
 }

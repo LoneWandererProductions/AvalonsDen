@@ -26,30 +26,20 @@ namespace Debugger
             textRange.Text = string.Concat(line, Environment.NewLine);
 
             if (line.Contains(nameof(ErCode.Error)))
-            {
                 textRange.ApplyPropertyValue(TextElement.ForegroundProperty, DebugRegister.ErrorColor);
-            }
 
             if (line.Contains(nameof(ErCode.Warning)))
-            {
                 textRange.ApplyPropertyValue(TextElement.ForegroundProperty, DebugRegister.WarningColor);
-            }
 
             if (line.Contains(nameof(ErCode.Information)))
-            {
                 textRange.ApplyPropertyValue(TextElement.ForegroundProperty, DebugRegister.InformationColor);
-            }
 
             if (line.Contains(nameof(ErCode.External)))
-            {
                 textRange.ApplyPropertyValue(TextElement.ForegroundProperty, DebugRegister.ExternalColor);
-            }
 
             if (!line.Contains(nameof(ErCode.External)) && !line.Contains(nameof(ErCode.Error)) &&
                 !line.Contains(nameof(ErCode.Warning)) && !line.Contains(nameof(ErCode.Information)))
-            {
                 textRange.ApplyPropertyValue(TextElement.ForegroundProperty, DebugRegister.StandardColor);
-            }
         }
     }
 }

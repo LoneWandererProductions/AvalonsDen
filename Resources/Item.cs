@@ -57,6 +57,11 @@ namespace Resources
         private int _maxStack;
 
         /// <summary>
+        ///     The position
+        /// </summary>
+        private InventoryEnum.EnumSlot _position;
+
+        /// <summary>
         ///     The rarity.
         /// </summary>
         private int _rarity;
@@ -70,11 +75,6 @@ namespace Resources
         ///     The worth.
         /// </summary>
         private int _worth;
-
-        /// <summary>
-        /// The position
-        /// </summary>
-        private InventoryEnum.EnumSlot _position;
 
         /// <summary>
         ///     Initializes a new instance of the <see cref="Item" /> class.
@@ -236,10 +236,10 @@ namespace Resources
         }
 
         /// <summary>
-        /// Gets or sets the position.
+        ///     Gets or sets the position.
         /// </summary>
         /// <value>
-        /// The position.
+        ///     The position.
         /// </value>
         public InventoryEnum.EnumSlot Position
         {

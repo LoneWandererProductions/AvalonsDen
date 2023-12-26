@@ -89,11 +89,9 @@ namespace InterOp
             using var curModule = curProcess.MainModule;
             //Pass it to our Hook
             if (curModule != null)
-            {
                 return Win32Api.SetWindowsHookEx(InterOpResources.WhKeyboardLl, proc,
                     Win32Api.GetModuleHandle(curModule.ModuleName),
                     0);
-            }
 
             return new IntPtr();
         }
@@ -110,9 +108,7 @@ namespace InterOp
             //allowed Key strokes checks
             if ((nCode < 0 || wParam != (IntPtr)InterOpResources.WmKeydown) &&
                 wParam != (IntPtr)InterOpResources.WmSysKeyDown)
-            {
                 return Win32Api.CallNextHookEx(_hookId, nCode, wParam, lParam);
-            }
 
             var vkCode = Marshal.ReadInt32(lParam);
 

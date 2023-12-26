@@ -57,7 +57,7 @@ namespace CharacterEngine
         /// <returns>Success Status</returns>
         public CharacterBundle LoadCharacter(string path)
         {
-            var bundle = new CharacterBundle {Bio = CharacterProcessing.LoadCharacterBiography(path)};
+            var bundle = new CharacterBundle { Bio = CharacterProcessing.LoadCharacterBiography(path) };
 
             path = PathInformation.GetPathWithoutExtension(path);
             path = Path.ChangeExtension(path, CharacterEngineResources.CharacterStatsExt);

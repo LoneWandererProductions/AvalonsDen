@@ -13,7 +13,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using CommonControls;
 using Imaging;
 using Resources;
 
@@ -96,9 +95,9 @@ namespace ItemExchange
             Canvas.SetTop(_dragObject, point.Y);
             Canvas.SetLeft(_dragObject, point.X);
 
-            var str = StackExchange.GetCell((int) point.X, (int) point.Y);
+            var str = StackExchange.GetCell((int)point.X, (int)point.Y);
             var cubeId = StackExchange.GetId(point.X, point.Y);
-            var tile = (Tile) FindName(str);
+            var tile = (Tile)FindName(str);
 
             if (tile == null) return;
 
@@ -149,10 +148,10 @@ namespace ItemExchange
             var point = e.GetPosition(sender as IInputElement);
 
             //get Name and Id of clicked Cell
-            var str = StackExchange.GetCell((int) point.X, (int) point.Y);
+            var str = StackExchange.GetCell((int)point.X, (int)point.Y);
             var id = StackExchange.GetId(point.X, point.Y);
 
-            var tileNew = (Tile) FindName(str);
+            var tileNew = (Tile)FindName(str);
 
             //not found? Return.
             if (tileNew == null) return;
@@ -163,7 +162,7 @@ namespace ItemExchange
             //Load clicked Cells old and new
             tileNew.SlcImage = LootResources.SelectionImage;
             //Get infos for the old Tile
-            var tileOld = (Tile) FindName(LootRegister.TileSelected);
+            var tileOld = (Tile)FindName(LootRegister.TileSelected);
 
             //clean up of the error case should never happen, if we did not get the old Cell
             if (LootRegister.ItemSelected == -1 || id == -1)
@@ -205,7 +204,7 @@ namespace ItemExchange
 
             foreach (var cube in StackExchange.Cubes.Where(cube => cube.Value.Id == itemPosition)) cellName = cube.Key;
 
-            var tile = (Tile) FindName(cellName);
+            var tile = (Tile)FindName(cellName);
 
             if (tile == null) return;
 

@@ -29,7 +29,7 @@ namespace CharacterDisplay
         {
             if (characterLst.IsNullOrEmpty()) throw new ArgumentNullException(nameof(characterLst));
 
-            var dsplay = new CharacterWindow(campaignName, characterLst) {Topmost = true};
+            var dsplay = new CharacterWindow(campaignName, characterLst) { Topmost = true };
             dsplay.ShowDialog();
         }
     }

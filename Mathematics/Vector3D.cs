@@ -167,7 +167,7 @@ namespace Mathematics
         /// </returns>
         public static double operator *(Vector3D first, Vector3D second)
         {
-            return (first.X * second.X) + (first.Y * second.Y) + (first.Z * second.Z);
+            return first.X * second.X + first.Y * second.Y + first.Z * second.Z;
         }
 
         /// <summary>
@@ -181,9 +181,9 @@ namespace Mathematics
         {
             return new Vector3D
             {
-                X = (Y * second.Z) - (Z * second.Y),
-                Y = (Z * second.X) - (X * second.Z),
-                Z = (X * second.Y) - (Y * second.X)
+                X = Y * second.Z - Z * second.Y,
+                Y = Z * second.X - X * second.Z,
+                Z = X * second.Y - Y * second.X
             };
         }
 
@@ -217,22 +217,22 @@ namespace Mathematics
         }
 
         /// <summary>
-        /// Converts to matrix.
+        ///     Converts to matrix.
         /// </summary>
         /// <returns>Vector transformed to Matrix</returns>
         public BaseMatrix ToMatrix()
         {
-            return new() {[0, 0] = X, [0, 1] = Y, [0, 2] = Z};
+            return new BaseMatrix { [0, 0] = X, [0, 1] = Y, [0, 2] = Z };
         }
 
         /// <summary>
-        /// Converts to matrix.
-        /// In this case especially for 3D Projection
+        ///     Converts to matrix.
+        ///     In this case especially for 3D Projection
         /// </summary>
         /// <returns>Vector transformed to Matrix</returns>
         public BaseMatrix To3DMatrix()
         {
-            return new() { [0, 0] = X, [0, 1] = Y, [0, 2] = Z, [0, 3] = 1 };
+            return new BaseMatrix { [0, 0] = X, [0, 1] = Y, [0, 2] = Z, [0, 3] = 1 };
         }
     }
 }

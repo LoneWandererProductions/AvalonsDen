@@ -249,17 +249,11 @@ namespace Debugger
                 proc = Process.GetProcessesByName(Path.GetFileNameWithoutExtension(DebuggerResources.TrailWindow));
 
                 //nothing found just bail out
-                if (proc.Length == 0)
-                {
-                    return;
-                }
+                if (proc.Length == 0) return;
 
                 var debugger = proc[0];
 
-                if (!debugger.HasExited)
-                {
-                    debugger.Kill();
-                }
+                if (!debugger.HasExited) debugger.Kill();
             }
             catch (InvalidOperationException ex)
             {
@@ -276,12 +270,8 @@ namespace Debugger
             finally
             {
                 if (proc != null)
-                {
                     foreach (var p in proc)
-                    {
                         p.Dispose();
-                    }
-                }
             }
         }
     }

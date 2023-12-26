@@ -224,10 +224,7 @@ namespace Interpreter
         /// </summary>
         private void CommandList()
         {
-            foreach (var com in _com.Values)
-            {
-                OnStatus(string.Concat(com.Command, Environment.NewLine));
-            }
+            foreach (var com in _com.Values) OnStatus(string.Concat(com.Command, Environment.NewLine));
         }
 
         /// <summary>Display all using and the Current in Use.</summary>
@@ -235,10 +232,7 @@ namespace Interpreter
         private void CommandUsing(string nameSpace)
         {
             OnStatus(string.Concat(IrtConst.Active, nameSpace, Environment.NewLine));
-            foreach (var key in Prompt.CollectedSpaces.Keys)
-            {
-                OnStatus(string.Concat(key, Environment.NewLine));
-            }
+            foreach (var key in Prompt.CollectedSpaces.Keys) OnStatus(string.Concat(key, Environment.NewLine));
         }
 
         /// <summary>
@@ -259,11 +253,9 @@ namespace Interpreter
 
             if (!check)
             {
-                {
-                    var log = ErrorLogging.SetLastError(IrtConst.ParenthesisError, 0);
-                    OnStatus(log);
-                    SetError();
-                }
+                var log = ErrorLogging.SetLastError(IrtConst.ParenthesisError, 0);
+                OnStatus(log);
+                SetError();
             }
 
             GenerateCommands(parameterPart);
@@ -296,10 +288,7 @@ namespace Interpreter
         /// <param name="parameterPart">The parameter part.</param>
         private void GenerateCommands(string parameterPart)
         {
-            foreach (var com in Irt.SplitParameter(parameterPart, IrtConst.NewCommand))
-            {
-                HandleInput(com);
-            }
+            foreach (var com in Irt.SplitParameter(parameterPart, IrtConst.NewCommand)) HandleInput(com);
         }
 
         /// <summary>

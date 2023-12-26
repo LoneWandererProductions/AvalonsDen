@@ -125,10 +125,7 @@ namespace PathFinding
                 currentPoint.Xrow = current.XNodeRow;
                 currentPoint.Ycolumn = current.YNodeColumn;
 
-                if (currentPoint.Equals(end))
-                {
-                    break; //If we stand on the target node return. No need to continue
-                }
+                if (currentPoint.Equals(end)) break; //If we stand on the target node return. No need to continue
 
                 possibleList.RemoveAt(0); //Removes the starting point from the possible Node Queue
                 exploredList.Add(current); //Add Start-point, since we stand on it.
@@ -138,10 +135,7 @@ namespace PathFinding
                 //Skips the node if it is blocked, thanks to Linq all in the loop
                 foreach (var neighbor in GetValidNeighbors(currentPoint, diagonal))
                 {
-                    if (exploredList.Contains(neighbor) || neighbor.IsWall)
-                    {
-                        continue;
-                    }
+                    if (exploredList.Contains(neighbor) || neighbor.IsWall) continue;
 
                     //Decision tree how we progress
                     //Check new possible Node
@@ -162,10 +156,7 @@ namespace PathFinding
                     else
                     {
                         //Is this a more efficient route than last time?
-                        if (current.Cost + 10 >= neighbor.Cost)
-                        {
-                            continue;
-                        }
+                        if (current.Cost + 10 >= neighbor.Cost) continue;
 
                         //else replace with new Node
                         neighbor.Parent = current; //Where it came from, final path can be found by linking parents
@@ -182,15 +173,9 @@ namespace PathFinding
             var pathway = new List<PathNode>();
 
             ////bail should not happen if files are loaded correct, if we load a wrong map, this might actual be possible, but we should still catch it
-            if (end.Xrow > (_length * 3) - 2)
-            {
-                throw new Exception(string.Concat(PathResources.ErrorLength, _length));
-            }
+            if (end.Xrow > _length * 3 - 2) throw new Exception(string.Concat(PathResources.ErrorLength, _length));
 
-            if (end.Ycolumn > (_height * 3) - 2)
-            {
-                throw new Exception(string.Concat(PathResources.ErrorHeight, _height));
-            }
+            if (end.Ycolumn > _height * 3 - 2) throw new Exception(string.Concat(PathResources.ErrorHeight, _height));
 
             current = _gridArray[end.Xrow, end.Ycolumn]; //Current = end designation node
 
@@ -229,12 +214,8 @@ namespace PathFinding
         {
             //Resets all the parent variables to clear the paths created last time
             for (var x = 0; x <= _gridArray.GetUpperBound(0); x++)
-            {
-                for (var y = 0; y <= _gridArray.GetUpperBound(1); y++)
-                {
-                    _gridArray[x, y].Parent = null;
-                }
-            }
+            for (var y = 0; y <= _gridArray.GetUpperBound(1); y++)
+                _gridArray[x, y].Parent = null;
         }
 
         /// <summary>
@@ -258,58 +239,34 @@ namespace PathFinding
             var maxHeight = _gridArray.GetUpperBound(1);
 
             //W
-            if (point.Xrow - 1 >= 0)
-            {
-                cache.Add(_gridArray[point.Xrow - 1, point.Ycolumn]);
-            }
+            if (point.Xrow - 1 >= 0) cache.Add(_gridArray[point.Xrow - 1, point.Ycolumn]);
 
             //E
-            if (point.Xrow < maxLength)
-            {
-                cache.Add(_gridArray[point.Xrow + 1, point.Ycolumn]);
-            }
+            if (point.Xrow < maxLength) cache.Add(_gridArray[point.Xrow + 1, point.Ycolumn]);
 
             //S
-            if (point.Ycolumn - 1 >= 0)
-            {
-                cache.Add(_gridArray[point.Xrow, point.Ycolumn - 1]);
-            }
+            if (point.Ycolumn - 1 >= 0) cache.Add(_gridArray[point.Xrow, point.Ycolumn - 1]);
 
             //N
-            if (point.Ycolumn < maxHeight)
-            {
-                cache.Add(_gridArray[point.Xrow, point.Ycolumn + 1]);
-            }
+            if (point.Ycolumn < maxHeight) cache.Add(_gridArray[point.Xrow, point.Ycolumn + 1]);
 
             //Conditional diagonal steps
-            if (!diagonal)
-            {
-                return cache;
-            }
+            if (!diagonal) return cache;
 
             //NE
             if (point.Xrow < maxLength && point.Ycolumn < maxHeight)
-            {
                 cache.Add(_gridArray[point.Xrow + 1, point.Ycolumn + 1]);
-            }
 
             //NW
             if (point.Xrow - 1 >= 0 && point.Ycolumn < maxHeight)
-            {
                 cache.Add(_gridArray[point.Xrow - 1, point.Ycolumn + 1]);
-            }
 
             //SE
             if (point.Xrow < maxLength && point.Ycolumn - 1 >= 0)
-            {
                 cache.Add(_gridArray[point.Xrow + 1, point.Ycolumn - 1]);
-            }
 
             //SW
-            if (point.Xrow - 1 >= 0 && point.Ycolumn - 1 >= 0)
-            {
-                cache.Add(_gridArray[point.Xrow - 1, point.Ycolumn - 1]);
-            }
+            if (point.Xrow - 1 >= 0 && point.Ycolumn - 1 >= 0) cache.Add(_gridArray[point.Xrow - 1, point.Ycolumn - 1]);
 
             return cache;
         }

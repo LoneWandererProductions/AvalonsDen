@@ -39,25 +39,25 @@ namespace AvalonsDenTests
         /// <summary>
         ///     The border one (readonly). Value: new List&lt;int&gt; { 1, 2, 3, 5, 7, 11 }.
         /// </summary>
-        internal static readonly List<int> BorderOne = new() {1, 2, 3, 5, 7, 11};
+        internal static readonly List<int> BorderOne = new() { 1, 2, 3, 5, 7, 11 };
 
         /// <summary>
         ///     The border two (readonly). Value: new List&lt;int&gt; { 6, 7 }.
         /// </summary>
-        internal static readonly List<int> BorderTwo = new() {6, 7};
+        internal static readonly List<int> BorderTwo = new() { 6, 7 };
 
         /// <summary>
         ///     0, Look event,
         ///     1, Talk event,
         ///     Event is the first (Key), Coordinate Id is second (Value)
         /// </summary>
-        internal static readonly Dictionary<int, int> EventIdOne = new() {{0, 9}, {1, 3}};
+        internal static readonly Dictionary<int, int> EventIdOne = new() { { 0, 9 }, { 1, 3 } };
 
         /// <summary>
         ///     4, Look event,
         ///     Event is the first (Key), Coordinate Id is second (Value)
         /// </summary>
-        internal static readonly Dictionary<int, int> EventIdTwo = new() {{4, 6}};
+        internal static readonly Dictionary<int, int> EventIdTwo = new() { { 4, 6 } };
 
         /// <summary>
         ///     Reduced EventType Dictionary

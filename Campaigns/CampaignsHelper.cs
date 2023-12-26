@@ -117,7 +117,7 @@ namespace Campaigns
         /// <returns>Items as slot Element</returns>
         internal static List<InventorySlot> ConvertToSlot(IEnumerable<KeyValuePair<int, int>> itm)
         {
-            return itm.Select(item => new InventorySlot {Id = item.Key, Amount = item.Value}).ToList();
+            return itm.Select(item => new InventorySlot { Id = item.Key, Amount = item.Value }).ToList();
         }
 
         /// <summary>

@@ -67,7 +67,7 @@ namespace DialogEngine
                     };
 
                     //loaded Master List
-                    var dialog = new DialogDisplay {BaseDialog = master};
+                    var dialog = new DialogDisplay { BaseDialog = master };
                     dialogTree.Add(dialogs.MasterId, dialog);
                 }
             }

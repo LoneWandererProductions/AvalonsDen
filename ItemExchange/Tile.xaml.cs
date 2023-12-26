@@ -7,7 +7,6 @@
  */
 
 using System.Windows;
-using CommonControls;
 using Imaging;
 
 namespace ItemExchange
@@ -55,7 +54,7 @@ namespace ItemExchange
         /// </value>
         public string SlcImage
         {
-            get => (string) GetValue(SelectionImage);
+            get => (string)GetValue(SelectionImage);
             set => SetValue(SelectionImage, value);
         }
 

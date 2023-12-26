@@ -74,7 +74,7 @@ namespace EventEngine
         /// <returns>Return Display</returns>
         internal static EventTypeDisplay StartNew()
         {
-            return new()
+            return new EventTypeDisplay
             {
                 PathDisplay = new List<int>(),
                 PathTravel = new List<int>(),
@@ -89,10 +89,10 @@ namespace EventEngine
         /// <returns>Return Display</returns>
         internal static EventTypeDisplay DisplayChar(int type)
         {
-            return new()
+            return new EventTypeDisplay
             {
                 Typ = type,
-                MyDisplayEventsTypes = new Dictionary<int, EventType> {{0, new EventType()}},
+                MyDisplayEventsTypes = new Dictionary<int, EventType> { { 0, new EventType() } },
                 PathDisplay = new List<int>(),
                 PathTravel = new List<int>(),
                 DoSomething = true
@@ -106,7 +106,7 @@ namespace EventEngine
         /// <returns>Return Display</returns>
         internal static EventTypeDisplay EventNothing(int type)
         {
-            return new()
+            return new EventTypeDisplay
             {
                 Typ = type,
                 DoSomething = false
@@ -124,7 +124,7 @@ namespace EventEngine
         internal static EventTypeDisplay EventDisplay(int type, List<int> pathtravel, List<int> pathDisplay,
             Dictionary<int, EventType> myDisplayEvents)
         {
-            return new()
+            return new EventTypeDisplay
             {
                 Typ = type,
                 PathTravel = pathtravel,
@@ -147,7 +147,7 @@ namespace EventEngine
         internal static EventTypeDisplay EventTrap(int type, List<int> pathtravel, List<int> pathDisplay,
             Dictionary<int, EventType> myDisplayEvents, Dictionary<int, EventType> trapdisplay)
         {
-            return new()
+            return new EventTypeDisplay
             {
                 Typ = type,
                 PathTravel = pathtravel,
@@ -167,7 +167,7 @@ namespace EventEngine
         /// <returns>Return Display</returns>
         internal static EventTypeDisplay EventMove(int type, List<int> pathtravel, List<int> pathDisplay)
         {
-            return new()
+            return new EventTypeDisplay
             {
                 Typ = type,
                 PathTravel = pathtravel,

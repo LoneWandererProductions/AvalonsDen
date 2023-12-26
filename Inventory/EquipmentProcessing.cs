@@ -75,7 +75,7 @@ namespace Inventory
                 }
                 else
                 {
-                    var chr = new CharacterOverview {CharacterId = value.CharacterId};
+                    var chr = new CharacterOverview { CharacterId = value.CharacterId };
                     InventoryRegister.Party.Add(value.CharacterId, chr);
                 }
         }
@@ -88,7 +88,7 @@ namespace Inventory
         /// <returns></returns>
         private static CharacterOverview ConvertSlot(Slot slot, CharacterOverview eqp)
         {
-            if (eqp == null) eqp = new CharacterOverview();
+            eqp ??= new CharacterOverview();
 
             //TODO add method to get Slot Type
             //var rest = InventoryRegister.ItemMaster[slot.Id].;
@@ -99,51 +99,51 @@ namespace Inventory
             //TODO Implement Data Handle to get Item
             switch (0)
             {
-                case (int) InventoryEnum.EnumSlot.Head:
+                case (int)InventoryEnum.EnumSlot.Head:
                     if (eqp.IsAllowedHead) eqp.Head = slot.Id;
                     break;
-                case (int) InventoryEnum.EnumSlot.Amulet:
+                case (int)InventoryEnum.EnumSlot.Amulet:
                     if (eqp.IsAllowedAmulet) eqp.Amulet = slot.Id;
                     break;
-                case (int) InventoryEnum.EnumSlot.Chest:
+                case (int)InventoryEnum.EnumSlot.Chest:
                     if (eqp.IsAllowedChest) eqp.Chest = slot.Id;
                     break;
-                case (int) InventoryEnum.EnumSlot.Gloves:
+                case (int)InventoryEnum.EnumSlot.Gloves:
                     if (eqp.IsAllowedGloves) eqp.Gloves = slot.Id;
                     break;
-                case (int) InventoryEnum.EnumSlot.RingLeft:
+                case (int)InventoryEnum.EnumSlot.RingLeft:
                     if (eqp.IsAllowedRingLeft)
                         eqp.RingLeft = slot.Id;
                     break;
-                case (int) InventoryEnum.EnumSlot.RingRight:
+                case (int)InventoryEnum.EnumSlot.RingRight:
                     if (eqp.IsAllowedRingRight)
                         eqp.RingRight = slot.Id;
                     break;
-                case (int) InventoryEnum.EnumSlot.MainHand:
+                case (int)InventoryEnum.EnumSlot.MainHand:
                     if (eqp.IsAllowedMainHand)
                         eqp.MainHand = slot.Id;
                     break;
-                case (int) InventoryEnum.EnumSlot.OffHand:
+                case (int)InventoryEnum.EnumSlot.OffHand:
                     if (eqp.IsAllowedOffHand)
                         eqp.OffHand = slot.Id;
                     break;
-                case (int) InventoryEnum.EnumSlot.Belt:
+                case (int)InventoryEnum.EnumSlot.Belt:
                     if (eqp.IsAllowedBelt)
                         eqp.Belt = slot.Id;
                     break;
-                case (int) InventoryEnum.EnumSlot.Trousers:
+                case (int)InventoryEnum.EnumSlot.Trousers:
                     if (eqp.IsAllowedTrousers)
                         eqp.Trousers = slot.Id;
                     break;
-                case (int) InventoryEnum.EnumSlot.Shoes:
+                case (int)InventoryEnum.EnumSlot.Shoes:
                     if (eqp.IsAllowedShoes)
                         eqp.Shoes = slot.Id;
                     break;
-                case (int) InventoryEnum.EnumSlot.EquipmentSlotOne:
+                case (int)InventoryEnum.EnumSlot.EquipmentSlotOne:
                     if (eqp.IsAllowedEquipmentSlotOne)
                         eqp.EquipmentSlotOne = slot.Id;
                     break;
-                case (int) InventoryEnum.EnumSlot.EquipmentSlotTwo:
+                case (int)InventoryEnum.EnumSlot.EquipmentSlotTwo:
                     if (eqp.IsAllowedEquipmentSlotTwo)
                         eqp.EquipmentSlotTwo = slot.Id;
                     break;

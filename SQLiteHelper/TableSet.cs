@@ -86,15 +86,9 @@ namespace SQLiteHelper
         /// </returns>
         public List<string> Columns(int height)
         {
-            if (height >= Height || height < 0)
-            {
-                return null;
-            }
+            if (height >= Height || height < 0) return null;
 
-            if (Row == null)
-            {
-                return null;
-            }
+            if (Row == null) return null;
 
             return Row[height].Row;
         }
@@ -108,15 +102,9 @@ namespace SQLiteHelper
         /// </returns>
         public List<string> Rows(int width)
         {
-            if (width >= Width || width < 0)
-            {
-                return null;
-            }
+            if (width >= Width || width < 0) return null;
 
-            if (Row == null)
-            {
-                return null;
-            }
+            if (Row == null) return null;
 
             var lst = new List<string>(Width);
 
@@ -134,15 +122,9 @@ namespace SQLiteHelper
         /// <returns>Specific element at that position</returns>
         public string Cell(int height, int width)
         {
-            if (height >= Height || height < 0)
-            {
-                return null;
-            }
+            if (height >= Height || height < 0) return null;
 
-            if (width >= Width || width < 0)
-            {
-                return null;
-            }
+            if (width >= Width || width < 0) return null;
 
             var lst = Row[height].Row;
 

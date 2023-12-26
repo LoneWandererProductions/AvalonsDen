@@ -47,10 +47,7 @@ namespace SQLiteGui
         /// <returns>Selected Value</returns>
         public static string PrimaryKeyItem(string item)
         {
-            if (TblItem == null)
-            {
-                return string.Empty;
-            }
+            if (TblItem == null) return string.Empty;
 
             var row = (DataRowView)TblItem;
             return !row.Row.Table.Columns.Contains(item) ? string.Empty : row[PrimaryKey].ToString();

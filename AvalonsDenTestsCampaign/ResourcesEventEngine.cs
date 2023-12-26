@@ -39,7 +39,7 @@ namespace AvalonsDenTestsCampaign
         /// <summary>
         ///     The border one (readonly). Value: new List&lt;int&gt; { 1, 2, 3, 5, 7, 11 }.
         /// </summary>
-        internal static readonly List<int> BorderOne = new() {1, 2, 3, 5, 7, 11};
+        internal static readonly List<int> BorderOne = new() { 1, 2, 3, 5, 7, 11 };
 
         /// <summary>
         ///     0, Gold event,
@@ -53,7 +53,7 @@ namespace AvalonsDenTestsCampaign
         ///     Event Dictionary(Key, EventType)
         ///     Id to Coordinates, Reference to CoordinatesId Dictionary(Event.Key, EventType.CoordinatesId)
         /// </summary>
-        internal static readonly Dictionary<int, int> EventIdOne = new() {{0, 9}, {1, 3}, {2, 9}};
+        internal static readonly Dictionary<int, int> EventIdOne = new() { { 0, 9 }, { 1, 3 }, { 2, 9 } };
 
         /// <summary>
         ///     Reduced EventType Dictionary, with items

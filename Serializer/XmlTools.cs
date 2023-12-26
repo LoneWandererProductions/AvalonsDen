@@ -34,23 +34,14 @@ namespace Serializer
         public static string GetFirstAttributeFromXml(string path, string property)
         {
             //if File exists
-            if (!FileHandleSearch.FileExists(path))
-            {
-                return null;
-            }
+            if (!FileHandleSearch.FileExists(path)) return null;
 
             var doc = LoadXml(path);
-            if (doc == null)
-            {
-                return string.Empty;
-            }
+            if (doc == null) return string.Empty;
 
             var elements = doc.GetElementsByTagName(property);
 
-            if (elements.Count != 0)
-            {
-                return elements[0]?.InnerText;
-            }
+            if (elements.Count != 0) return elements[0]?.InnerText;
 
             throw new XmlException(SerialResources.ErrorPropertyNotFound);
         }
@@ -64,24 +55,15 @@ namespace Serializer
         public static List<string> GetAttributesFromXml(string path, string property)
         {
             //if File exists
-            if (!FileHandleSearch.FileExists(path))
-            {
-                return null;
-            }
+            if (!FileHandleSearch.FileExists(path)) return null;
 
             var lst = new List<string>();
             var doc = LoadXml(path);
-            if (doc == null)
-            {
-                return null;
-            }
+            if (doc == null) return null;
 
             var elements = doc.GetElementsByTagName(property);
 
-            if (elements.Count == 0)
-            {
-                throw new XmlException(SerialResources.ErrorPropertyNotFound);
-            }
+            if (elements.Count == 0) throw new XmlException(SerialResources.ErrorPropertyNotFound);
 
             for (var i = 0; i < elements.Count; i++)
             {

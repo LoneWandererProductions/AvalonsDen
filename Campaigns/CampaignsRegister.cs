@@ -257,11 +257,11 @@ namespace Campaigns
         /// <returns>Current Map Data in use</returns>
         internal static LoaderContainer GetOld()
         {
-            return new()
+            return new LoaderContainer
             {
                 TransitionDictionary = TransitionDictionary,
                 MapObject = MapObject,
-                EventCollection = new EventContainer {EventTypeDictionary = EventTypeDictionary}
+                EventCollection = new EventContainer { EventTypeDictionary = EventTypeDictionary }
             };
         }
 

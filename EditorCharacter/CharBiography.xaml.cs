@@ -9,7 +9,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Windows;
 using AvalonRuntime;
 using CharacterEngine;
@@ -126,7 +125,8 @@ namespace EditorCharacter
             else
             {
                 DebugLog.CreateLogFile(EditorCharacterResources.ErrorCharacter, ErCode.Warning);
-                ScrollTxtBoxInfo.AppendText(string.Concat(EditorCharacterResources.ErrorCharacter, Environment.NewLine));
+                ScrollTxtBoxInfo.AppendText(string.Concat(EditorCharacterResources.ErrorCharacter,
+                    Environment.NewLine));
             }
 
             check = _charHandler.SaveCharacter(_charBio, Path.Combine(path, ArtConst.CharacterBiographyExt));
@@ -141,7 +141,8 @@ namespace EditorCharacter
             else
             {
                 DebugLog.CreateLogFile(EditorCharacterResources.ErrorCharacter, ErCode.Warning);
-                ScrollTxtBoxInfo.AppendText(string.Concat(EditorCharacterResources.ErrorCharacter, Environment.NewLine));
+                ScrollTxtBoxInfo.AppendText(string.Concat(EditorCharacterResources.ErrorCharacter,
+                    Environment.NewLine));
             }
         }
 
@@ -164,7 +165,6 @@ namespace EditorCharacter
                     ErCode.Warning);
                 ScrollTxtBoxInfo.AppendText(string.Concat(EditorCharacterResources.ErrorNoCharactersFound,
                     Environment.NewLine));
-                return;
             }
 
             //ListBoxLoad.Collection = _foundCharDct.Keys.ToList();

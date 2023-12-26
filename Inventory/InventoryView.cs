@@ -123,22 +123,22 @@ namespace Inventory
         ///     The item command.
         /// </value>
         public ICommand ItemCommand =>
-            _itemCommand ?? (_itemCommand = new DelegateCommand<object>(ItemAction, CanExecute));
+            _itemCommand ??= new DelegateCommand<object>(ItemAction, CanExecute);
 
         public ICommand ItemEquipCommand =>
-            _equipCommand ?? (_equipCommand = new DelegateCommand<object>(EquipAction, CanExecute));
+            _equipCommand ??= new DelegateCommand<object>(EquipAction, CanExecute);
 
         public ICommand RemoveCommand =>
-            _removeCommand ?? (_removeCommand = new DelegateCommand<object>(RemoveAction, CanExecute));
+            _removeCommand ??= new DelegateCommand<object>(RemoveAction, CanExecute);
 
         public ICommand DiscardCommand =>
-            _discardCommand ?? (_discardCommand = new DelegateCommand<object>(DiscardAction, CanExecute));
+            _discardCommand ??= new DelegateCommand<object>(DiscardAction, CanExecute);
 
         public ICommand UseCommand =>
-            _useCommand ?? (_useCommand = new DelegateCommand<object>(UseAction, CanExecute));
+            _useCommand ??= new DelegateCommand<object>(UseAction, CanExecute);
 
         public ICommand InfoCommand =>
-            _infoCommand ?? (_infoCommand = new DelegateCommand<object>(InfoAction, CanExecute));
+            _infoCommand ??= new DelegateCommand<object>(InfoAction, CanExecute);
 
         /// <inheritdoc />
         /// <summary>
@@ -181,32 +181,32 @@ namespace Inventory
 
         private void ItemAction(object obj)
         {
-            var data = (Slot) obj;
+            var data = (Slot)obj;
         }
 
         private void EquipAction(object obj)
         {
-            var data = (Slot) obj;
+            var data = (Slot)obj;
         }
 
         private void RemoveAction(object obj)
         {
-            var data = (Slot) obj;
+            var data = (Slot)obj;
         }
 
         private void DiscardAction(object obj)
         {
-            var data = (Slot) obj;
+            var data = (Slot)obj;
         }
 
         private void UseAction(object obj)
         {
-            var data = (Slot) obj;
+            var data = (Slot)obj;
         }
 
         private void InfoAction(object obj)
         {
-            var data = (Slot) obj;
+            var data = (Slot)obj;
         }
     }
 }

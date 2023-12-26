@@ -10,9 +10,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using InterOp;
 using Resources;
-using Point = System.Drawing.Point;
 
 namespace Renderer
 {
