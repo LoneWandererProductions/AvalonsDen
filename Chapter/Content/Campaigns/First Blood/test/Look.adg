@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ArrayOfDialogObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DialogObject>
+    <MasterId>1</MasterId>
+    <DialogType>1</DialogType>
+    <IsMaster>true</IsMaster>
+    <IsItemActive>true</IsItemActive>
+    <IsRepeatable>true</IsRepeatable>
+    <IsEndPoint>false</IsEndPoint>
+    <DialogLine>You see Something</DialogLine>
+    <InternalRemarks>First test Event</InternalRemarks>
+    <ImageId>0</ImageId>
+    <CharacterId>0</CharacterId>
+    <EventId>-1</EventId>
+    <ConditionId>0</ConditionId>
+    <SuccessorId>0</SuccessorId>
+    <Level>1</Level>
+  </DialogObject>
+  <DialogObject>
+    <MasterId>1</MasterId>
+    <ChildId>0</ChildId>
+    <DialogType>0</DialogType>
+    <IsMaster>false</IsMaster>
+    <IsItemActive>true</IsItemActive>
+    <IsRepeatable>true</IsRepeatable>
+    <IsEndPoint>true</IsEndPoint>
+    <DialogLine>Stop Looking</DialogLine>
+    <ImageId>0</ImageId>
+    <CharacterId>0</CharacterId>
+    <EventId>-1</EventId>
+    <ConditionId>0</ConditionId>
+    <SuccessorId>0</SuccessorId>
+    <Level>0</Level>
+  </DialogObject>
+</ArrayOfDialogObject>

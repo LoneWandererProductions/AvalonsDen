@@ -1,0 +1,309 @@
+﻿0.0.1 30.1.2014
+	- Integrate Border Map
+
+0.1.0 10.02.2014
+	- Integrated Border Map
+	- Fixed Various Map Issues
+
+0.1.1 11.02.2014
+	- changed TileBox
+
+0.0.1.2 13.02.2014
+	- changed TileBox/Cells
+	- resolved some Performance Issues
+	- Border Map finished
+
+0.1.3 16.02.2014
+	- implemented movement code
+	- fixed various bugs
+
+0.0.1.4
+	- AStar finally Implemented
+
+0.1.5
+	- Implemented Click type started root for Path Display
+
+0.1.6
+	- Implemented 9 Borders
+	- Fixed up border Maps
+
+0.1.7
+	- Introduced Normalization, reworked code, not fully implemented
+	- Finished Border Table reimplemented Master List! Created big onLoad Object(LoadUpCollection)
+	- Cut-ed MasterTile Dictionary in smaller Elements
+
+0.1.8
+	- Finished Normalization
+	- Reworked Screen for Data Tables
+	- Added new Screen
+	- Partly Implemented EventMap
+	- fixed error in Border Map, movement code
+
+0.1.9 9.5.2014
+	- translate movementPath to Image
+	- MovementPath display and Animation done
+	- Context Menu implemented
+	- Support for BackroundImages implemented
+	- Basic Implementation of Music
+	- Reworked Editor, Basic implementation of event marking
+
+0.1.10 20.5.2015
+	- Implemented Various Events, Campaign Objects
+	- Implemented new Event Editor Window
+	- Revamped Tile List Editor
+	- Load/Save Map
+
+0.1.10 20.6.2015
+	- Campaign Manifest done
+	- Implement Assets serializer, AvalonItemParser, save load than wire into campaign
+	- fixed some bugs, Cleanups and Optimize the Code
+
+0.1.11 17.8.2015
+	- Rebuild Campaign Structure
+	- hooked up Events
+	- Cleaned up Code
+
+
+0.1.12 12.9.15
+	- Replaced pop up with Show Dialog
+	- Restructured Campaigns Locations
+	- Restructured Background Image
+	- Added path to Background Image in Map Object
+
+0.1.13 14.10.15
+	- Rename to Avalon's Den
+	- Add AssetEditor
+	- Code cleanups
+	- Implemented basic Autosave, full save needs persistent saving and Menu, put some basics in place
+	- Added License, Author InfoBox
+	- Integrate Map change Event
+	- Added new Toolbox
+	- Reworked Cells
+	- Lost count on Bug fixes
+	- Re factor code, add some sanity for me
+	- Various speed Improvements
+	- Improved Documentation
+	- Basic Bug Tracking
+	- Code Speed ups
+	- Add Function to Combine two or more Transitions on the Fly at runtime
+
+0.1.14 14.03.16
+	- Moved to .Net 4.6
+	- Implemented Transitions
+	- Reworked Cells further
+	- Save ID in a different Fashion
+	- Add a new Image Display System
+	- Even more code cleanups
+	- Event Engine debugged and fixed
+	- Re factor code, add more sanity
+	- Various speed Improvements
+	- Even more Improved Documentation
+	- Basic Bug Tracking
+	- Code Speed ups
+	- New change Tracking of Maps in Editor
+	- Editor overhaul
+	- Improved Error handling
+	- Improved Error tracking
+	- Improved Class Intercommunication
+	- Various Bug fixes
+
+0.1.15 9.07.16
+
+- Prototype Script Interpreter
+	- make it case insensitive
+	- add some simple create commands
+	- add some documentation
+
+- Prototype Character View
+	-basic objects
+	-basic Front end
+	-basic Data-binding
+
+	- Improved Serializer
+	- Switched from Coordinate to ID
+	- Implement simple Threading for Image loading
+	- Improved Error Handling
+	- Improve the code, Add some String Resources, re factor Code into Libraries, make the Editor Standalone
+	- Clean-out the Solution
+	- Fix some Warnings
+	- Improve Image quality
+
+- Added Database Handler
+	-Some basic Functions 
+	-Connection Stuff
+
+0.1.16 30.10.16
+
+	- Improved Code in Editor
+	- re factored Campaigns and Engine
+	- Fixed some minor bugs
+	- Added Manifest Files
+	- WIP Splash-screen
+	- Added Tests
+
+- Rework the way to handle Events
+	- Integrate new Dictionary for paths and Events
+	- Add Id as Tool tip for Events
+	- Handle Events based on Ids not on Coordinates
+- Rewrote the Map Generator
+	- Wip fine tune the map clean up 
+- Character View
+	- better code
+	- better Data binding
+	- Image Binding
+- Dialog Engine
+	- Implement some Objects
+	- Add some Converters and Serializer
+- Movement Engine
+	- Reworked and Spitted Engine into Move Engine
+	- Rework Event
+	- Integrate into Interface and Loader
+
+0.1.16 09.03.17
+	- Cleanup Load Files
+	- Delay Loading of EventTypeExtension
+	- Rework Campaign Loading
+	- Reworked Start Menu
+	- Fixed and improved Autosave
+	- Minimized Campaign Manifest to make Campaigns grow dynamically
+	- Implement Various File operations for internal use
+	- Further work on Dialogs
+	- Finally Implemented Save and Load of a Campaign
+	- Added Load and Save Gui Elements
+	- improved our small Interpreter
+	- more Tests
+
+- Dialog Engine
+	- Implement and refine Objects
+	- Add some Converters and Serializer
+	- Lay groundwork for Engine
+	- will handle Look and Interactions in the Future
+
+- Add Common Controls
+	- Implemented a basic List
+
+0.1.17 22.09.17
+	 - Simplify Rendering with new Extended Grid
+	 - Implemented Rendering Module as new Graphic Module
+	 - Whole Map System and Graphic rendering is now Layer agnostic
+	 - Rework Saving, Creation, Format of Dialog
+	 - Created a basic Display of the Dialog Tree
+	 - Hooked Dialog up into the Editor
+	 - Implemented Dialogs into the Campaign
+	 - We now official have a working Dialog Framework
+	 - Factored out Event Editor
+	 - Refined Event Editor
+	 - Factored out Campaign Editor
+	 - Refined Campaign Editor
+	 - Hooked up Dialogs in the Editor
+	 - Various Improvements in Movement Class mostly Code
+	 - Various Improvements in Save Window, mostly usability
+	 - Various Improvements in Campaign Class mostly Code
+	 - Various Improvements in mostly Code
+	 - Start work on implementing Numbering
+	 - Major step in making the whole System File system Extension Agnostic
+	 - Rewrote the way how the map changed is handled
+	 - Improved AssetLoader
+	 - Cleaned Up Save Handler
+	 - minor Cleanups
+	 - Way too many bugs fixed 
+	 - Improved Debug Tracing, and Debug Channel now with extended Object serializing
+	 - Implement a new Transition Handler, this one Supports Transitions Terrain and Multi Terrain 
+	 - Code and simple Modules are more portable
+	 - Implementation of Path finding improved
+	 - Bug Fixing
+	 - Various Tests and Improvements
+
+ - Common Controls
+	- Implemented Extended Grid
+	- Implemented Scrolling Text-box
+	- Move Open Save Dialog into this
+	- Generic Extended System Objects
+
+0.1.18 10.04.18
+	 - Added various DataBindings
+	 - Fixed bugs a lot of them
+	 - More Tests
+	 - improved Dialog Handling
+	 - rewired the Character screen
+	 - Turn and Time Management basic implementation
+	 - refactoring of Event Handling
+	 - lay out ground work for party management
+	 - Rewire some stats to Enums
+	 - Rewrote the EventEngine
+	 - Add some Event Types and new Triggers
+	 - Added in back SqlLite
+	 - Start an GUI for Database Operations
+	 - various tests and Improvements on the Sqlite Interface
+	 - Re factor the Campaign Interface even further
+	 - Work on Inventory Management
+	 - Various fixes, tests and refactoring
+	 - Added various new Functions and Tools to Common Controls
+	 - Improved and fixed Transition Engine
+	 - Recoding of the DebugChannel into Debugger
+
+ 0.1.19 15.02.21
+	- Various clean ups and fixes
+	- Improved tests
+	- Loot Screen
+	- Inventory Groundwork
+	- Extended System Libraries like Extended Objects and File Operations
+	- refacor GUis minor internal changes and clean ups
+	- switched to newer .net Version
+	- Switched more Objects to the Serializer
+
+	 - Extended SystemObjects
+		- Comparer for float values
+		- Extended get first avaible index with indexes
+
+	 - File Handler
+		- Commpleted Part for renaming files
+		- Scan Library, so we can read File Informations
+	
+	- CommonControls
+		- Improve Image handling
+		- Add the option to Scale Images
+		- we now support a host of Image manipulations and use them
+		- new Control Thumbnails
+
+	 - Debugger
+		- Fixed and improved Caller Methods
+
+  Bugs:
+ - Check if Image Background can be loaded 
+
+ -TODO Campaign
+ - Add Campaign wide Tile List
+ - factor out Master Tile List
+ - Create River specific Transitions
+
+
+TODO Context Menu
+ - Change Inventory to Party Management
+ - Add camp Option
+
+- TODO Game
+	- Level Up Missing
+	- Implement Party System
+	- Different Chars
+	- Skill tree
+	- Count turns
+	- handle multi monitor
+	- Reputation System
+
+TODO UI:
+- Make window dock-able
+- Better Multi Monitor Support
+- http://stackoverflow.com/questions/6108218/stretch-a-wpf-window-across-two-screens
+- http://stackoverflow.com/questions/512398/showing-a-window-with-wpf-winforms-and-dual-monitors
+- Better Window Handling
+- https://stackoverflow.com/questions/38594837/visual-studio-c-sharp-sqlite-interop-dll-not-found/38599849
+
+
+Long Term:
+- Add Random Events for Map
+- Add global Events
+- Add new Pictures / rework existing ones
+- Second Path Layer for Bridges etc ... new map on top per event
+- Rework Editor Map Editor!
+

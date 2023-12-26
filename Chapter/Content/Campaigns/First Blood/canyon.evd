@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfItem>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;0&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;EventType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;CoordinatesId&gt;0&lt;/CoordinatesId&gt;
+  &lt;LabelEvent&gt;Portal&lt;/LabelEvent&gt;
+  &lt;IsStepOn&gt;false&lt;/IsStepOn&gt;
+  &lt;IsRepeatable&gt;false&lt;/IsRepeatable&gt;
+  &lt;IsRandom&gt;false&lt;/IsRandom&gt;
+  &lt;IsDependent&gt;true&lt;/IsDependent&gt;
+  &lt;IsActive&gt;true&lt;/IsActive&gt;
+  &lt;TypeOfEvent&gt;MapChange&lt;/TypeOfEvent&gt;
+  &lt;IdForFurtherEventInfo&gt;0&lt;/IdForFurtherEventInfo&gt;
+  &lt;Description&gt;Map change&lt;/Description&gt;
+&lt;/EventType&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;1&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;EventType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;CoordinatesId&gt;2&lt;/CoordinatesId&gt;
+  &lt;LabelEvent&gt;Add Item&lt;/LabelEvent&gt;
+  &lt;IsStepOn&gt;true&lt;/IsStepOn&gt;
+  &lt;IsRepeatable&gt;false&lt;/IsRepeatable&gt;
+  &lt;IsRandom&gt;false&lt;/IsRandom&gt;
+  &lt;IsDependent&gt;false&lt;/IsDependent&gt;
+  &lt;IsActive&gt;true&lt;/IsActive&gt;
+  &lt;TypeOfEvent&gt;AddItems&lt;/TypeOfEvent&gt;
+  &lt;IdForFurtherEventInfo&gt;2&lt;/IdForFurtherEventInfo&gt;
+  &lt;Description&gt;Here we add Items&lt;/Description&gt;
+&lt;/EventType&gt;</Value>
+  </Item>
+</ArrayOfItem>

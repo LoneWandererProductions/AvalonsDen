@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<CampaignManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CampaignName>First Blood</CampaignName>
+  <CampaignDescription>For Testing purposes, now with a Database</CampaignDescription>
+  <StartMap>test</StartMap>
+  <StartTime>0</StartTime>
+  <CharacterId>14</CharacterId>
+  <Character>1</Character>
+  <StartPoint>0</StartPoint>
+</CampaignManifest>

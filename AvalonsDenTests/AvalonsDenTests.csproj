@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <Company>Lone Wanderer Productions</Company>
+    <Copyright>Lone Wanderer Productions</Copyright>
+    <Authors>Wayfarer</Authors>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.2.3" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.3" />
+    <PackageReference Include="coverlet.collector" Version="3.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CampaignDriver\CampaignDriver.csproj" />
+    <ProjectReference Include="..\DialogEngine\DialogEngine.csproj" />
+    <ProjectReference Include="..\EventEngine\EventEngine.csproj" />
+    <ProjectReference Include="..\Inventory\Inventory.csproj" />
+    <ProjectReference Include="..\ItemExchange\ItemExchange.csproj" />
+    <ProjectReference Include="..\Loader\Loader.csproj" />
+    <ProjectReference Include="..\MapGenerator\MapGenerator.csproj" />
+    <ProjectReference Include="..\Resources\Resources.csproj" />
+    <ProjectReference Include="..\Serializer\Serializer.csproj" />
+    <ProjectReference Include="..\TransitionEngine\TransitionEngine.csproj" />
+  </ItemGroup>
+
+</Project>

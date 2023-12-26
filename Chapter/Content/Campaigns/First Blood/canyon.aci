@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfItem>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;0&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;6&lt;/int&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;1&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;0&lt;/int&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;2&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;5&lt;/int&gt;</Value>
+  </Item>
+</ArrayOfItem>

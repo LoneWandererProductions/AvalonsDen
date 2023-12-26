@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Company>Lone Wanderer Productions</Company>
+    <Copyright>Lone Wanderer Productions</Copyright>
+    <Authors>Wayfarer</Authors>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>D:\Users\Peter\Documents\Visual Studio 2019\Projects\AvalonsDen\Chapter\bin\Debug</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AvalonRuntime\AvalonRuntime.csproj" />
+    <ProjectReference Include="..\CommonControls\CommonControls.csproj" />
+    <ProjectReference Include="..\EditorCampaign\EditorCampaign.csproj" />
+    <ProjectReference Include="..\EditorCharacter\EditorCharacter.csproj" />
+    <ProjectReference Include="..\EditorDialogTree\EditorDialogTree.csproj" />
+    <ProjectReference Include="..\EditorEvent\EditorEvent.csproj" />
+    <ProjectReference Include="..\EditorItems\EditorItems.csproj" />
+    <ProjectReference Include="..\EditorMap\EditorMap.csproj" />
+    <ProjectReference Include="..\Interpreter\Interpreter.csproj" />
+    <ProjectReference Include="..\MapGenerator\MapGenerator.csproj" />
+    <ProjectReference Include="..\Renderer\Renderer.csproj" />
+    <ProjectReference Include="..\Resources\Resources.csproj" />
+    <ProjectReference Include="..\SqlLiteGui\SQLiteGui.csproj" />
+    <ProjectReference Include="..\TransitionEngine\TransitionEngine.csproj" />
+  </ItemGroup>
+
+</Project>

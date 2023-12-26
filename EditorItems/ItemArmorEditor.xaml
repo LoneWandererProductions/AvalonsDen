@@ -1,0 +1,144 @@
+﻿<UserControl x:Class="EditorItems.ItemArmorEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:resource="clr-namespace:Resources;assembly=Resources"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance {x:Type resource:Armor}}"
+             x:ClassModifier="internal"
+             d:DesignHeight="650" d:DesignWidth="380" Loaded="UserControl_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="TableData"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  Grid.Row="2"
+                  Grid.RowSpan="33"
+                  CanUserAddRows="False"
+                  AutoGenerateColumns="True"
+                  ScrollViewer.CanContentScroll="True"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  SelectionChanged="TableData_SelectionChanged" />
+        <Button Grid.Row="0" Grid.Column="0" Content="Add" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                Click="Btn_Click_Add" />
+        <Button Grid.Row="0" Grid.Column="2" Content="Save" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                Click="Btn_Click_Save" />
+        <Button Grid.Row="0" Grid.Column="4" Content="Delete" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                Click="Btn_Click_Delete" />
+        <Label Content="Id" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="2" VerticalAlignment="Stretch" />
+        <TextBox Text="{Binding Id, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Column="4" HorizontalAlignment="Stretch" Grid.Row="2" TextWrapping="Wrap"
+                 VerticalAlignment="Stretch" />
+        <Label Content="ImageId" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="4" VerticalAlignment="Stretch" />
+        <TextBox Text="{Binding ImageId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Column="4" HorizontalAlignment="Stretch" Grid.Row="4" TextWrapping="Wrap"
+                 VerticalAlignment="Stretch" />
+        <Label Content="CustomName" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="6"
+               VerticalAlignment="Stretch" />
+        <TextBox Text="{Binding CustomName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Column="4" HorizontalAlignment="Stretch" Grid.Row="6" TextWrapping="Wrap"
+                 VerticalAlignment="Stretch" />
+        <Label Content="BaseName" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="8"
+               VerticalAlignment="Stretch" />
+        <TextBox Text="{Binding BaseName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Column="4" HorizontalAlignment="Stretch" Grid.Row="8" TextWrapping="Wrap"
+                 VerticalAlignment="Stretch" />
+        <Label Content="Rarity" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="10" VerticalAlignment="Stretch" />
+        <TextBox Text="{Binding Rarity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Column="4" HorizontalAlignment="Stretch" Grid.Row="10" TextWrapping="Wrap"
+                 VerticalAlignment="Stretch" />
+        <Label Content="Worth" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="12" VerticalAlignment="Stretch" />
+        <TextBox Text="{Binding Worth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Column="4" HorizontalAlignment="Stretch" Grid.Row="12" TextWrapping="Wrap"
+                 VerticalAlignment="Stretch" />
+        <Label Content="MaxStack" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="14"
+               VerticalAlignment="Stretch" />
+        <TextBox Text="{Binding MaxStack, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Column="4" HorizontalAlignment="Stretch" Grid.Row="14" TextWrapping="Wrap"
+                 VerticalAlignment="Stretch" />
+        <Label Content="Weight" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="16" VerticalAlignment="Stretch" />
+        <TextBox Text="{Binding Weight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Column="4" HorizontalAlignment="Stretch" Grid.Row="16" TextWrapping="Wrap"
+                 VerticalAlignment="Stretch" />
+        <Label Content="IdOfAttributes" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="18"
+               VerticalAlignment="Stretch" />
+        <TextBox Text="{Binding IdOfAttributes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Column="4" HorizontalAlignment="Stretch" Grid.Row="18" TextWrapping="Wrap"
+                 VerticalAlignment="Stretch" />
+        <Label Content="Description" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="20"
+               VerticalAlignment="Stretch" />
+        <TextBox Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Column="4" HorizontalAlignment="Stretch" Grid.Row="20" TextWrapping="Wrap"
+                 VerticalAlignment="Stretch" />
+        <Label Content="CustomDescription" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="22"
+               VerticalAlignment="Stretch" />
+        <TextBox Text="{Binding CustomDescription, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Column="4" HorizontalAlignment="Stretch" Grid.Row="22" TextWrapping="Wrap"
+                 VerticalAlignment="Stretch" />
+        <Label Content="Slot" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="26" VerticalAlignment="Stretch" />
+        <ComboBox Grid.Column="4" HorizontalAlignment="Stretch" Grid.Row="26" VerticalAlignment="Stretch"
+                  SelectedValue="{Binding Path= Position, Mode=TwoWay}"
+                  Name="CxbSlot" />
+        <Label Content="ArmorValue" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="28"
+               VerticalAlignment="Stretch" />
+        <TextBox Text="{Binding ArmorValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Column="4" HorizontalAlignment="Stretch" Grid.Row="28" TextWrapping="Wrap"
+                 VerticalAlignment="Stretch" />
+        <Label Content="ArmorClass" Grid.Column="2" Grid.Row="30" />
+        <ComboBox Grid.Column="4" HorizontalAlignment="Stretch" Grid.Row="30" VerticalAlignment="Stretch"
+                  SelectedValue="{Binding Path= ArmorClass, Mode=TwoWay}"
+                  Name="CxbArmor" />
+        <Label Content="Durability" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="32"
+               VerticalAlignment="Stretch" />
+        <TextBox Text="{Binding Durability, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Column="4" HorizontalAlignment="Stretch" Grid.Row="32" TextWrapping="Wrap"
+                 VerticalAlignment="Stretch" />
+    </Grid>
+</UserControl>

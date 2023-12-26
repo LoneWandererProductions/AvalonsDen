@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CharacterBaseStats xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Level>2</Level>
+  <ClassType>1</ClassType>
+  <Wisdom>1</Wisdom>
+  <Strength>1</Strength>
+  <Agility>1</Agility>
+  <Intelligence>2</Intelligence>
+  <Will>1</Will>
+  <Charisma>0</Charisma>
+  <Endurance>0</Endurance>
+</CharacterBaseStats>

@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfItem>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;0&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;Void.png&lt;/FileName&gt;
+  &lt;Layer&gt;1&lt;/Layer&gt;
+  &lt;TileType&gt;InternalTiles&lt;/TileType&gt;
+  &lt;BorderId&gt;0&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;1&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;0&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;1&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;border.png&lt;/FileName&gt;
+  &lt;Layer&gt;6&lt;/Layer&gt;
+  &lt;TileType&gt;InternalTiles&lt;/TileType&gt;
+  &lt;BorderId&gt;0&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;0&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;0&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;2&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;Void.png&lt;/FileName&gt;
+  &lt;Layer&gt;1&lt;/Layer&gt;
+  &lt;TileType&gt;InternalTiles&lt;/TileType&gt;
+  &lt;BorderId&gt;10&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;0&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;0&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;3&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;Dot.png&lt;/FileName&gt;
+  &lt;Layer&gt;6&lt;/Layer&gt;
+  &lt;TileType&gt;InternalTiles&lt;/TileType&gt;
+  &lt;BorderId&gt;0&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;0&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;0&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;4&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;flag.png&lt;/FileName&gt;
+  &lt;Layer&gt;8&lt;/Layer&gt;
+  &lt;TileType&gt;InternalTiles&lt;/TileType&gt;
+  &lt;BorderId&gt;0&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;0&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;0&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;5&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;grass.png&lt;/FileName&gt;
+  &lt;Layer&gt;1&lt;/Layer&gt;
+  &lt;TileType&gt;NoTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;10&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;0&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;0&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;6&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;tile_hile_1_e.png&lt;/FileName&gt;
+  &lt;Layer&gt;2&lt;/Layer&gt;
+  &lt;TileType&gt;NoTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;2&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;0&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;0&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;7&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;tile_hile_1_w.png&lt;/FileName&gt;
+  &lt;Layer&gt;2&lt;/Layer&gt;
+  &lt;TileType&gt;NoTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;3&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;0&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;0&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;8&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;tile_hile_1_s.png&lt;/FileName&gt;
+  &lt;Layer&gt;2&lt;/Layer&gt;
+  &lt;TileType&gt;NoTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;4&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;0&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;0&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;9&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;tile_hile_1_n.png&lt;/FileName&gt;
+  &lt;Layer&gt;2&lt;/Layer&gt;
+  &lt;TileType&gt;NoTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;5&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;0&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;0&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;10&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;tile_hile_1_ne.png&lt;/FileName&gt;
+  &lt;Layer&gt;2&lt;/Layer&gt;
+  &lt;TileType&gt;NoTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;6&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;0&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;0&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;11&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;tile_hile_1_nw.png&lt;/FileName&gt;
+  &lt;Layer&gt;2&lt;/Layer&gt;
+  &lt;TileType&gt;NoTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;7&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;0&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;0&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;12&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;tile_hile_1_se.png&lt;/FileName&gt;
+  &lt;Layer&gt;2&lt;/Layer&gt;
+  &lt;TileType&gt;NoTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;8&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;0&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;0&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;13&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;tile_hile_1_sw.png&lt;/FileName&gt;
+  &lt;Layer&gt;2&lt;/Layer&gt;
+  &lt;TileType&gt;NoTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;9&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;0&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;0&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;14&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;drakecoloredwv5.png&lt;/FileName&gt;
+  &lt;Layer&gt;5&lt;/Layer&gt;
+  &lt;TileType&gt;NoTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;0&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;0&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;0&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;15&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;hill.png&lt;/FileName&gt;
+  &lt;Layer&gt;1&lt;/Layer&gt;
+  &lt;TileType&gt;NoTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;10&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;0&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;0&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;16&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;Flieder.png&lt;/FileName&gt;
+  &lt;Layer&gt;4&lt;/Layer&gt;
+  &lt;TileType&gt;NoTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;10&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;0&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;0&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;17&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;Morganwv1.png&lt;/FileName&gt;
+  &lt;Layer&gt;5&lt;/Layer&gt;
+  &lt;TileType&gt;NoTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;1&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;0&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;0&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;18&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;Portal.png&lt;/FileName&gt;
+  &lt;Layer&gt;4&lt;/Layer&gt;
+  &lt;TileType&gt;NoTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;1&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;0&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;0&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;19&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;path.png&lt;/FileName&gt;
+  &lt;Layer&gt;3&lt;/Layer&gt;
+  &lt;TileType&gt;TerrainWithTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;0&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;0&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;0&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;20&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;path_n.png&lt;/FileName&gt;
+  &lt;Layer&gt;3&lt;/Layer&gt;
+  &lt;TileType&gt;TerrainWithTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;0&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;19&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;1&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;21&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;path_s.png&lt;/FileName&gt;
+  &lt;Layer&gt;3&lt;/Layer&gt;
+  &lt;TileType&gt;TerrainWithTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;0&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;19&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;5&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;22&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;path_e.png&lt;/FileName&gt;
+  &lt;Layer&gt;3&lt;/Layer&gt;
+  &lt;TileType&gt;TerrainWithTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;0&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;19&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;3&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;23&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;path_w.png&lt;/FileName&gt;
+  &lt;Layer&gt;3&lt;/Layer&gt;
+  &lt;TileType&gt;TerrainWithTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;0&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;19&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;7&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;24&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;path_ne.png&lt;/FileName&gt;
+  &lt;Layer&gt;3&lt;/Layer&gt;
+  &lt;TileType&gt;TerrainWithTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;0&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;19&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;2&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;25&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;path_se.png&lt;/FileName&gt;
+  &lt;Layer&gt;3&lt;/Layer&gt;
+  &lt;TileType&gt;TerrainWithTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;0&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;19&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;4&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;26&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;path_sw.png&lt;/FileName&gt;
+  &lt;Layer&gt;3&lt;/Layer&gt;
+  &lt;TileType&gt;TerrainWithTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;0&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;19&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;6&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;27&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Tile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;FileName&gt;path_nw.png&lt;/FileName&gt;
+  &lt;Layer&gt;3&lt;/Layer&gt;
+  &lt;TileType&gt;TerrainWithTransitions&lt;/TileType&gt;
+  &lt;BorderId&gt;0&lt;/BorderId&gt;
+  &lt;IdOfMaster&gt;19&lt;/IdOfMaster&gt;
+  &lt;DirectionOfTransition&gt;8&lt;/DirectionOfTransition&gt;
+&lt;/Tile&gt;</Value>
+  </Item>
+</ArrayOfItem>

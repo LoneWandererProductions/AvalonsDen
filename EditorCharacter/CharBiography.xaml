@@ -1,0 +1,165 @@
+﻿<UserControl xmlns:commonControls="clr-namespace:CommonControls;assembly=CommonControls"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:EditorCharacter"
+             xmlns:resources="clr-namespace:Resources;assembly=Resources"
+             x:Class="EditorCharacter.CharBiography"
+             mc:Ignorable="d"
+             d:DesignHeight="500" d:DesignWidth="600"
+             x:ClassModifier="internal"
+             Loaded="UserControl_Loaded">
+    <UserControl.DataContext>
+        <resources:CharacterBiography />
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+        <Label Content="Id" Grid.Column="3" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" />
+        <Label Content="Npc" HorizontalAlignment="Stretch" Grid.Row="3" VerticalAlignment="Stretch" Grid.Column="3" />
+        <Label Content="Image" HorizontalAlignment="Stretch" Grid.Row="5" VerticalAlignment="Stretch"
+               Grid.Column="3" />
+        <Label Content="Name" HorizontalAlignment="Stretch" Grid.Row="7" VerticalAlignment="Stretch" Grid.Column="3"
+               Grid.ColumnSpan="2" />
+        <Label Content="Biography" HorizontalAlignment="Stretch" Grid.Row="18" VerticalAlignment="Stretch"
+               Grid.Column="3" />
+        <Label Content="Faction" HorizontalAlignment="Stretch" Grid.Row="9" VerticalAlignment="Stretch"
+               Grid.Column="3" />
+        <Label Content="Alignment" HorizontalAlignment="Stretch" Grid.Row="11" VerticalAlignment="Stretch"
+               Grid.Column="3" />
+        <Label Content="TypeId" HorizontalAlignment="Stretch" Grid.Row="13" VerticalAlignment="Stretch" Grid.Column="3" />
+        <Label Content="IsEssential"
+               HorizontalAlignment="Stretch"
+               VerticalAlignment="Stretch"
+               Grid.Row="15"
+               Grid.Column="3" />
+        <Label Content="Full Image"
+               HorizontalAlignment="Stretch"
+               VerticalAlignment="Stretch"
+               Grid.Row="17"
+               Grid.Column="3" />
+        <TextBox Grid.Column="4"
+                 HorizontalAlignment="Stretch"
+                 Grid.Row="1"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Stretch"
+                 Text="{Binding Id, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" />
+        <CheckBox x:Name="ChkbNpc"
+                  Grid.Column="4"
+                  HorizontalAlignment="Stretch"
+                  Grid.Row="3"
+                  VerticalAlignment="Stretch"
+                  IsChecked="{Binding Npc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2"
+                  Checked="ChkbNpc_Checked" />
+        <TextBox Grid.Column="4"
+                 HorizontalAlignment="Stretch"
+                 Grid.Row="5"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Stretch"
+                 Text="{Binding Image, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" />
+        <TextBox
+            HorizontalAlignment="Stretch"
+            Grid.Row="7"
+            TextWrapping="Wrap"
+            VerticalAlignment="Stretch"
+            Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Grid.Column="4" />
+        <TextBox Grid.Column="4"
+                 HorizontalAlignment="Stretch"
+                 Grid.Row="18"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Stretch"
+                 Text="{Binding Biography, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="4" />
+        <TextBox Grid.Column="4"
+                 HorizontalAlignment="Stretch"
+                 Grid.Row="9"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Stretch"
+                 Text="{Binding Faction, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" />
+        <TextBox Grid.Column="4"
+                 HorizontalAlignment="Stretch"
+                 Grid.Row="11"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Stretch"
+                 Text="{Binding Alignment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" />
+        <TextBox Grid.Column="4"
+                 HorizontalAlignment="Stretch"
+                 Grid.Row="13"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Stretch"
+                 Text="{Binding TypeId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" />
+        <TextBox Grid.Column="4"
+                 HorizontalAlignment="Stretch"
+                 Grid.Row="17"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Stretch"
+                 Text="{Binding FullImage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" />
+        <CheckBox Grid.Column="4"
+                  HorizontalAlignment="Stretch"
+                  Grid.Row="15"
+                  VerticalAlignment="Center"
+                  IsChecked="{Binding IsEssential, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  Grid.ColumnSpan="2" />
+        <commonControls:DataList Grid.Column="1"
+                                 x:Name="ListBoxLoad"
+                                 HorizontalAlignment="Stretch"
+                                 Grid.Row="1"
+                                 VerticalAlignment="Stretch"
+                                 Title="List of Characters"
+                                 Grid.RowSpan="17" />
+        <local:CharStat x:Name="CtrlStats"
+                        Grid.Column="7"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Grid.Row="0" Grid.RowSpan="17"
+                        IsEnabled="{Binding IsChecked, ElementName=ChkbNpc}" />
+        <Button Content="New" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Width="74" Click="BtnNew_Click" Margin="13,5" />
+        <Button Content="Load" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Width="76" Click="BtnLoad_Click" Margin="12,5" />
+        <Button Content="Save" Grid.Row="0" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Width="76" Click="BtnSave_Click" Margin="12,5" />
+        <Button Content="Overview" Grid.Row="0" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Width="76" Click="BtnOverView_Click" Margin="32,5" />
+        <commonControls:ScrollingTextBoxes x:Name="ScrollTxtBoxInfo"
+                                           Grid.ColumnSpan="7"
+                                           Grid.Column="1"
+                                           HorizontalAlignment="Stretch"
+                                           Grid.Row="20" TextWrapping="Wrap"
+                                           VerticalAlignment="Stretch"
+                                           AutoScrolling="True" />
+    </Grid>
+</UserControl>

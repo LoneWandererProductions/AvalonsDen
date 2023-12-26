@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<CharacterBiography xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>2</Id>
+  <Npc>true</Npc>
+  <Image>Darius.png</Image>
+  <Name>Darius</Name>
+  <Biography>Yourself</Biography>
+  <Faction>none</Faction>
+  <Alignment>TrueNeutral</Alignment>
+  <TypeId>PartyMember</TypeId>
+  <IsEssential>true</IsEssential>
+</CharacterBiography>

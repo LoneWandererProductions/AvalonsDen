@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="Chapter.Index"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="200" d:DesignWidth="200"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             Loaded="World_Loaded"
+             x:ClassModifier="internal">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+        <Button Grid.Column="1"
+                Grid.Row="1"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Content="Editor" Click="EditorButton_Click" />
+        <ListBox Name="ListBoxCampaign"
+                 Grid.Column="1"
+                 Grid.Row="3"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch"
+                 MouseDoubleClick="LstBoxCampaign_MouseDoubleClick"
+                 x:FieldModifier="private" />
+        <Button Grid.Column="1"
+                Grid.Row="5"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Content="Authors"
+                Click="Authors_Click" />
+        <Button Content="Bookmark"
+                Grid.Column="3"
+                HorizontalAlignment="Stretch"
+                Grid.Row="3"
+                VerticalAlignment="Stretch"
+                Click="Bookmark_Click" />
+        <Button Grid.Column="3"
+                Grid.Row="5"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Content="License" Click="License_Click" />
+        <Button Grid.Column="3"
+                Grid.Row="1"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Content="Close"
+                Click="Close_Click" />
+    </Grid>
+</UserControl>

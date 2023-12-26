@@ -1,0 +1,122 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:resources="clr-namespace:Resources;assembly=Resources" x:Class="EditorCharacter.CharStat"
+    mc:Ignorable="d"
+    d:DesignHeight="600" d:DesignWidth="300">
+    <UserControl.DataContext>
+        <resources:CharacterBaseStats />
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+        <Label Content="Level"
+               Grid.Column="1"
+               HorizontalAlignment="Stretch"
+               Grid.Row="1"
+               VerticalAlignment="Stretch" />
+        <Label Content="CharacterClass" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="3"
+               VerticalAlignment="Stretch" />
+        <Label Content="ClassType" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="5"
+               VerticalAlignment="Stretch" />
+        <Label Content="Wisdom" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="7" VerticalAlignment="Stretch" />
+        <Label Content="Strength" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="9"
+               VerticalAlignment="Stretch" />
+        <Label Content="Agility" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="11"
+               VerticalAlignment="Stretch" />
+        <Label Content="Intelligence" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="13"
+               VerticalAlignment="Stretch" />
+        <Label Content="Will" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="15" VerticalAlignment="Stretch" />
+        <Label Content="Charisma" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="17"
+               VerticalAlignment="Stretch" />
+        <Label Content="Endurance" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="19"
+               VerticalAlignment="Stretch" />
+        <TextBox Grid.Column="2"
+                 HorizontalAlignment="Stretch"
+                 Grid.Row="1"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Stretch" />
+        <TextBox Grid.Column="2"
+                 HorizontalAlignment="Stretch"
+                 Grid.Row="3"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Stretch"
+                 Text="{Binding CharacterClass, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Column="2"
+                 HorizontalAlignment="Stretch"
+                 Grid.Row="5"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Stretch"
+                 Text="{Binding ClassType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Column="2"
+                 HorizontalAlignment="Stretch"
+                 Grid.Row="7"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Stretch"
+                 Text="{Binding Wisdom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Column="2"
+                 HorizontalAlignment="Stretch"
+                 Grid.Row="9"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Stretch"
+                 Text="{Binding Strength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Column="2"
+                 HorizontalAlignment="Stretch"
+                 Grid.Row="11"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Stretch"
+                 Text="{Binding Agility, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Column="2"
+                 HorizontalAlignment="Stretch"
+                 Grid.Row="13"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Stretch"
+                 Text="{Binding Intelligence, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Column="2"
+                 HorizontalAlignment="Stretch"
+                 Grid.Row="15"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Stretch"
+                 Text="{Binding Will, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Column="2"
+                 HorizontalAlignment="Stretch"
+                 Grid.Row="17" TextWrapping="Wrap"
+                 VerticalAlignment="Stretch"
+                 Text="{Binding Charisma, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Column="2"
+                 HorizontalAlignment="Stretch"
+                 Grid.Row="19"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Stretch"
+                 Text="{Binding Endurance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+    </Grid>
+</UserControl>

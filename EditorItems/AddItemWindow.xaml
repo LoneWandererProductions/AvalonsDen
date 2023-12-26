@@ -1,0 +1,45 @@
+﻿<Window x:Class="EditorItems.AddItemWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Item Editor" Height="850" Width="525" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="5" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="25" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+        <ComboBox x:Name="CmbBxTable"
+                  Grid.Column="1"
+                  HorizontalAlignment="Stretch"
+                  Grid.Row="1"
+                  SelectionChanged="CmbBxTable_SelectionChanged"
+                  VerticalAlignment="Stretch">
+            <ComboBoxItem>Armor</ComboBoxItem>
+            <ComboBoxItem>Weapon</ComboBoxItem>
+            <ComboBoxItem>Miscellaneous</ComboBoxItem>
+            <ComboBoxItem>Image</ComboBoxItem>
+        </ComboBox>
+        <Button Grid.Column="4" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch"
+                Click="BtnConnect_Click" />
+        <TextBox x:Name="TxtBoxPath" Grid.Column="3" HorizontalAlignment="Stretch" Grid.Row="1"
+                 IsReadOnly="True"
+                 VerticalAlignment="Stretch" />
+        <Canvas Name="CanvasBase" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="3"
+                VerticalAlignment="Stretch"
+                Grid.ColumnSpan="6" />
+    </Grid>
+</Window>

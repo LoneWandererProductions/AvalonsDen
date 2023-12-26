@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="ItemExchange.Tile"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             Height="75"
+             Width="75"
+             d:DesignHeight="75"
+             d:DesignWidth="75" Loaded="Tile_Loaded">
+    <Grid Background="#FFBBBBBB">
+        <Image x:Name="ImageBackground" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <Image x:Name="ImageItem" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <Label x:Name="LblNumber" />
+        <Image x:Name="ImageSelection" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+    </Grid>
+</UserControl>

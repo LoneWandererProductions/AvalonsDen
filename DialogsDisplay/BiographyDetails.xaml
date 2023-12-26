@@ -1,0 +1,45 @@
+﻿<Window x:Class="DialogsDisplay.BiographyDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dialogsDisplay="clr-namespace:DialogsDisplay"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance {x:Type dialogsDisplay:CharInfo}}"
+        Title="BiographyDetails"
+        Height="500" Width="400"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="200" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="5" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Image Name="FullImage" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="1" Grid.RowSpan="11"
+               VerticalAlignment="Stretch" />
+        <Label Grid.Column="3" Content="{Binding Path=Name}" HorizontalAlignment="Stretch" Grid.Row="1"
+               VerticalAlignment="Stretch" />
+        <Label Grid.Column="3" Content="{Binding Path=Faction}" HorizontalAlignment="Stretch" Grid.Row="3"
+               VerticalAlignment="Stretch" />
+        <Label Grid.Column="3" Content="{Binding Path=Alignment}" HorizontalAlignment="Stretch" Grid.Row="5"
+               VerticalAlignment="Stretch" />
+        <Label Grid.Column="3" Content="{Binding Path=Biography}" HorizontalAlignment="Stretch" Grid.Row="7"
+               VerticalAlignment="Stretch" />
+    </Grid>
+</Window>

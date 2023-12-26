@@ -1,0 +1,412 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Company>Lone Wanderer Productions</Company>
+    <Copyright>Lone Wanderer Productions</Copyright>
+    <Authors>Wayfarer</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Authors.txt" />
+    <None Remove="AvalonsDenSplashScreen.png" />
+    <None Remove="Changelog.txt" />
+    <None Remove="Content\Campaigns\First Blood.cpg" />
+    <None Remove="Content\Campaigns\First Blood\canyon.aci" />
+    <None Remove="Content\Campaigns\First Blood\canyon.anp" />
+    <None Remove="Content\Campaigns\First Blood\canyon.atl" />
+    <None Remove="Content\Campaigns\First Blood\canyon.avd" />
+    <None Remove="Content\Campaigns\First Blood\canyon.evd" />
+    <None Remove="Content\Campaigns\First Blood\Character\Ariadne.acb" />
+    <None Remove="Content\Campaigns\First Blood\Character\Darius.acb" />
+    <None Remove="Content\Campaigns\First Blood\Character\Darius.acs" />
+    <None Remove="Content\Campaigns\First Blood\Character\Drake.acb" />
+    <None Remove="Content\Campaigns\First Blood\Character\Drake.acs" />
+    <None Remove="Content\Campaigns\First Blood\CharList.xml" />
+    <None Remove="Content\Campaigns\First Blood\First Blood.db" />
+    <None Remove="Content\Campaigns\First Blood\Images\Portraits\Ariadne.png" />
+    <None Remove="Content\Campaigns\First Blood\Images\Portraits\Darius.png" />
+    <None Remove="Content\Campaigns\First Blood\Images\Portraits\Drake.png" />
+    <None Remove="Content\Campaigns\First Blood\test.aci" />
+    <None Remove="Content\Campaigns\First Blood\test.anp" />
+    <None Remove="Content\Campaigns\First Blood\test.avd" />
+    <None Remove="Content\Campaigns\First Blood\test.evd" />
+    <None Remove="Content\Campaigns\First Blood\test\Look.adg" />
+    <None Remove="Content\Campaigns\First Blood\test\Talk.adg" />
+    <None Remove="Core\Files\MasterBorder.xml" />
+    <None Remove="Core\Files\MasterTile.xml" />
+    <None Remove="Core\Icons\base.png" />
+    <None Remove="Core\Icons\char.png" />
+    <None Remove="Core\Icons\fight.png" />
+    <None Remove="Core\Icons\idle.png" />
+    <None Remove="Core\Icons\interact.png" />
+    <None Remove="Core\Icons\inventory.png" />
+    <None Remove="Core\Icons\log.png" />
+    <None Remove="Core\Icons\look.png" />
+    <None Remove="Core\Icons\menu.png" />
+    <None Remove="Core\Icons\move.png" />
+    <None Remove="Core\Icons\talk.png" />
+    <None Remove="Core\Icons\trade.png" />
+    <None Remove="Core\Icons\wisdom.png" />
+    <None Remove="Core\Images\Items\Axe.png" />
+    <None Remove="Core\Images\Items\base.png" />
+    <None Remove="Core\Images\Items\Chest.png" />
+    <None Remove="Core\Images\Items\Consumable.png" />
+    <None Remove="Core\Images\Items\Gloves.png" />
+    <None Remove="Core\Images\Items\Leather Cap.png" />
+    <None Remove="Core\Images\Items\Quest.png" />
+    <None Remove="Core\Images\Items\selection.png" />
+    <None Remove="Core\Images\Items\Shoes.png" />
+    <None Remove="Core\Images\Items\Sword.png" />
+    <None Remove="Core\Images\Items\Trousers.png" />
+    <None Remove="Core\Images\Items\wool jacket.png" />
+    <None Remove="Core\Sounds\Finntroll-Tomhet och Tystnad Härska %28Outro%29.mp3" />
+    <None Remove="Core\Sounds\Info.txt" />
+    <None Remove="License.txt" />
+    <None Remove="Resource\backround.png" />
+    <None Remove="Resource\base.png" />
+    <None Remove="Resource\blank.png" />
+    <None Remove="Resource\dot.png" />
+    <None Remove="Resource\error.png" />
+    <None Remove="Resource\selection.png" />
+    <None Remove="Tiles\Border.png" />
+    <None Remove="Tiles\desert.png" />
+    <None Remove="Tiles\Dot.png" />
+    <None Remove="Tiles\drakecoloredwv5.png" />
+    <None Remove="Tiles\flag.png" />
+    <None Remove="Tiles\Flieder.png" />
+    <None Remove="Tiles\grass.png" />
+    <None Remove="Tiles\hill.png" />
+    <None Remove="Tiles\Morganwv1.png" />
+    <None Remove="Tiles\path.png" />
+    <None Remove="Tiles\path_e.png" />
+    <None Remove="Tiles\path_n.png" />
+    <None Remove="Tiles\path_ne.png" />
+    <None Remove="Tiles\path_nw.png" />
+    <None Remove="Tiles\path_s.png" />
+    <None Remove="Tiles\path_se.png" />
+    <None Remove="Tiles\path_sw.png" />
+    <None Remove="Tiles\path_trans_ne.png" />
+    <None Remove="Tiles\path_trans_nw.png" />
+    <None Remove="Tiles\path_trans_se.png" />
+    <None Remove="Tiles\path_trans_sw.png" />
+    <None Remove="Tiles\path_w.png" />
+    <None Remove="Tiles\Portal.png" />
+    <None Remove="Tiles\tile_hile_1_e.png" />
+    <None Remove="Tiles\tile_hile_1_n.png" />
+    <None Remove="Tiles\tile_hile_1_ne.png" />
+    <None Remove="Tiles\tile_hile_1_nw.png" />
+    <None Remove="Tiles\tile_hile_1_s.png" />
+    <None Remove="Tiles\tile_hile_1_se.png" />
+    <None Remove="Tiles\tile_hile_1_sw.png" />
+    <None Remove="Tiles\tile_hile_1_w.png" />
+    <None Remove="Tiles\void.png" />
+    <None Remove="Tiles\way.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Authors.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Changelog.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood.cpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\canyon.aci">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\canyon.anp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\canyon.atl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\canyon.avd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\canyon.evd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\Character\Ariadne.acb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\Character\Darius.acb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\Character\Darius.acs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\Character\Drake.acb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\Character\Drake.acs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\CharList.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\First Blood.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\Images\Portraits\Ariadne.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\Images\Portraits\Darius.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\Images\Portraits\Drake.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\test.aci">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\test.anp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\test.avd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\test.evd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\test\Look.adg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Campaigns\First Blood\test\Talk.adg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Files\MasterBorder.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Files\MasterTile.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Icons\base.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Icons\char.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Icons\fight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Icons\idle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Icons\interact.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Icons\inventory.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Icons\log.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Icons\look.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Icons\menu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Icons\move.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Icons\talk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Icons\trade.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Icons\wisdom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Images\Items\Axe.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Images\Items\base.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Images\Items\Chest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Images\Items\Consumable.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Images\Items\Gloves.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Images\Items\Leather Cap.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Images\Items\Quest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Images\Items\selection.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Images\Items\Shoes.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Images\Items\Sword.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Images\Items\Trousers.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Images\Items\wool jacket.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Sounds\Finntroll-Tomhet och Tystnad Härska (Outro).mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Sounds\Info.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\backround.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\base.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\blank.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\dot.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\error.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\selection.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\Border.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\desert.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\Dot.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\drakecoloredwv5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\flag.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\Flieder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\grass.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\hill.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\Morganwv1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\path.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\path_e.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\path_n.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\path_ne.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\path_nw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\path_s.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\path_se.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\path_sw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\path_trans_ne.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\path_trans_nw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\path_trans_se.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\path_trans_sw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\path_w.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\Portal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\tile_hile_1_e.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\tile_hile_1_n.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\tile_hile_1_ne.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\tile_hile_1_nw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\tile_hile_1_s.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\tile_hile_1_se.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\tile_hile_1_sw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\tile_hile_1_w.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\void.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiles\way.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AvalonRuntime\AvalonRuntime.csproj" />
+    <ProjectReference Include="..\Campaigns\Campaigns.csproj" />
+    <ProjectReference Include="..\CommonControls\CommonControls.csproj" />
+    <ProjectReference Include="..\Debugger\Debugger.csproj" />
+    <ProjectReference Include="..\Resources\Resources.csproj" />
+    <ProjectReference Include="..\Serializer\Serializer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DataFormatter">
+      <HintPath>..\DataFormatter\bin\Debug\net5.0\DataFormatter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <SplashScreen Include="AvalonsDenSplashScreen.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </SplashScreen>
+  </ItemGroup>
+
+</Project>

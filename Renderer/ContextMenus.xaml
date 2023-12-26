@@ -1,0 +1,76 @@
+﻿<Window x:Class="Renderer.ContextMenus"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        SizeToContent="WidthAndHeight"
+        Background="Transparent"
+        d:DesignHeight="216" d:DesignWidth="216"
+        WindowStyle="None" AllowsTransparency="True" x:ClassModifier="internal">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="55*" />
+            <ColumnDefinition Width="55*" />
+            <ColumnDefinition Width="55*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*" />
+            <RowDefinition Height="55*" />
+            <RowDefinition Height="55*" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Image Name="ImageBase" Width="216" Height="216" Grid.RowSpan="3" Grid.ColumnSpan="3" />
+        <!--Field one-->
+        <Image Name="ImageIdle" Width="55" Height="55"
+               HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" />
+        <Button Name="ButtonIdle" Width="55" Height="55" HorizontalAlignment="Center"
+                VerticalAlignment="Center" Click="Button_Click" ToolTip="Do nothing, but don't do any harm either."
+                ToolTipService.ShowDuration="5000" x:FieldModifier="private" Grid.Column="1" Grid.Row="0" />
+        <!--Field two-->
+        <Image Name="ImageTwo" Width="55" Height="55" HorizontalAlignment="Left"
+               VerticalAlignment="Center" x:FieldModifier="private" Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" />
+        <Button Name="ButtonTwo" Width="55" Height="55" HorizontalAlignment="center"
+                VerticalAlignment="center" Click="Button_Click" x:FieldModifier="private" Grid.Row="0" Grid.RowSpan="2"
+                Grid.Column="2" />
+        <!--Field three-->
+        <Image Name="ImageThree" Width="55" Height="55" HorizontalAlignment="Left"
+               VerticalAlignment="Center" x:FieldModifier="private" Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" />
+        <Button Name="ButtonThree" Width="55" Height="55" HorizontalAlignment="Left"
+                VerticalAlignment="Center" Click="Button_Click" x:FieldModifier="private" Grid.Row="1" Grid.RowSpan="2"
+                Grid.Column="2" />
+        <!--Field four-->
+        <Image Name="ImageFour" Width="55" Height="55" HorizontalAlignment="Center"
+               VerticalAlignment="Center" x:FieldModifier="private" Grid.Row="2" Grid.Column="1" />
+        <Button Name="ButtonFour" Width="55" Height="55" HorizontalAlignment="Center"
+                VerticalAlignment="Center" Click="Button_Click" x:FieldModifier="private" Grid.Row="2" Grid.Column="1" />
+        <!--Field five-->
+        <Image Name="ImageFive" Width="55" Height="55" HorizontalAlignment="Right"
+               VerticalAlignment="Center" x:FieldModifier="private" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" />
+        <Button Name="ButtonFive" Width="55" Height="55" HorizontalAlignment="Right"
+                VerticalAlignment="Center" Click="Button_Click" x:FieldModifier="private" Grid.Row="1" Grid.Column="0"
+                Grid.RowSpan="2" />
+        <!--Field six-->
+        <Image Name="ImageSix" Width="55" Height="55" HorizontalAlignment="Right"
+               VerticalAlignment="Center" x:FieldModifier="private" Grid.Row="0" Grid.RowSpan="2"
+               Grid.Column="0" />
+        <Button Name="ButtonSix" Width="55" Height="56" HorizontalAlignment="Right"
+                VerticalAlignment="Center" Click="Button_Click" x:FieldModifier="private" Grid.Row="0" Grid.RowSpan="2"
+                Grid.Column="0" />
+        <!--Field Middle-->
+        <Button Width="55" Height="55" HorizontalAlignment="Center" Name="ButtonMiddle"
+                VerticalAlignment="Center" Click="Button_Click" Grid.Row="1" Grid.Column="1" />
+    </Grid>
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Polygon Points=" 18,0  54,0  72,36  54,72  18,72 0,36   " StrokeThickness="0"
+                                 Fill="Transparent" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+</Window>

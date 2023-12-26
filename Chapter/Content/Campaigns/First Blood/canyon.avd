@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfItem>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;0&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;EventTypeExtension xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Id&gt;0&lt;/Id&gt;
+  &lt;Value&gt;test&lt;/Value&gt;
+&lt;/EventTypeExtension&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;1&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;EventTypeExtension xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Id&gt;0&lt;/Id&gt;
+  &lt;Value&gt;3&lt;/Value&gt;
+&lt;/EventTypeExtension&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;2&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;EventTypeExtension xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Id&gt;2&lt;/Id&gt;
+  &lt;Value&gt;(1,3)(2,1)&lt;/Value&gt;
+&lt;/EventTypeExtension&gt;</Value>
+  </Item>
+</ArrayOfItem>

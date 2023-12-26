@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfItem>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;0&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;5&lt;/int&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;1&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;19&lt;/int&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;2&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;24&lt;/int&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;3&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;23&lt;/int&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;4&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;7&lt;/int&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;5&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;17&lt;/int&gt;</Value>
+  </Item>
+</ArrayOfItem>

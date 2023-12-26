@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfItem>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;0&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;TileBorders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;BlockAble&gt;false&lt;/BlockAble&gt;
+  &lt;BorderNorth&gt;false&lt;/BorderNorth&gt;
+  &lt;BorderEast&gt;false&lt;/BorderEast&gt;
+  &lt;BorderSouth&gt;false&lt;/BorderSouth&gt;
+  &lt;BorderWest&gt;false&lt;/BorderWest&gt;
+  &lt;BorderNorthWest&gt;false&lt;/BorderNorthWest&gt;
+  &lt;BorderNorthEast&gt;false&lt;/BorderNorthEast&gt;
+  &lt;BorderSouthEast&gt;false&lt;/BorderSouthEast&gt;
+  &lt;BorderSouthWest&gt;false&lt;/BorderSouthWest&gt;
+&lt;/TileBorders&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;1&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;TileBorders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;BlockAble&gt;true&lt;/BlockAble&gt;
+  &lt;BorderNorth&gt;true&lt;/BorderNorth&gt;
+  &lt;BorderEast&gt;true&lt;/BorderEast&gt;
+  &lt;BorderSouth&gt;true&lt;/BorderSouth&gt;
+  &lt;BorderWest&gt;true&lt;/BorderWest&gt;
+  &lt;BorderNorthWest&gt;false&lt;/BorderNorthWest&gt;
+  &lt;BorderNorthEast&gt;false&lt;/BorderNorthEast&gt;
+  &lt;BorderSouthEast&gt;false&lt;/BorderSouthEast&gt;
+  &lt;BorderSouthWest&gt;false&lt;/BorderSouthWest&gt;
+&lt;/TileBorders&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;2&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;TileBorders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;BlockAble&gt;false&lt;/BlockAble&gt;
+  &lt;BorderNorth&gt;false&lt;/BorderNorth&gt;
+  &lt;BorderEast&gt;true&lt;/BorderEast&gt;
+  &lt;BorderSouth&gt;false&lt;/BorderSouth&gt;
+  &lt;BorderWest&gt;false&lt;/BorderWest&gt;
+  &lt;BorderNorthWest&gt;false&lt;/BorderNorthWest&gt;
+  &lt;BorderNorthEast&gt;false&lt;/BorderNorthEast&gt;
+  &lt;BorderSouthEast&gt;false&lt;/BorderSouthEast&gt;
+  &lt;BorderSouthWest&gt;false&lt;/BorderSouthWest&gt;
+&lt;/TileBorders&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;3&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;TileBorders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;BlockAble&gt;false&lt;/BlockAble&gt;
+  &lt;BorderNorth&gt;false&lt;/BorderNorth&gt;
+  &lt;BorderEast&gt;false&lt;/BorderEast&gt;
+  &lt;BorderSouth&gt;false&lt;/BorderSouth&gt;
+  &lt;BorderWest&gt;true&lt;/BorderWest&gt;
+  &lt;BorderNorthWest&gt;false&lt;/BorderNorthWest&gt;
+  &lt;BorderNorthEast&gt;false&lt;/BorderNorthEast&gt;
+  &lt;BorderSouthEast&gt;false&lt;/BorderSouthEast&gt;
+  &lt;BorderSouthWest&gt;false&lt;/BorderSouthWest&gt;
+&lt;/TileBorders&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;4&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;TileBorders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;BlockAble&gt;false&lt;/BlockAble&gt;
+  &lt;BorderNorth&gt;false&lt;/BorderNorth&gt;
+  &lt;BorderEast&gt;false&lt;/BorderEast&gt;
+  &lt;BorderSouth&gt;true&lt;/BorderSouth&gt;
+  &lt;BorderWest&gt;false&lt;/BorderWest&gt;
+  &lt;BorderNorthWest&gt;false&lt;/BorderNorthWest&gt;
+  &lt;BorderNorthEast&gt;false&lt;/BorderNorthEast&gt;
+  &lt;BorderSouthEast&gt;false&lt;/BorderSouthEast&gt;
+  &lt;BorderSouthWest&gt;false&lt;/BorderSouthWest&gt;
+&lt;/TileBorders&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;5&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;TileBorders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;BlockAble&gt;false&lt;/BlockAble&gt;
+  &lt;BorderNorth&gt;true&lt;/BorderNorth&gt;
+  &lt;BorderEast&gt;false&lt;/BorderEast&gt;
+  &lt;BorderSouth&gt;false&lt;/BorderSouth&gt;
+  &lt;BorderWest&gt;false&lt;/BorderWest&gt;
+  &lt;BorderNorthWest&gt;false&lt;/BorderNorthWest&gt;
+  &lt;BorderNorthEast&gt;false&lt;/BorderNorthEast&gt;
+  &lt;BorderSouthEast&gt;false&lt;/BorderSouthEast&gt;
+  &lt;BorderSouthWest&gt;false&lt;/BorderSouthWest&gt;
+&lt;/TileBorders&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;6&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;TileBorders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;BlockAble&gt;false&lt;/BlockAble&gt;
+  &lt;BorderNorth&gt;true&lt;/BorderNorth&gt;
+  &lt;BorderEast&gt;true&lt;/BorderEast&gt;
+  &lt;BorderSouth&gt;false&lt;/BorderSouth&gt;
+  &lt;BorderWest&gt;false&lt;/BorderWest&gt;
+  &lt;BorderNorthWest&gt;false&lt;/BorderNorthWest&gt;
+  &lt;BorderNorthEast&gt;false&lt;/BorderNorthEast&gt;
+  &lt;BorderSouthEast&gt;false&lt;/BorderSouthEast&gt;
+  &lt;BorderSouthWest&gt;false&lt;/BorderSouthWest&gt;
+&lt;/TileBorders&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;7&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;TileBorders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;BlockAble&gt;false&lt;/BlockAble&gt;
+  &lt;BorderNorth&gt;true&lt;/BorderNorth&gt;
+  &lt;BorderEast&gt;false&lt;/BorderEast&gt;
+  &lt;BorderSouth&gt;false&lt;/BorderSouth&gt;
+  &lt;BorderWest&gt;true&lt;/BorderWest&gt;
+  &lt;BorderNorthWest&gt;false&lt;/BorderNorthWest&gt;
+  &lt;BorderNorthEast&gt;false&lt;/BorderNorthEast&gt;
+  &lt;BorderSouthEast&gt;false&lt;/BorderSouthEast&gt;
+  &lt;BorderSouthWest&gt;false&lt;/BorderSouthWest&gt;
+&lt;/TileBorders&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;8&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;TileBorders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;BlockAble&gt;false&lt;/BlockAble&gt;
+  &lt;BorderNorth&gt;false&lt;/BorderNorth&gt;
+  &lt;BorderEast&gt;true&lt;/BorderEast&gt;
+  &lt;BorderSouth&gt;true&lt;/BorderSouth&gt;
+  &lt;BorderWest&gt;false&lt;/BorderWest&gt;
+  &lt;BorderNorthWest&gt;false&lt;/BorderNorthWest&gt;
+  &lt;BorderNorthEast&gt;false&lt;/BorderNorthEast&gt;
+  &lt;BorderSouthEast&gt;false&lt;/BorderSouthEast&gt;
+  &lt;BorderSouthWest&gt;false&lt;/BorderSouthWest&gt;
+&lt;/TileBorders&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;9&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;TileBorders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;BlockAble&gt;false&lt;/BlockAble&gt;
+  &lt;BorderNorth&gt;false&lt;/BorderNorth&gt;
+  &lt;BorderEast&gt;false&lt;/BorderEast&gt;
+  &lt;BorderSouth&gt;true&lt;/BorderSouth&gt;
+  &lt;BorderWest&gt;true&lt;/BorderWest&gt;
+  &lt;BorderNorthWest&gt;false&lt;/BorderNorthWest&gt;
+  &lt;BorderNorthEast&gt;false&lt;/BorderNorthEast&gt;
+  &lt;BorderSouthEast&gt;false&lt;/BorderSouthEast&gt;
+  &lt;BorderSouthWest&gt;false&lt;/BorderSouthWest&gt;
+&lt;/TileBorders&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;10&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;TileBorders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;BlockAble&gt;false&lt;/BlockAble&gt;
+  &lt;BorderNorth&gt;false&lt;/BorderNorth&gt;
+  &lt;BorderEast&gt;false&lt;/BorderEast&gt;
+  &lt;BorderSouth&gt;false&lt;/BorderSouth&gt;
+  &lt;BorderWest&gt;false&lt;/BorderWest&gt;
+  &lt;BorderNorthWest&gt;false&lt;/BorderNorthWest&gt;
+  &lt;BorderNorthEast&gt;false&lt;/BorderNorthEast&gt;
+  &lt;BorderSouthEast&gt;false&lt;/BorderSouthEast&gt;
+  &lt;BorderSouthWest&gt;false&lt;/BorderSouthWest&gt;
+&lt;/TileBorders&gt;</Value>
+  </Item>
+  <Item>
+    <Key>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;int&gt;11&lt;/int&gt;</Key>
+    <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;TileBorders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;BlockAble&gt;false&lt;/BlockAble&gt;
+  &lt;BorderNorth&gt;false&lt;/BorderNorth&gt;
+  &lt;BorderEast&gt;false&lt;/BorderEast&gt;
+  &lt;BorderSouth&gt;false&lt;/BorderSouth&gt;
+  &lt;BorderWest&gt;false&lt;/BorderWest&gt;
+  &lt;BorderNorthWest&gt;false&lt;/BorderNorthWest&gt;
+  &lt;BorderNorthEast&gt;false&lt;/BorderNorthEast&gt;
+  &lt;BorderSouthEast&gt;false&lt;/BorderSouthEast&gt;
+  &lt;BorderSouthWest&gt;false&lt;/BorderSouthWest&gt;
+&lt;/TileBorders&gt;</Value>
+  </Item>
+</ArrayOfItem>

@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<UserControl
+    x:Class="CharacterDisplay.GearInfoControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    mc:Ignorable="d">
+    <Grid>
+        <TextBox
+            Height="23"
+            TextWrapping="Wrap"
+            Width="120"
+            Grid.Column="0"
+            Grid.Row="0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="8,8,0,0"
+            Text="{Binding Path=Damage, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+        <TextBox
+            Height="23"
+            TextWrapping="Wrap"
+            Width="120"
+            Grid.Column="0"
+            Grid.Row="0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="8,36,0,0"
+            Text="{Binding Path=RangedDamage, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+        <TextBox
+            Height="23"
+            TextWrapping="Wrap"
+            Width="120"
+            Grid.Column="0"
+            Grid.Row="0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="8,64,0,0"
+            Text="{Binding Path=MagicDamage, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+        <TextBox
+            Height="23"
+            TextWrapping="Wrap"
+            Width="120"
+            Grid.Column="0"
+            Grid.Row="0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="8,138,0,0"
+            Text="{Binding Path=Armor, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+        <TextBox
+            Height="23"
+            TextWrapping="Wrap"
+            Width="120"
+            Grid.Column="0"
+            Grid.Row="0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="8,110,0,0"
+            Text="{Binding Path=ResistancePhysical, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+        <TextBox
+            Height="23"
+            TextWrapping="Wrap"
+            Width="120"
+            Grid.Column="0"
+            Grid.Row="0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="8,166,0,0"
+            Text="{Binding Path=ResistancePsychological, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+        <TextBox
+            Height="23"
+            TextWrapping="Wrap"
+            Width="120"
+            Grid.Column="0"
+            Grid.Row="0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="8,195,0,0"
+            Text="{Binding Path=ResistanceFire, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+        <TextBox
+            Height="23"
+            TextWrapping="Wrap"
+            Width="120"
+            Grid.Column="0"
+            Grid.Row="0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="8,225,0,0"
+            Text="{Binding Path=ResistanceWater, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+        <TextBox
+            Height="23"
+            TextWrapping="Wrap"
+            Width="120"
+            Grid.Column="0"
+            Grid.Row="0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="8,256,0,0"
+            Text="{Binding Path=ResistanceEarth, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+        <TextBox
+            Height="23"
+            TextWrapping="Wrap"
+            Width="120"
+            Grid.Column="0"
+            Grid.Row="0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="8,287,0,0"
+            Text="{Binding Path=ResistanceAir, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+        <TextBox
+            Height="23"
+            TextWrapping="Wrap"
+            Width="120"
+            Grid.Column="0"
+            Grid.Row="0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="8,318,0,0"
+            Text="{Binding Path=ResistanceDark, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+        <TextBox
+            Height="23"
+            TextWrapping="Wrap"
+            Width="120"
+            Grid.Column="0"
+            Grid.Row="0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="8,349,0,0"
+            Text="{Binding Path=ResistanceLight, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+    </Grid>
+</UserControl>

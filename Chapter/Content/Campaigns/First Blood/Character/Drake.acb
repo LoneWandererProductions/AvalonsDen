@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<CharacterBiography xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>1</Id>
+  <Npc>true</Npc>
+  <Image>Drake.png</Image>
+  <Name>Drake</Name>
+  <Biography>Yourself</Biography>
+  <Faction>none</Faction>
+  <Alignment>ChaoticGood</Alignment>
+  <TypeId>Player</TypeId>
+  <IsEssential>true</IsEssential>
+</CharacterBiography>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfDataItem>
+  <DataItem>
+    <Key>0</Key>
+    <Value>&lt;ArrayOfint xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays"&gt;&lt;int&gt;19&lt;/int&gt;&lt;/ArrayOfint&gt;</Value>
+  </DataItem>
+  <DataItem>
+    <Key>7</Key>
+    <Value>&lt;ArrayOfint xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays"&gt;&lt;int&gt;22&lt;/int&gt;&lt;int&gt;25&lt;/int&gt;&lt;int&gt;21&lt;/int&gt;&lt;int&gt;23&lt;/int&gt;&lt;/ArrayOfint&gt;</Value>
+  </DataItem>
+  <DataItem>
+    <Key>1</Key>
+    <Value>&lt;ArrayOfint xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays"&gt;&lt;int&gt;19&lt;/int&gt;&lt;/ArrayOfint&gt;</Value>
+  </DataItem>
+  <DataItem>
+    <Key>6</Key>
+    <Value>&lt;ArrayOfint xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays"&gt;&lt;int&gt;19&lt;/int&gt;&lt;/ArrayOfint&gt;</Value>
+  </DataItem>
+  <DataItem>
+    <Key>2</Key>
+    <Value>&lt;ArrayOfint xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays"&gt;&lt;int&gt;22&lt;/int&gt;&lt;int&gt;20&lt;/int&gt;&lt;/ArrayOfint&gt;</Value>
+  </DataItem>
+  <DataItem>
+    <Key>8</Key>
+    <Value>&lt;ArrayOfint xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays"&gt;&lt;int&gt;19&lt;/int&gt;&lt;/ArrayOfint&gt;</Value>
+  </DataItem>
+  <DataItem>
+    <Key>9</Key>
+    <Value>&lt;ArrayOfint xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays"&gt;&lt;int&gt;22&lt;/int&gt;&lt;/ArrayOfint&gt;</Value>
+  </DataItem>
+  <DataItem>
+    <Key>3</Key>
+    <Value>&lt;ArrayOfint xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays"&gt;&lt;int&gt;24&lt;/int&gt;&lt;/ArrayOfint&gt;</Value>
+  </DataItem>
+</ArrayOfDataItem>
