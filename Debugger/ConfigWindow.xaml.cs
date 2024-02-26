@@ -32,11 +32,11 @@ namespace Debugger
         /// <param name="e">The routed event arguments.</param>
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            DebugRegister.ErrorColor = CombColorError.Color;
-            DebugRegister.WarningColor = CombColorWarning.Color;
-            DebugRegister.InformationColor = CombColorInformation.Color;
-            DebugRegister.ExternalColor = CombColorExternal.Color;
-            DebugRegister.StandardColor = CombColorStandard.Color;
+            DebugRegister.ErrorColor = CombColorError.StartColor;
+            DebugRegister.WarningColor = CombColorWarning.StartColor;
+            DebugRegister.InformationColor = CombColorInformation.StartColor;
+            DebugRegister.ExternalColor = CombColorExternal.StartColor;
+            DebugRegister.StandardColor = CombColorStandard.StartColor;
             DebugRegister.XmlSerializerObject(DataContext);
         }
 
@@ -47,14 +47,17 @@ namespace Debugger
         /// <param name="e">The routed event arguments.</param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            if (DebugRegister.Config == null) DebugRegister.ReadConfigFile();
+            if (DebugRegister.Config == null)
+            {
+                DebugRegister.ReadConfigFile();
+            }
 
             DataContext = DebugRegister.Config;
-            CombColorError.Color = DebugRegister.ErrorColor;
-            CombColorWarning.Color = DebugRegister.WarningColor;
-            CombColorInformation.Color = DebugRegister.InformationColor;
-            CombColorExternal.Color = DebugRegister.ExternalColor;
-            CombColorStandard.Color = DebugRegister.StandardColor;
+            CombColorError.StartColor = DebugRegister.ErrorColor;
+            CombColorWarning.StartColor = DebugRegister.WarningColor;
+            CombColorInformation.StartColor = DebugRegister.InformationColor;
+            CombColorExternal.StartColor = DebugRegister.ExternalColor;
+            CombColorStandard.StartColor = DebugRegister.StandardColor;
         }
 
         /// <summary>

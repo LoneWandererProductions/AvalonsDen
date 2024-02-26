@@ -44,7 +44,10 @@ namespace SQLiteHelper
 
             foreach (DataRow row in table.Rows)
             {
-                if (row == null) continue;
+                if (row == null)
+                {
+                    continue;
+                }
 
                 var column = new TableColumns
                 {
@@ -64,7 +67,10 @@ namespace SQLiteHelper
 
                 column = SetDataType(column, row.ItemArray[2].ToString());
 
-                if (column == null) return null;
+                if (column == null)
+                {
+                    return null;
+                }
 
                 vector.Add(row.ItemArray[1].ToString(), column);
             }
@@ -104,7 +110,9 @@ namespace SQLiteHelper
             List<string> tableHeader)
         {
             foreach (var headers in tableInfo.SelectMany(info => tableHeader.Where(headers => info.Key == headers)))
+            {
                 tableInfo[headers].Unique = true;
+            }
 
             return tableInfo;
         }
@@ -143,7 +151,10 @@ namespace SQLiteHelper
             {
                 var list = new TableSet();
 
-                foreach (var vector in row.ItemArray.Select(item => item?.ToString())) list.Row.Add(vector);
+                foreach (var vector in row.ItemArray.Select(item => item?.ToString()))
+                {
+                    list.Row.Add(vector);
+                }
 
                 rows.Add(list);
             }

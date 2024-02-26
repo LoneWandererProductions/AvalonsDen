@@ -28,9 +28,15 @@ namespace SQLiteHelper
         {
             var cache = new List<List<string>>(csv);
 
-            if (csv.Count == 0) return null;
+            if (csv.Count == 0)
+            {
+                return null;
+            }
 
-            if (headers) cache.RemoveAt(0);
+            if (headers)
+            {
+                cache.RemoveAt(0);
+            }
 
             var lst = new List<TableSet>(cache.Count);
 
@@ -48,7 +54,10 @@ namespace SQLiteHelper
         [return: MaybeNull]
         public static List<List<string>> ExportCsv(DataSet table, DictionaryTableColumns info)
         {
-            if (table == null) return null;
+            if (table == null)
+            {
+                return null;
+            }
 
             var lst = new List<List<string>>(table.Row.Count + 1);
             var cache = new List<string>(info.DColumns.Count);
@@ -69,7 +78,10 @@ namespace SQLiteHelper
         [return: MaybeNull]
         internal static List<List<string>> ExportCsv(DataSet table)
         {
-            if (table == null) return null;
+            if (table == null)
+            {
+                return null;
+            }
 
             return Converge(table);
         }

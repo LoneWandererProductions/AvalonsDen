@@ -71,7 +71,10 @@ namespace SQLiteGui
         {
             GetSelectedItem();
             var check = SqLiteGuiProcessing.TruncateTable();
-            if (check) refreshTable?.Invoke(this, EventArgs.Empty);
+            if (check)
+            {
+                refreshTable?.Invoke(this, EventArgs.Empty);
+            }
         }
 
         /// <summary>
@@ -83,7 +86,10 @@ namespace SQLiteGui
         {
             GetSelectedItem();
             var check = SqLiteGuiProcessing.DropTable();
-            if (check) refreshDatabase?.Invoke(this, EventArgs.Empty);
+            if (check)
+            {
+                refreshDatabase?.Invoke(this, EventArgs.Empty);
+            }
         }
 
         /// <summary>
@@ -95,7 +101,10 @@ namespace SQLiteGui
         {
             GetSelectedItem();
             var check = SqLiteGuiProcessing.CopyTable();
-            if (check) refreshDatabase?.Invoke(this, EventArgs.Empty);
+            if (check)
+            {
+                refreshDatabase?.Invoke(this, EventArgs.Empty);
+            }
         }
 
         /// <summary>
@@ -107,7 +116,10 @@ namespace SQLiteGui
         {
             GetSelectedItem();
             var check = SqLiteGuiProcessing.RenameTable();
-            if (check) refreshDatabase?.Invoke(this, EventArgs.Empty);
+            if (check)
+            {
+                refreshDatabase?.Invoke(this, EventArgs.Empty);
+            }
         }
 
         /// <summary>
@@ -118,7 +130,10 @@ namespace SQLiteGui
         private void AddTable_Click(object sender, RoutedEventArgs e)
         {
             var check = SqLiteGuiProcessing.AddTable();
-            if (check) refreshDatabase?.Invoke(this, EventArgs.Empty);
+            if (check)
+            {
+                refreshDatabase?.Invoke(this, EventArgs.Empty);
+            }
         }
 
         /// <summary>
@@ -138,7 +153,10 @@ namespace SQLiteGui
             //TODO refine this is ugly
             var cellInfo = Tables.SelectedCells[0];
 
-            if (cellInfo.Column.GetCellContent(cellInfo.Item) is not TextBlock content) return;
+            if (cellInfo.Column.GetCellContent(cellInfo.Item) is not TextBlock content)
+            {
+                return;
+            }
 
             var tbl = new TableDetails { TableAlias = content.Text };
 

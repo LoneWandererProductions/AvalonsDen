@@ -30,14 +30,20 @@ namespace SQLiteGui
             if (loader)
             {
                 var openFile = new OpenFileDialog { Filter = appendage };
-                if (openFile.ShowDialog() == true) root = openFile.FileName;
+                if (openFile.ShowDialog() == true)
+                {
+                    root = openFile.FileName;
+                }
 
                 return root;
             }
 
             var saveFile = new SaveFileDialog { Filter = appendage };
 
-            if (saveFile.ShowDialog() == true) root = saveFile.FileName;
+            if (saveFile.ShowDialog() == true)
+            {
+                root = saveFile.FileName;
+            }
 
             return root;
         }

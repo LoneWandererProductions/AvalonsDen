@@ -65,9 +65,15 @@ namespace SQLiteGui
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Title = _title;
-            foreach (var errors in _listErrors) TextBoxErrors.AppendText(string.Concat(errors, Environment.NewLine));
+            foreach (var errors in _listErrors)
+            {
+                TextBoxErrors.AppendText(string.Concat(errors, Environment.NewLine));
+            }
 
-            foreach (var logs in _logFile) TextBoxLogs.AppendText(string.Concat(logs, Environment.NewLine));
+            foreach (var logs in _logFile)
+            {
+                TextBoxLogs.AppendText(string.Concat(logs, Environment.NewLine));
+            }
         }
     }
 }

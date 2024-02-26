@@ -22,14 +22,14 @@ namespace CommonLibrarySqlLiteTests
     public class SqlLiteCvs
     {
         /// <summary>
+        ///     The CSV table
+        /// </summary>
+        private const string CsvTable = "Csv";
+
+        /// <summary>
         ///     The target (readonly). Value: new SqlLiteDatabase().
         /// </summary>
         private static readonly SqlLiteDatabase Target = new();
-
-        /// <summary>
-        ///     The CSV table
-        /// </summary>
-        private static readonly string CsvTable = "Csv";
 
         /// <summary>
         ///     CSVs the import export.
@@ -40,11 +40,12 @@ namespace CommonLibrarySqlLiteTests
             Target.SendMessage += SharedHelperClass.DebugPrints;
 
             //cleanup
-            SharedHelperClass.CleanUp(ResourcesSqlLite.PathDbCreate);
+            SharedHelperClass.CleanUp(ResourcesSqlLite.DbImportExport);
 
             //Check if file was created
             Target.CreateDatabase(ResourcesSqlLite.Root, ResourcesSqlLite.DbImportExport, true);
-            Assert.IsTrue(File.Exists(ResourcesSqlLite.PathDbCreateComplex),
+
+            Assert.IsTrue(File.Exists(ResourcesSqlLite.DbImportExport),
                 "Test failed Create: " + Target.LastErrors);
 
             var elementOne = new TableColumns
@@ -63,19 +64,19 @@ namespace CommonLibrarySqlLiteTests
             columns.DColumns.Add("Two", elementTwo);
 
             var lst = new List<List<string>>();
-            var header = new List<string> {"One", "Two"};
+            var header = new List<string> { "One", "Two" };
             lst.Add(header);
-            var line = new List<string> {"1", "2"};
+            var line = new List<string> { "1", "2" };
             lst.Add(line);
-            line = new List<string> {"2", "4"};
+            line = new List<string> { "2", "4" };
             lst.Add(line);
-            line = new List<string> {"5", "7"};
+            line = new List<string> { "5", "7" };
             lst.Add(line);
-            line = new List<string> {"1", "0"};
+            line = new List<string> { "1", "0" };
             lst.Add(line);
-            line = new List<string> {"10", "13"};
+            line = new List<string> { "10", "13" };
             lst.Add(line);
-            line = new List<string> {"11", "5"};
+            line = new List<string> { "11", "5" };
             lst.Add(line);
 
             var check = Target.LoadCsv(CsvTable, columns, lst, true);

@@ -76,9 +76,15 @@ namespace SQLiteHelper
                 default: return string.Empty;
             }
 
-            if (_errorLog == MaxLinesError) ListError.RemoveAt(0);
+            if (_errorLog == MaxLinesError)
+            {
+                ListError.RemoveAt(0);
+            }
 
-            if (_messageLog == MaxLinesError) LogFile.RemoveAt(0);
+            if (_messageLog == MaxLinesError)
+            {
+                LogFile.RemoveAt(0);
+            }
 
             if (logLvl == 0)
             {

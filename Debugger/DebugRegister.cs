@@ -117,7 +117,10 @@ namespace Debugger
             else
             {
                 var conf = SerializeConfig();
-                if (conf == null) return;
+                if (conf == null)
+                {
+                    return;
+                }
 
                 DebugPath = conf.DebugPath;
                 SecondsTick = conf.SecondsTick;
@@ -189,7 +192,10 @@ namespace Debugger
         /// <param name="serializeObject">Target Object</param>
         internal static void XmlSerializerObject<T>(T serializeObject)
         {
-            if (serializeObject is not ConfigExtended data) return;
+            if (serializeObject is not ConfigExtended data)
+            {
+                return;
+            }
 
             //Add our Colors a bit of a hack but works for now
             data.ErrorColor = ErrorColor;

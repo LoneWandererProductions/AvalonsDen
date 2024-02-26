@@ -35,6 +35,7 @@ namespace InterOp
             try
             {
                 if (key != null)
+                {
                     foreach (var subKeyName in key.GetSubKeyNames())
                     {
                         using var subKey = key.OpenSubKey(subKeyName);
@@ -47,6 +48,7 @@ namespace InterOp
                         i++;
                         registry.Add(i, subKey);
                     }
+                }
             }
             catch (Exception ex)
             {

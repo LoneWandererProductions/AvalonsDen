@@ -33,10 +33,15 @@ namespace Serializer
         {
             //if File exists
             if (!FileHandleSearch.FileExists(path))
+            {
                 throw new ArgumentException(string.Concat(SerialResources.ErrorPath, path));
+            }
 
             //check if file is empty, if empty return a new empty one
-            if (!FileContent(path)) throw new ArgumentException(string.Concat(SerialResources.ErrorFileEmpty, path));
+            if (!FileContent(path))
+            {
+                throw new ArgumentException(string.Concat(SerialResources.ErrorFileEmpty, path));
+            }
 
             try
             {
@@ -81,10 +86,15 @@ namespace Serializer
         {
             //if File exists
             if (!FileHandleSearch.FileExists(path))
+            {
                 throw new ArgumentException(string.Concat(SerialResources.ErrorPath, path));
+            }
 
             //check if file is empty, if empty return a new empty one
-            if (!FileContent(path)) throw new ArgumentException(string.Concat(SerialResources.ErrorFileEmpty, path));
+            if (!FileContent(path))
+            {
+                throw new ArgumentException(string.Concat(SerialResources.ErrorFileEmpty, path));
+            }
 
             try
             {
@@ -130,10 +140,15 @@ namespace Serializer
         {
             //if File exists
             if (!FileHandleSearch.FileExists(path))
+            {
                 throw new ArgumentException(string.Concat(SerialResources.ErrorPath, path));
+            }
 
             //check if file is empty, if empty return a new empty one
-            if (!FileContent(path)) throw new ArgumentException(string.Concat(SerialResources.ErrorFileEmpty, path));
+            if (!FileContent(path))
+            {
+                throw new ArgumentException(string.Concat(SerialResources.ErrorFileEmpty, path));
+            }
 
             var sr = new StreamReader(path);
 
@@ -144,7 +159,10 @@ namespace Serializer
 
                 var dct = new Dictionary<TKey, TValue>();
 
-                if (lst == null) return null;
+                if (lst == null)
+                {
+                    return null;
+                }
 
                 foreach (var node in lst)
                 {

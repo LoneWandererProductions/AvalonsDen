@@ -27,14 +27,20 @@ namespace PathFinding
             var point = new MovePoint();
             var playerYColumn = 1;
 
-            if (newPoint.Ycolumn != 0) playerYColumn = newPoint.Ycolumn * 3 + 1;
+            if (newPoint.YColumn != 0)
+            {
+                playerYColumn = (newPoint.YColumn * 3) + 1;
+            }
 
             var playerXRow = 1;
 
-            if (newPoint.Xrow != 0) playerXRow = newPoint.Xrow * 3 + 1;
+            if (newPoint.XRow != 0)
+            {
+                playerXRow = (newPoint.XRow * 3) + 1;
+            }
 
-            point.Xrow = playerXRow;
-            point.Ycolumn = playerYColumn;
+            point.XRow = playerXRow;
+            point.YColumn = playerYColumn;
             return point;
         }
 
@@ -54,7 +60,10 @@ namespace PathFinding
                 : length;
 
             var coordinateKeys = new List<int>();
-            for (var i = 0; i < x; i++) coordinateKeys.Add(i * 3 + 1);
+            for (var i = 0; i < x; i++)
+            {
+                coordinateKeys.Add((i * 3) + 1);
+            }
 
             return coordinateKeys;
         }
@@ -70,16 +79,20 @@ namespace PathFinding
             var grid = new PathNode[borderMap.GetUpperBound(0), borderMap.GetUpperBound(1)];
 
             for (var x = 0; x < borderMap.GetUpperBound(0); x++)
-            for (var y = 0; y < borderMap.GetUpperBound(1); y++)
-                grid[x, y] = new PathNode
+            {
+                for (var y = 0; y < borderMap.GetUpperBound(1); y++)
                 {
-                    Parent = null,
-                    XNodeRow = x,
-                    YNodeColumn = y,
-                    Cost = 0,
-                    Heuristic = 0,
-                    IsWall = borderMap[x, y] != 0
-                };
+                    grid[x, y] = new PathNode
+                    {
+                        Parent = null,
+                        XNodeRow = x,
+                        YNodeColumn = y,
+                        Cost = 0,
+                        Heuristic = 0,
+                        IsWall = borderMap[x, y] != 0
+                    };
+                }
+            }
 
             return grid;
         }
@@ -114,7 +127,7 @@ namespace PathFinding
         /// <returns>Fitting id of the Coordinate</returns>
         private static int CalculateId(int xRow, int yColumn, int length)
         {
-            return yColumn * length + xRow;
+            return (yColumn * length) + xRow;
         }
 
         /// <summary>
@@ -128,7 +141,7 @@ namespace PathFinding
             var modulo = masterId % length;
             var yColumn = masterId / length;
 
-            return new MovePoint { Xrow = modulo, Ycolumn = yColumn };
+            return new MovePoint { XRow = modulo, YColumn = yColumn };
         }
     }
 }

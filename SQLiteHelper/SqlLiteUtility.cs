@@ -33,7 +33,10 @@ namespace SQLiteHelper
         public DictionaryTableColumns ConvertObject(object obj)
         {
             //well obvious don't fuck with me and don't expect an Debug Message
-            if (obj == null) return null;
+            if (obj == null)
+            {
+                return null;
+            }
 
             var dct = new DictionaryTableColumns();
 
@@ -77,7 +80,10 @@ namespace SQLiteHelper
         public TableSet ConvertToTableSet(object obj)
         {
             //well obvious don't fuck with me and don't expect an Debug Message
-            if (obj == null) return null;
+            if (obj == null)
+            {
+                return null;
+            }
 
             var lst = ConvertAttribute(obj);
 
@@ -96,9 +102,15 @@ namespace SQLiteHelper
         [return: MaybeNull]
         public object FillObject(List<string> row, object obj)
         {
-            if (row == null || obj == null) return null;
+            if (row == null || obj == null)
+            {
+                return null;
+            }
 
-            if (row.Count != obj.GetType().GetProperties().Length) return null;
+            if (row.Count != obj.GetType().GetProperties().Length)
+            {
+                return null;
+            }
 
             try
             {
@@ -109,9 +121,13 @@ namespace SQLiteHelper
                     count++;
 
                     if (!propertyInfo.PropertyType.IsEnum)
+                    {
                         propertyInfo.SetValue(obj, Convert.ChangeType(row[count], propertyInfo.PropertyType), null);
+                    }
                     else
+                    {
                         propertyInfo.SetValue(obj, Enum.Parse(propertyInfo.PropertyType, row[count], true), null);
+                    }
                 }
             }
             catch (ArgumentException ex)

@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using ExtendedSystemObjects;
+using Mathematics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CommonLibraryTests
@@ -34,7 +35,8 @@ namespace CommonLibraryTests
         ///     The Dictionary three (readonly).
         ///     Value: new Dictionary&lt;int, string&gt; { {1, "test"}, {2, "new"}, {3, "new"}, {4, "hell"} }.
         /// </summary>
-        private readonly Dictionary<int, string> _dictThree = new() {{1, "test"}, {2, "new"}, {3, "new"}, {4, "hell"}};
+        private readonly Dictionary<int, string> _dictThree =
+            new() { { 1, "test" }, { 2, "new" }, { 3, "new" }, { 4, "hell" } };
 
         /// <summary>
         ///     The list one (readonly). Value: new List&lt;string&gt;().
@@ -44,7 +46,7 @@ namespace CommonLibraryTests
         /// <summary>
         ///     The list two (readonly). Value: new List&lt;string&gt; {"test"}.
         /// </summary>
-        private readonly List<string> _listTwo = new() {"test"};
+        private readonly List<string> _listTwo = new() { "test" };
 
         /// <summary>
         ///     Here we Test our List
@@ -68,7 +70,7 @@ namespace CommonLibraryTests
         [TestMethod]
         public void ExtendedListAddFirst()
         {
-            var lst = new List<int> {0, 1, 3};
+            var lst = new List<int> { 0, 1, 3 };
 
             lst.AddFirst(7);
 
@@ -76,16 +78,24 @@ namespace CommonLibraryTests
         }
 
         /// <summary>
-        ///     Here we Test our List AddDistinct
+        ///     Here we Test our List AddDistinct and AddIsDistinct
         /// </summary>
         [TestMethod]
         public void ExtendedListAddDistinct()
         {
-            var lst = new List<int> {2, 3};
-            lst.AddDistinct(3);
+            var lst = new List<int> { 2, 3 };
+            var check = lst.AddDistinct(3);
 
-            Assert.AreEqual(2, lst.Count, "Not replaced");
-            Assert.AreEqual(3, lst[1], "Not replaced");
+            Assert.IsFalse(check, "Wrong bool");
+
+            Assert.AreEqual(2, lst.Count, "Value added");
+
+            check = lst.AddDistinct(4);
+            Assert.IsTrue(check, "Wrong bool");
+
+            Assert.IsTrue(check, "Element added");
+            check = lst.AddDistinct(2);
+            Assert.IsFalse(check, "Element not added");
         }
 
         /// <summary>
@@ -94,29 +104,53 @@ namespace CommonLibraryTests
         [TestMethod]
         public void CloneList()
         {
-            var dct = new List<int> {2, 3, 1};
+            var list = new List<int> { 2, 3, 1 };
 
-            var clone = dct.Clone();
+            var clone = list.Clone();
 
-            Assert.AreEqual(clone.Count, dct.Count, "Test passed CloneList, first round:  " + dct.Count);
+            Assert.AreEqual(clone.Count, list.Count, "Test passed CloneList, first round:  " + list.Count);
 
-            dct.Remove(1);
+            list.Remove(1);
 
-            Assert.AreNotEqual(clone.Count, dct.Count, "Test passed CloneList, first round:  " + dct.Count);
+            Assert.AreNotEqual(clone.Count, list.Count, "Test passed CloneList, first round:  " + list.Count);
 
             var lst = new List<TstObj>();
-            var obj = new TstObj {First = 1, Second = 2};
+            var obj = new TstObj { First = 1, Second = 2 };
 
             lst.Add(obj);
             lst.Add(obj);
 
             var secondClone = lst.Clone();
 
-            Assert.AreEqual(lst.Count, secondClone.Count, "Test passed CloneList, second round:  " + dct.Count);
+            Assert.AreEqual(lst.Count, secondClone.Count,
+                string.Concat("Test passed CloneList, second round:  ", list.Count));
 
             secondClone.RemoveAt(0);
 
-            Assert.AreNotEqual(lst.Count, secondClone.Count, "Test passed CloneList, second round:  " + dct.Count);
+            Assert.AreNotEqual(lst.Count, secondClone.Count,
+                string.Concat("Test passed CloneList, second round:  ", list.Count));
+        }
+
+        /// <summary>
+        ///     Chunks of a list.
+        /// </summary>
+        [TestMethod]
+        public void ChunkList()
+        {
+            var lst = new List<int>
+            {
+                1,
+                2,
+                3,
+                4,
+                5
+            };
+            var result = lst.ChunkBy(2);
+
+            Assert.AreEqual(3, result.Count, string.Concat("Test passed ChunkList:  ", result.Count));
+            var cache = result[2];
+
+            Assert.AreEqual(5, cache[0], string.Concat("Test passed ChunkList, second round:  ", cache[0]));
         }
 
         /// <summary>
@@ -127,14 +161,18 @@ namespace CommonLibraryTests
         {
             var lst = new Dictionary<XmlItem, int>
             {
-                {ResourcesGeneral.DataItemOne, 1}, {ResourcesGeneral.DataItemThree, 2}
+                { ResourcesGeneral.DataItemOne, 1 }, { ResourcesGeneral.DataItemThree, 2 }
             };
 
             Debug.WriteLine("Passed the basic add");
 
             lst.AddDistinct(ResourcesGeneral.DataItemOne, 3);
 
-            Assert.AreEqual(2, lst.Count, "Tested not as equal: " + lst.Count);
+            Assert.AreEqual(2, lst.Count, string.Concat("Tested not as equal: ", lst.Count));
+
+            lst.AddDistinct(ResourcesGeneral.DataItemTwo, 4);
+
+            Assert.AreEqual(3, lst.Count, string.Concat("Tested not as equal: ", lst.Count));
         }
 
         /// <summary>
@@ -143,8 +181,8 @@ namespace CommonLibraryTests
         [TestMethod]
         public void ExtendedListRemoveListRange()
         {
-            var baseLst = new List<int> {1, 2, 3};
-            var removeList = new List<int> {1, 2};
+            var baseLst = new List<int> { 1, 2, 3 };
+            var removeList = new List<int> { 1, 2 };
             baseLst.RemoveListRange(removeList);
             Assert.AreEqual(1, baseLst.Count, "Not removed");
             Assert.AreEqual(3, baseLst[0], "Right Element removed");
@@ -152,9 +190,72 @@ namespace CommonLibraryTests
             baseLst.Add(5);
             baseLst.Add(6);
 
-            var removeLstAlt = new List<int> {1, 2};
+            var removeLstAlt = new List<int> { 1, 2 };
             baseLst.RemoveListRange(removeLstAlt);
             Assert.AreEqual(3, baseLst.Count, "Not removed");
+        }
+
+        /// <summary>
+        ///     Here we Test our List AddReplace
+        /// </summary>
+        [TestMethod]
+        public void ExtendedListChunk()
+        {
+            var baseLst = new List<int> { 1, 2, 3 };
+            var removeList = new List<int> { 1, 2 };
+
+            baseLst.AddRange(removeList);
+            var result = baseLst.ChunkBy(3);
+
+            Assert.AreEqual(2, result.Count, "Not enough Chunks.");
+
+            Assert.AreEqual(2, result[1][1], "Wrong element.");
+        }
+
+        /// <summary>
+        ///     Here we Test our List
+        /// </summary>
+        [TestMethod]
+        public void ExtendedListCompare()
+        {
+            var one = new List<int> { 1, 2, 3 };
+            var two = new List<int> { 1, 3, 2 };
+            var three = new List<int> { 1, 3, 2, 4 };
+            var four = new List<int> { 1, 2, 3, 3 };
+
+            var check = one.Equal(two);
+            Assert.IsTrue(check,
+                string.Concat("Base Compare Test failed: ", nameof(one), " , ", nameof(two), " : ", check));
+            check = one.Equal(four);
+            Assert.IsTrue(check, string.Concat("Base Test failed: ", nameof(one), " , ", nameof(four), " : ", check));
+
+            check = one.Equal(two, EnumerableCompare.IgnoreOrderCount);
+            Assert.IsTrue(check,
+                string.Concat("IgnoreOrderCount Compare Test failed: ", nameof(one), " , ", nameof(two), " : ", check));
+            check = one.Equal(four, EnumerableCompare.IgnoreOrderCount);
+            Assert.IsTrue(check,
+                string.Concat("IgnoreOrderCount Compare Test failed: ", nameof(one), " , ", nameof(four), " : ",
+                    check));
+
+            check = one.Equal(two, EnumerableCompare.IgnoreOrder);
+            Assert.IsTrue(check,
+                string.Concat("IgnoreOrder Compare Test failed: ", nameof(one), " , ", nameof(two), " : ", check));
+            check = one.Equal(four, EnumerableCompare.IgnoreOrder);
+            Assert.IsFalse(check,
+                string.Concat("IgnoreOrder Compare Test failed: ", nameof(one), " , ", nameof(four), " : ", check));
+
+            check = one.Equal(two, EnumerableCompare.AllEqual);
+            Assert.IsFalse(check,
+                string.Concat("AllEqual Compare Test failed: ", nameof(one), " , ", nameof(two), " : ", check));
+            check = one.Equal(one, EnumerableCompare.AllEqual);
+            Assert.IsTrue(check,
+                string.Concat("AllEqual Compare Test failed: ", nameof(one), " , ", nameof(one), " : ", check));
+            check = one.Equal(three, EnumerableCompare.AllEqual);
+            Assert.IsFalse(check,
+                string.Concat("AllEqual Compare Test failed: ", nameof(one), " , ", nameof(three), " : ", check));
+            check = one.Equal(four, EnumerableCompare.AllEqual);
+            Assert.IsFalse(check,
+                string.Concat("AllEqual Compare Test failed: ", nameof(one), " , ", nameof(four), " : ", check));
         }
 
         /// <summary>
@@ -205,7 +306,7 @@ namespace CommonLibraryTests
         [TestMethod]
         public void ExtendedDictionaryGetDictionaryByValues()
         {
-            var lst = new List<int> {2, 4};
+            var lst = new List<int> { 2, 4 };
 
             var cache = _dictThree.GetDictionaryByValues(lst);
 
@@ -238,7 +339,7 @@ namespace CommonLibraryTests
 
             var dctAdv = new Dictionary<int, List<int>>();
 
-            var lst = new List<int> {1, 3};
+            var lst = new List<int> { 1, 3 };
 
             dctAdv.Add(2, lst);
             dctAdv.Add(3, lst);
@@ -255,7 +356,7 @@ namespace CommonLibraryTests
             var dctAdvObj = new Dictionary<int, List<TstObj>>();
 
             var lstObj = new List<TstObj>();
-            var obj = new TstObj {First = 1, Second = 2};
+            var obj = new TstObj { First = 1, Second = 2 };
 
             lstObj.Add(obj);
             lstObj.Add(obj);
@@ -310,7 +411,7 @@ namespace CommonLibraryTests
             dct.AddDistinctKeyValue(3, 3);
             dct.AddDistinctKeyValue(1, 1);
 
-            var lst = new List<int> {1, 2, 3};
+            var lst = new List<int> { 1, 2, 3 };
 
             Assert.IsTrue(dct.ContainsKeys(lst), "Test passed ContainsKeys, contained True");
 
@@ -323,7 +424,7 @@ namespace CommonLibraryTests
         ///     Here we Test our Dictionary FindKeysByValue
         /// </summary>
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException), "")]
+        [ExpectedException(typeof(NullReferenceException), "")]
         public void ExtendedDictionaryException()
         {
             Dictionary<int, int> dct = null;
@@ -346,13 +447,51 @@ namespace CommonLibraryTests
         }
 
         /// <summary>
+        ///     Dictionaries the add list.
+        /// </summary>
+        [TestMethod]
+        public void DictionaryAddList()
+        {
+            var dct = new Dictionary<int, List<int>> { { 1, 1 }, { 1, 1 } };
+
+            Assert.AreEqual(2, dct[1].Count, "Correct count");
+
+            dct.Add(0, 0);
+
+            Assert.IsTrue(dct.ContainsKey(0), "key not added");
+        }
+
+        /// <summary>
+        ///     Dictionaries the add list.
+        /// </summary>
+        [TestMethod]
+        public void DictionaryAddDisctinct()
+        {
+            var dct = new Dictionary<int, List<int>> { { 1, 1 }, { 1, 1 } };
+
+            Assert.AreEqual(2, dct[1].Count, "Correct count");
+
+            dct.AddDistinct(0, 0);
+
+            Assert.IsTrue(dct.ContainsKey(0), "key not added");
+
+            dct.AddDistinct(0, 1);
+
+            Assert.AreEqual(2, dct[1].Count, "Correct count");
+
+            dct.AddDistinct(0, 1);
+
+            Assert.AreEqual(2, dct[1].Count, "Correct count");
+        }
+
+        /// <summary>
         ///     Swap Test for Dictionaries
         /// </summary>
         [TestMethod]
         public void DictionarySwap()
         {
             //add some Test Data
-            var loot = new Dictionary<int, Item> {{0, new Item()}, {10, new Item()}};
+            var loot = new Dictionary<int, Item> { { 0, new Item() }, { 10, new Item() } };
 
             //add some Test Data
             //first
@@ -372,6 +511,13 @@ namespace CommonLibraryTests
 
             Assert.AreEqual(1, loot[10].Id, "Check passed");
             Assert.AreEqual(5, loot[10].Amount, "Check passed");
+
+            loot.Swap(10, 11);
+
+            Assert.AreEqual(1, loot[11].Id, "Check passed");
+            Assert.AreEqual(5, loot[11].Amount, "Check passed");
+
+            Assert.IsFalse(loot.ContainsKey(10), "Check passed");
         }
 
         /// <summary>
@@ -382,13 +528,13 @@ namespace CommonLibraryTests
         {
             var dct = new Dictionary<int, string>(_dictThree);
 
-            dct.Reduce();
+            _ = dct.Reduce();
             Assert.AreEqual(4, _dictThree.Count, "Check passed");
             Assert.AreEqual(3, dct.Count, "Check passed");
 
             for (var i = 0; i < 3; i++)
             {
-                dct.Reduce();
+                _ = dct.Reduce();
             }
 
             Assert.AreEqual(0, dct.Count, "Check passed");
@@ -408,6 +554,61 @@ namespace CommonLibraryTests
             Assert.IsTrue(i.Interval(one, interval), "Check passed");
 
             Assert.IsFalse(i.Interval(two, interval), "Check passed");
+        }
+
+        /// <summary>
+        ///     Test some MultiArray stuff.
+        /// </summary>
+        [TestMethod]
+        public void MultiArray()
+        {
+            int[,] matrix = { { 1, 2, 3, 4 }, { 1, 2, 3, 4 }, { 5, 2, 3, 1 } };
+
+            matrix.SwapColumn(0, 2);
+            Assert.AreEqual(matrix[2, 3], 4, "4");
+            Assert.AreEqual(matrix[0, 3], 1, "4");
+
+            Assert.AreEqual(matrix[2, 0], 1, "4");
+            Assert.AreEqual(matrix[0, 0], 5, "4");
+
+            matrix = new[,] { { 1, 2, 3, 4 }, { 1, 2, 3, 4 }, { 5, 2, 3, 1 } };
+
+            matrix.SwapRow(0, 1);
+            Assert.AreEqual(matrix[0, 0], 2, "4");
+            Assert.AreEqual(matrix[0, 1], 1, "4");
+
+            Assert.AreEqual(matrix[2, 0], 2, "4");
+            Assert.AreEqual(matrix[2, 1], 5, "4");
+
+            var str = matrix.ToText();
+            Assert.IsFalse(string.IsNullOrEmpty(str), "Null string");
+            Assert.AreEqual(str.Length, 45, "Count");
+
+            int[,] normal = { { 1, 2 }, { 1, 2 } };
+            var copy = normal.Duplicate();
+            normal[0, 0] = 0;
+            Assert.AreEqual(copy[0, 0], 1, "00");
+            Assert.AreEqual(copy[0, 1], 2, "01");
+
+            //see Matrix Multiplication, the speed is sadly slower, but it converts arrays to span in a fast way and the results are the same
+
+            var x = new double[,] { { 2, 1, 1 }, { 1, 2, 1 }, { 1, 1, 2 } };
+            var m1 = new BaseMatrix { Matrix = x };
+
+            var y = new double[,] { { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
+            var m2 = new BaseMatrix { Matrix = y };
+
+            var compare1 = MathSpeedTests.TestOne(m1, m2);
+
+            Assert.AreEqual(compare1[0, 0], 2, "00");
+            Assert.AreEqual(compare1[1, 0], 1, "10");
+            Assert.AreEqual(compare1[2, 0], 1, "20");
+            Assert.AreEqual(compare1[0, 1], 1, "01");
+            Assert.AreEqual(compare1[1, 1], 2, "11");
+            Assert.AreEqual(compare1[2, 1], 1, "21");
+            Assert.AreEqual(compare1[0, 2], 1, "02");
+            Assert.AreEqual(compare1[1, 2], 1, "12");
+            Assert.AreEqual(compare1[2, 2], 2, "22");
         }
 
         /// <summary>

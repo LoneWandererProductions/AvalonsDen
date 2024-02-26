@@ -32,7 +32,10 @@ namespace InterOp
         /// <exception cref="PlatformNotSupportedException"></exception>
         public Dictionary<int, object> GetRegistryObjects(string registryPath)
         {
-            if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) throw new PlatformNotSupportedException();
+            if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                throw new PlatformNotSupportedException();
+            }
 
             return RegistryHelper.GetRegistryObjects(registryPath);
         }
@@ -47,7 +50,10 @@ namespace InterOp
         /// <exception cref="PlatformNotSupportedException"></exception>
         public bool WriteRegistry(string registryPath, KeyValuePair<string, string> value)
         {
-            if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) throw new PlatformNotSupportedException();
+            if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                throw new PlatformNotSupportedException();
+            }
 
             return RegistryHelper.SetRegistryObjects(registryPath, value);
         }

@@ -61,7 +61,7 @@ namespace CommonLibrarySqlLiteTests
             Assert.IsTrue(File.Exists(ResourcesSqlLite.PathDbSelect),
                 "Test not passed Create: " + _target.LastErrors);
 
-            var header = SharedHelperClass.CreateTableHeadersMultible();
+            var header = SharedHelperClass.CreateTableHeadersMultiple();
             //create the Table
             var check = _target.CreateTable(TblName, header);
             Assert.IsTrue(check, "Test not passed Create Table: " + _target.LastErrors);
@@ -77,7 +77,7 @@ namespace CommonLibrarySqlLiteTests
             var count = cache.Row.Count;
             Assert.AreEqual(8, count, "Test not passed Select Table" + _target.LastErrors);
 
-            check = SharedHelperClass.CompareTableMultibleSet(table, cache.Row);
+            check = SharedHelperClass.CompareTableMultipleSet(table, cache.Row);
 
             Assert.IsTrue(check, "Test not passed Select Compare: " + _target.LastErrors);
 
@@ -89,12 +89,12 @@ namespace CommonLibrarySqlLiteTests
             count = cache.Row.Count;
             Assert.AreEqual(8, count, "Test not passed Select Table: " + _target.LastErrors);
 
-            check = SharedHelperClass.CompareTableMultibleSet(table, cache.Row);
+            check = SharedHelperClass.CompareTableMultipleSet(table, cache.Row);
 
             Assert.IsTrue(check, "Test not passed Select Compare: " + _target.LastErrors);
 
             //select only specific headers
-            var lst = new List<string> {FrstHeader};
+            var lst = new List<string> { FrstHeader };
             cache = _target.SimpleSelect(TblName, lst);
 
             Assert.AreEqual(1, cache.Width,
@@ -141,7 +141,7 @@ namespace CommonLibrarySqlLiteTests
             Assert.IsTrue(File.Exists(ResourcesSqlLite.DbAdvancedSelect),
                 "Test not passed Create: " + _target.LastErrors);
 
-            var header = SharedHelperClass.CreateTableHeadersMultible();
+            var header = SharedHelperClass.CreateTableHeadersMultiple();
 
             //create the Table
             var check = _target.CreateTable(TblName, header);
@@ -163,7 +163,7 @@ namespace CommonLibrarySqlLiteTests
             Assert.AreEqual("39", item, "Test not passed Get Value of Cell: " + item);
 
             //now for the real deal multiple where Clause
-            var lst = new List<string> {FrstHeader};
+            var lst = new List<string> { FrstHeader };
             cache = _target.SimpleSelect(TblName, lst, FrstHeader, CompareOperator.Equal, "0");
             Assert.AreEqual(1, cache.Height, "Test not passed Get Dimension Height: " + cache.Height);
             Assert.AreEqual(1, cache.Width, "Test not passed Get Dimension Width: " + cache.Width);
@@ -195,7 +195,7 @@ namespace CommonLibrarySqlLiteTests
             Assert.IsTrue(File.Exists(ResourcesSqlLite.PathDbDbSelectIn),
                 "Test not passed Create: " + _target.LastErrors);
 
-            var header = SharedHelperClass.CreateTableHeadersMultible();
+            var header = SharedHelperClass.CreateTableHeadersMultiple();
 
             //create the Table
             var check = _target.CreateTable(TblName, header);
@@ -210,9 +210,9 @@ namespace CommonLibrarySqlLiteTests
             Assert.IsTrue(check, "Test not passed Insert into Table: " + _target.LastErrors);
 
             //check our custom Object
-            var lst = new List<string> {"0"};
+            var lst = new List<string> { "0" };
 
-            var headers = new List<string> {FrstHeader, ScdHeader};
+            var headers = new List<string> { FrstHeader, ScdHeader };
 
             //test 1
             var cache = _target.SelectIn(TblName, FrstHeader, lst);

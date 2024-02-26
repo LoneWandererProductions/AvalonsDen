@@ -53,7 +53,10 @@ namespace SQLiteGui
         {
             var path = Dialogs.HandleFile(SqLiteGuiResource.DbFilter, false);
             //nothing was selected
-            if (path.Length == 0) return;
+            if (path.Length == 0)
+            {
+                return;
+            }
 
             var location = Directory.GetParent(path)?.ToString();
             var dbName = Path.GetFileName(path);
@@ -114,7 +117,7 @@ namespace SQLiteGui
         private void RefreshTable(object sender, EventArgs e)
         {
             //Refresh the table
-            SqLiteGuiProcessing.SelectTable(Register.Tablealias);
+            SqLiteGuiProcessing.SelectTable(Register.TableAlias);
             TableDetailView.SetData();
         }
 

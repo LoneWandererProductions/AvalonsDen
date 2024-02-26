@@ -46,7 +46,7 @@ namespace CommonLibraryTests
         [TestMethod]
         public void LoadLstObjectFromXml()
         {
-            var lst = new List<XmlItem> {ResourcesGeneral.DataItemOne, ResourcesGeneral.DataItemTwo};
+            var lst = new List<XmlItem> { ResourcesGeneral.DataItemOne, ResourcesGeneral.DataItemTwo };
 
             var paths = Path.Combine(Directory.GetCurrentDirectory(), "testList.xml");
 
@@ -85,7 +85,8 @@ namespace CommonLibraryTests
         public void Cvs()
         {
             var path = Path.Combine(Directory.GetCurrentDirectory(), nameof(Serialize),
-                "test.cvs");
+                "cvstest.cvs");
+
             var lst = new List<List<string>>();
 
             for (var i = 0; i < 10; i++)

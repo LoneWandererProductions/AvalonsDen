@@ -251,7 +251,10 @@ namespace Imaging
         /// <exception cref="IOException">File not Found</exception>
         internal static Bitmap GetBitmapFile(string path)
         {
-            if (!string.IsNullOrEmpty(path) && File.Exists(path)) return new Bitmap(path, true);
+            if (!string.IsNullOrEmpty(path) && File.Exists(path))
+            {
+                return new Bitmap(path, true);
+            }
 
             var innerException = path != null
                 ? new IOException(string.Concat(nameof(path), ImagingResources.Spacing, path))
@@ -471,14 +474,51 @@ namespace Imaging
             {
                 //go through each image and draw it on the final image
                 foreach (var image in images)
+                {
                     graph.DrawImage(image,
                         new Rectangle(0, 0, image.Width, image.Height));
+                }
             }
 
-            foreach (var image in images) image.Dispose();
+            foreach (var image in images)
+            {
+                image.Dispose();
+            }
 
             //before return please Convert
             return btm;
+        }
+
+        /// <summary>
+        ///     Combines the bitmaps.
+        /// </summary>
+        /// <param name="original">The original image.</param>
+        /// <param name="overlay">The overlay image.</param>
+        /// <param name="x">The x position.</param>
+        /// <param name="y">The y position.</param>
+        /// <returns>Combined Image</returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        internal static Bitmap CombineBitmap(Bitmap original, Bitmap overlay, int x, int y)
+        {
+            if (original == null)
+            {
+                var innerException = new ArgumentNullException(nameof(original));
+                throw new ArgumentNullException(ImagingResources.ErrorWrongParameters, innerException);
+            }
+
+            if (overlay == null)
+            {
+                var innerException = new ArgumentNullException(nameof(overlay));
+                throw new ArgumentNullException(ImagingResources.ErrorWrongParameters, innerException);
+            }
+
+            //get a graphics object from the image so we can draw on it
+            using var graph = Graphics.FromImage(original);
+
+            graph.DrawImage(overlay,
+                new Rectangle(x, y, overlay.Width, overlay.Height));
+
+            return original;
         }
 
         /// <summary>
@@ -550,6 +590,36 @@ namespace Imaging
             }
 
             return images;
+        }
+
+        /// <summary>
+        ///     Erases the rectangle from an Image.
+        /// </summary>
+        /// <param name="image">The image.</param>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
+        /// <param name="height">The height.</param>
+        /// <param name="width">The width.</param>
+        /// <returns>Original Image with the erased area</returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static Bitmap EraseRectangle(Bitmap image, int x, int y, int height, int width)
+        {
+            if (image == null)
+            {
+                var innerException = new ArgumentNullException(nameof(image));
+                throw new ArgumentNullException(ImagingResources.ErrorWrongParameters, innerException);
+            }
+
+            using var graph = Graphics.FromImage(image);
+
+            graph.CompositingMode = CompositingMode.SourceCopy;
+
+            using var br = new SolidBrush(Color.FromArgb(0, 255, 255, 255));
+
+            graph.FillRectangle(br, new Rectangle(x, y, width, height));
+
+
+            return image;
         }
 
         /// <summary>
@@ -690,7 +760,10 @@ namespace Imaging
         internal static Bitmap RotateImage(Bitmap image, int degree)
         {
             //no need to do anything
-            if (degree is 360 or 0) return image;
+            if (degree is 360 or 0)
+            {
+                return image;
+            }
 
             if (image == null)
             {
@@ -717,8 +790,8 @@ namespace Imaging
                 var point = corners[i];
                 corners[i] =
                     new PointF(
-                        (float)(point.X * ExtendedMath.CalcCos(degree) - point.Y * ExtendedMath.CalcSin(degree)),
-                        (float)(point.X * ExtendedMath.CalcSin(degree) + point.Y * ExtendedMath.CalcCos(degree)));
+                        (float)((point.X * ExtendedMath.CalcCos(degree)) - (point.Y * ExtendedMath.CalcSin(degree))),
+                        (float)((point.X * ExtendedMath.CalcSin(degree)) + (point.Y * ExtendedMath.CalcCos(degree))));
             }
 
             // Find the min and max x and y coordinates.
@@ -785,14 +858,20 @@ namespace Imaging
                 for (var y = 0; y < image.Height; y++)
                 {
                     var color = dbm.GetPixel(x, y);
-                    if (CheckTransparent(color)) continue;
+                    if (CheckTransparent(color))
+                    {
+                        continue;
+                    }
 
                     // this pixel is either not white or not fully transparent
                     top = x;
                     break;
                 }
 
-                if (top != -1) break;
+                if (top != -1)
+                {
+                    break;
+                }
             }
 
             //Get the Bottom
@@ -801,14 +880,20 @@ namespace Imaging
                 for (var y = image.Height - 1; y >= 0; --y)
                 {
                     var color = dbm.GetPixel(x, y);
-                    if (CheckTransparent(color)) continue;
+                    if (CheckTransparent(color))
+                    {
+                        continue;
+                    }
 
                     // this pixel is either not white or not fully transparent
                     bottom = x;
                     break;
                 }
 
-                if (bottom != -1) break;
+                if (bottom != -1)
+                {
+                    break;
+                }
             }
 
             //Get the left
@@ -817,14 +902,20 @@ namespace Imaging
                 for (var y = image.Height - 1; y >= 0; --y)
                 {
                     var color = dbm.GetPixel(x, y);
-                    if (CheckTransparent(color)) continue;
+                    if (CheckTransparent(color))
+                    {
+                        continue;
+                    }
 
                     // this pixel is either not white or not fully transparent
                     left = x;
                     break;
                 }
 
-                if (left != -1) break;
+                if (left != -1)
+                {
+                    break;
+                }
             }
 
             //Get the right
@@ -833,14 +924,20 @@ namespace Imaging
                 for (var y = 0; y < image.Height; y++)
                 {
                     var color = dbm.GetPixel(x, y);
-                    if (CheckTransparent(color)) continue;
+                    if (CheckTransparent(color))
+                    {
+                        continue;
+                    }
 
                     // this pixel is either not white or not fully transparent
                     right = x;
                     break;
                 }
 
-                if (right != -1) break;
+                if (right != -1)
+                {
+                    break;
+                }
             }
 
             first.X = left;
@@ -907,7 +1004,10 @@ namespace Imaging
                 var fileNameOnly = Path.GetFileNameWithoutExtension(path);
                 var extension = Path.GetExtension(path);
                 var directory = Path.GetDirectoryName(path);
-                if (!Directory.Exists(directory)) return;
+                if (!Directory.Exists(directory))
+                {
+                    return;
+                }
 
                 var newPath = path;
 
@@ -958,7 +1058,10 @@ namespace Imaging
                 var color = dbm.GetPixel(x, y);
 
                 //not in the area? continue, 255 is White
-                if (255 - color.R >= threshold || 255 - color.G >= threshold || 255 - color.B >= threshold) continue;
+                if (255 - color.R >= threshold || 255 - color.G >= threshold || 255 - color.B >= threshold)
+                {
+                    continue;
+                }
 
                 //replace Value under the threshold with pure White
                 dbm.SetPixel(x, y, replacementColor);
@@ -1015,7 +1118,10 @@ namespace Imaging
 
             var points = GetCirclePoints(point, radius, image.Height, image.Width);
 
-            if (points.Count == 0) return GetPixel(image, point);
+            if (points.Count == 0)
+            {
+                return GetPixel(image, point);
+            }
 
             var r = 0;
             var g = 0;
@@ -1106,16 +1212,28 @@ namespace Imaging
             var lst = new List<Point>();
 
             var minX = point.X - radius;
-            if (minX < 0) minX = 0;
+            if (minX < 0)
+            {
+                minX = 0;
+            }
 
             var maxX = point.X + radius;
-            if (maxX > width) maxX = width;
+            if (maxX > width)
+            {
+                maxX = width;
+            }
 
             var minY = point.Y - radius;
-            if (minY < 0) minY = 0;
+            if (minY < 0)
+            {
+                minY = 0;
+            }
 
             var maxY = point.Y + radius;
-            if (maxY > width) maxY = length;
+            if (maxY > width)
+            {
+                maxY = length;
+            }
 
             for (var x = minX; x <= maxX; x++)
             for (var y = minY; y <= maxY; y++)
@@ -1124,7 +1242,10 @@ namespace Imaging
 
                 var dist = Math.Sqrt(Math.Pow(calcPoint.X - point.X, 2) + Math.Pow(calcPoint.Y - point.Y, 2));
 
-                if (dist <= radius) lst.Add(calcPoint);
+                if (dist <= radius)
+                {
+                    lst.Add(calcPoint);
+                }
             }
 
             return lst;

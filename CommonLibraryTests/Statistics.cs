@@ -8,7 +8,7 @@
 
 using System;
 using System.Collections.Generic;
-using ExtendedSystemObjects;
+using Mathematics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CommonLibraryTests

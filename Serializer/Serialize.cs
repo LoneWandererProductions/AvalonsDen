@@ -37,7 +37,10 @@ namespace Serializer
             FileHandleCreate.CreateFolder(folder);
 
             //check if file is empty, if empty return
-            if (obj == null) throw new ArgumentException(SerialResources.ErrorSerializerEmpty);
+            if (obj == null)
+            {
+                throw new ArgumentException(SerialResources.ErrorSerializerEmpty);
+            }
 
             try
             {
@@ -85,7 +88,10 @@ namespace Serializer
             FileHandleCreate.CreateFolder(folder);
 
             //check if file is empty, if empty return
-            if (obj == null) throw new ArgumentException(SerialResources.ErrorSerializerEmpty);
+            if (obj == null)
+            {
+                throw new ArgumentException(SerialResources.ErrorSerializerEmpty);
+            }
 
             try
             {
@@ -131,7 +137,10 @@ namespace Serializer
             FileHandleCreate.CreateFolder(folder);
 
             //check if file is empty, if empty return
-            if (dct == null || dct.Count == 0) throw new ArgumentException(SerialResources.ErrorSerializerEmpty);
+            if (dct == null || dct.Count == 0)
+            {
+                throw new ArgumentException(SerialResources.ErrorSerializerEmpty);
+            }
 
             var myDictionary = new Dictionary<string, string>();
 
@@ -140,7 +149,10 @@ namespace Serializer
                 var itemValue = Handle(value);
                 var itemKey = Handle(key);
 
-                if (string.IsNullOrEmpty(itemValue) || string.IsNullOrEmpty(itemKey)) continue;
+                if (string.IsNullOrEmpty(itemValue) || string.IsNullOrEmpty(itemKey))
+                {
+                    continue;
+                }
 
                 myDictionary.Add(itemKey, itemValue);
             }
@@ -170,7 +182,10 @@ namespace Serializer
         private static void SerializeDictionary(Dictionary<string, string> dct, string path)
         {
             //check if file is empty, if empty return
-            if (dct == null || dct.Count == 0) throw new ArgumentException(SerialResources.ErrorSerializerEmpty);
+            if (dct == null || dct.Count == 0)
+            {
+                throw new ArgumentException(SerialResources.ErrorSerializerEmpty);
+            }
 
             var sw = new StringWriter(CultureInfo.InvariantCulture);
             try
@@ -214,7 +229,10 @@ namespace Serializer
             }
             finally
             {
-                if (true) sw.Dispose();
+                if (true)
+                {
+                    sw.Dispose();
+                }
             }
         }
     }

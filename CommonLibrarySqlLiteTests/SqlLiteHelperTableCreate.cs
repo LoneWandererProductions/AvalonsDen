@@ -249,14 +249,14 @@ namespace CommonLibrarySqlLiteTests
                 "Test failed Create: " + _target.LastErrors);
 
             //add Column with specific Name
-            var elementone = new TableColumns
+            var element = new TableColumns
             {
                 DataType = SqLiteDataTypes.Text, PrimaryKey = false, Unique = false, NotNull = false
             };
 
             var columns = new DictionaryTableColumns();
 
-            columns.DColumns.Add("Test_Header_one", elementone);
+            columns.DColumns.Add("Test_Header_one", element);
 
             var check = _target.CreateTable(TblNameFirst, columns);
             Assert.IsTrue(check, "Test failed create: " + _target.LastErrors);
@@ -296,7 +296,7 @@ namespace CommonLibrarySqlLiteTests
             columns.DColumns.Add(ScdHeader, elementone);
 
             var check = _target.CreateTable(TblNameFirst, columns);
-            Assert.IsFalse(check, "Test failed Unique Key catched: " + _target.LastErrors);
+            Assert.IsFalse(check, string.Concat("Test failed Unique Key caught: ", _target.LastErrors));
         }
 
         /// <summary>
@@ -312,51 +312,51 @@ namespace CommonLibrarySqlLiteTests
             //Check if file was created
             _target.CreateDatabase(ResourcesSqlLite.Root, DbNameFive, true);
 
-            var elementone = new TableColumns
+            var elementOne = new TableColumns
             {
                 DataType = SqLiteDataTypes.Text, PrimaryKey = false, Unique = false, NotNull = false
             };
 
-            var elementtwo = new TableColumns
+            var elementTwo = new TableColumns
             {
                 DataType = SqLiteDataTypes.Integer, PrimaryKey = true, Unique = true, NotNull = false
             };
 
-            var elementthree = new TableColumns
+            var elementThree = new TableColumns
             {
                 DataType = SqLiteDataTypes.Text, PrimaryKey = false, Unique = true, NotNull = true
             };
 
-            var elementfour = new TableColumns
+            var elementFour = new TableColumns
             {
                 DataType = SqLiteDataTypes.DateTime, PrimaryKey = false, Unique = false, NotNull = false
             };
 
-            var elementfive = new TableColumns
+            var elementFive = new TableColumns
             {
                 DataType = SqLiteDataTypes.Real, PrimaryKey = false, Unique = false, NotNull = false
             };
 
             var columns = new DictionaryTableColumns();
 
-            columns.DColumns.Add(FrstHeader, elementone);
-            columns.DColumns.Add(ScdHeader, elementtwo);
-            columns.DColumns.Add(ThrdHeader, elementthree);
-            columns.DColumns.Add(FrthHeader, elementfour);
-            columns.DColumns.Add(FfthHeader, elementfive);
+            columns.DColumns.Add(FrstHeader, elementOne);
+            columns.DColumns.Add(ScdHeader, elementTwo);
+            columns.DColumns.Add(ThrdHeader, elementThree);
+            columns.DColumns.Add(FrthHeader, elementFour);
+            columns.DColumns.Add(FfthHeader, elementFive);
 
             _target.CreateTable(TblNameFirst, columns);
 
             columns = new DictionaryTableColumns();
 
-            columns.DColumns.Add(FrstHeader, elementone);
-            columns.DColumns.Add(ScdHeader, elementtwo);
+            columns.DColumns.Add(FrstHeader, elementOne);
+            columns.DColumns.Add(ScdHeader, elementTwo);
 
             _target.CreateTable(TblNameSecond, columns);
 
             columns = new DictionaryTableColumns();
 
-            columns.DColumns.Add(FrstHeader, elementone);
+            columns.DColumns.Add(FrstHeader, elementOne);
 
             _target.CreateTable(TblNameThird, columns);
 
@@ -384,7 +384,7 @@ namespace CommonLibrarySqlLiteTests
             Assert.IsTrue(File.Exists(ResourcesSqlLite.PathCopyTable),
                 "Test failed Create " + _target.LastErrors);
 
-            var header = SharedHelperClass.CreateTableHeadersMultible();
+            var header = SharedHelperClass.CreateTableHeadersMultiple();
             //create the Table
             var check = _target.CreateTable(DbSource, header);
             Assert.IsTrue(check, "Test failed Create Table" + _target.LastErrors);
@@ -420,7 +420,7 @@ namespace CommonLibrarySqlLiteTests
             Assert.IsTrue(File.Exists(ResourcesSqlLite.PathCopyTableAdvanced),
                 "Test failed Create " + _target.LastErrors);
 
-            var header = SharedHelperClass.CreateTableHeadersMultible();
+            var header = SharedHelperClass.CreateTableHeadersMultiple();
             //create the Table
             var check = _target.CreateTable(DbSource, header);
             Assert.IsTrue(check, "Test failed Create Table" + _target.LastErrors);
@@ -451,12 +451,12 @@ namespace CommonLibrarySqlLiteTests
 
             //Select simple
             var set = _target.SimpleSelect(DbSource);
-            var rstl = new List<TableSet>(set.Row);
-            rstl.RemoveAt(set.Row.Count - 1);
+            var result = new List<TableSet>(set.Row);
+            result.RemoveAt(set.Row.Count - 1);
 
             Assert.AreEqual(8, set.Height, "Test failed Copy Table, wrong amount old: " + set.Height);
 
-            check = _target.CopyTable(DbSource, DbTarget, rstl);
+            check = _target.CopyTable(DbSource, DbTarget, result);
 
             Assert.IsTrue(check, "Test failed Copy Table" + _target.LastErrors);
 
