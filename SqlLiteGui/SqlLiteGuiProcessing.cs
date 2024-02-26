@@ -40,10 +40,7 @@ namespace SQLiteGui
         internal SqLiteGuiProcessing(DbInfo dbInfo)
         {
             _dbInfo = dbInfo;
-            if (_db != null)
-            {
-                _db.SendMessage += SendMessage;
-            }
+            if (_db != null) _db.SendMessage += SendMessage;
         }
 
         /// <summary>
@@ -76,10 +73,7 @@ namespace SQLiteGui
         internal static void OpenDatabase(string path)
         {
             //Clean Detail View
-            if (TableViewModel.Item != null)
-            {
-                TableViewModel.Item = null;
-            }
+            if (TableViewModel.Item != null) TableViewModel.Item = null;
 
             //Check if Path is Correct
             if (string.IsNullOrEmpty(path))
@@ -121,10 +115,7 @@ namespace SQLiteGui
         /// <returns>Success Status</returns>
         internal static bool DeleteItem()
         {
-            if (!GetWhereClause())
-            {
-                return false;
-            }
+            if (!GetWhereClause()) return false;
 
             //Remove selected Item
             var count = _db.DeleteRows(Register.TableAlias, _paramsClause.Where, _paramsClause.Value);
@@ -140,10 +131,7 @@ namespace SQLiteGui
         /// <param name="tablealias">Name of the Table</param>
         internal static void SelectTable(string tablealias)
         {
-            if (tablealias.Length == 0)
-            {
-                _dbInfo.SetData(SqLiteGuiResource.ErrorNoValidTableName);
-            }
+            if (tablealias.Length == 0) _dbInfo.SetData(SqLiteGuiResource.ErrorNoValidTableName);
 
             var data = _db.Primary_Key_list(tablealias);
             var uniqueIndex = string.Empty;
@@ -169,7 +157,6 @@ namespace SQLiteGui
             _dbInfo.SetData(SqLiteGuiResource.Header);
 
             foreach (var item in tableInfo.DColumns)
-            {
                 _dbInfo.SetData(string.Concat(
                     item.Key,
                     SqLiteGuiResource.Separator,
@@ -178,7 +165,6 @@ namespace SQLiteGui
                     item.Value.Unique,
                     SqLiteGuiResource.Separator,
                     item.Value.PrimaryKey));
-            }
 
             //Set Register with infos about current Table Selection
             Register.SelectedTable(tablealias, uniqueIndex);
@@ -211,10 +197,7 @@ namespace SQLiteGui
                 return false;
             }
 
-            if (!GetWhereClause())
-            {
-                return false;
-            }
+            if (!GetWhereClause()) return false;
 
             var data = _db.SimpleSelect(Register.TableAlias, _paramsClause.Where,
                 CompareOperator.Equal, _paramsClause.Value);
@@ -232,10 +215,7 @@ namespace SQLiteGui
             var inputwin = new InputUpdateWindow(item);
             _ = inputwin.ShowDialog();
 
-            if (InputUpdateWindow.TableRow == null)
-            {
-                return false;
-            }
+            if (InputUpdateWindow.TableRow == null) return false;
 
             var count = _db.UpdateTable(Register.TableAlias, CompareOperator.Equal, _paramsClause.Where,
                 _paramsClause.Value, InputUpdateWindow.TableRow.Row);
@@ -272,10 +252,7 @@ namespace SQLiteGui
         /// <returns>Success Status</returns>
         internal static bool TruncateTable()
         {
-            if (Register.TableAlias.Length != 0)
-            {
-                return _db.TruncateTable(Register.TableAlias);
-            }
+            if (Register.TableAlias.Length != 0) return _db.TruncateTable(Register.TableAlias);
 
             _dbInfo.SetData(SqLiteGuiResource.ErrorEmptySelect);
             return false;
@@ -287,10 +264,7 @@ namespace SQLiteGui
         /// <returns>Success Status</returns>
         internal static bool DropTable()
         {
-            if (Register.TableAlias.Length != 0)
-            {
-                return _db.DropTable(Register.TableAlias);
-            }
+            if (Register.TableAlias.Length != 0) return _db.DropTable(Register.TableAlias);
 
             _dbInfo.SetData(SqLiteGuiResource.ErrorEmptySelect);
             return false;
@@ -377,10 +351,7 @@ namespace SQLiteGui
 
             var slice = tableSet.Columns(SqLiteGuiResource.StartColumn);
 
-            for (var i = 0; i < lst.Count; i++)
-            {
-                lst[i].Value = slice[i];
-            }
+            for (var i = 0; i < lst.Count; i++) lst[i].Value = slice[i];
 
             return lst;
         }
@@ -409,10 +380,7 @@ namespace SQLiteGui
         /// <returns>if something went wrong</returns>
         private static bool GetWhereClause()
         {
-            if (!Register.IsDetailActive)
-            {
-                return false;
-            }
+            if (!Register.IsDetailActive) return false;
 
             if (!string.IsNullOrEmpty(Register.PrimaryKey))
             {
@@ -435,10 +403,7 @@ namespace SQLiteGui
 
             _ = inputwin.ShowDialog();
 
-            if (InputBinaryWindow.ParamsClause == null)
-            {
-                return false;
-            }
+            if (InputBinaryWindow.ParamsClause == null) return false;
 
             _paramsClause = InputBinaryWindow.ParamsClause;
             return true;

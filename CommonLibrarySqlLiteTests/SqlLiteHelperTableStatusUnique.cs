@@ -44,10 +44,7 @@ namespace CommonLibrarySqlLiteTests
             //add values
             var cache = _target.Pragma_index_list("TableStatusTestUnique");
 
-            foreach (var element in cache)
-            {
-                Debug.WriteLine(element);
-            }
+            foreach (var element in cache) Debug.WriteLine(element);
 
             Assert.AreEqual(2, cache.Count, "Test failed Unique Count " + _target.LastErrors);
             Assert.IsTrue(cache.Contains("Third"), "Test failed Unique Third " + _target.LastErrors);

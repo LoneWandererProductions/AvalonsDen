@@ -33,10 +33,7 @@ namespace Debugger
             var convert = string.Empty;
             var bld = new StringBuilder(convert);
 
-            foreach (var vector in serializeObject.Select(ConvertObjectToXml))
-            {
-                _ = bld.AppendLine(vector);
-            }
+            foreach (var vector in serializeObject.Select(ConvertObjectToXml)) _ = bld.AppendLine(vector);
 
             return bld.ToString();
         }

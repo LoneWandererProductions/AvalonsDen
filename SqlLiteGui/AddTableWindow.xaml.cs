@@ -187,10 +187,7 @@ namespace SQLiteGui
         /// <param name="e">Type of Event</param>
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
-            if (DataGridTbl.SelectedItem is not TableColumnsExtended selectedItem)
-            {
-                return;
-            }
+            if (DataGridTbl.SelectedItem is not TableColumnsExtended selectedItem) return;
 
             _ = TableElements.Remove(selectedItem);
         }

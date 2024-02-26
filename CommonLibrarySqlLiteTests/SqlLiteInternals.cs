@@ -106,10 +106,8 @@ namespace CommonLibrarySqlLiteTests
             var cache = Target.Pragma_TableInfo(TableThree);
 
             foreach (var item in cache.DColumns)
-            {
                 Debug.WriteLine(string.Concat(item.Key, " , ", item.Value.DataType, " , ", item.Value.Unique + " , ",
                     item.Value.PrimaryKey));
-            }
 
             Assert.AreEqual(false, cache.DColumns["First"].PrimaryKey,
                 "First Test not passed PrimaryKey: " + cache.DColumns["First"].PrimaryKey);
@@ -126,15 +124,9 @@ namespace CommonLibrarySqlLiteTests
 
             var data = Target.Pragma_index_list(TableThree);
 
-            if (data == null)
-            {
-                Assert.Fail("Pragma was empty");
-            }
+            if (data == null) Assert.Fail("Pragma was empty");
 
-            foreach (var item in data)
-            {
-                Debug.WriteLine(item);
-            }
+            foreach (var item in data) Debug.WriteLine(item);
 
             Assert.AreEqual(2, data.Count, TableThree + " Test not passed Unique Index: " + Target.LastErrors);
             Assert.AreEqual("Fourth", data[0], TableThree + "First Test not passed Unique Index: " + data[0]);

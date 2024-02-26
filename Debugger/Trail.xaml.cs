@@ -56,10 +56,7 @@ namespace Debugger
         /// <param name="e">The routed event arguments.</param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            if (!File.Exists(DebugRegister.DebugPath))
-            {
-                return;
-            }
+            if (!File.Exists(DebugRegister.DebugPath)) return;
 
             //load Config
             DebugRegister.ReadConfigFile();
@@ -98,10 +95,7 @@ namespace Debugger
         {
             _counter = ReadLines(DebugRegister.DebugPath).Count();
 
-            if (_index == _counter)
-            {
-                return;
-            }
+            if (_index == _counter) return;
 
             var diff = _counter - _index;
 
@@ -134,10 +128,7 @@ namespace Debugger
                     FileOptions.SequentialScan);
                 using var sr = new StreamReader(fs, Encoding.UTF8);
 
-                while (sr.ReadLine() is { } line)
-                {
-                    yield return line;
-                }
+                while (sr.ReadLine() is { } line) yield return line;
             }
         }
 
@@ -197,10 +188,7 @@ namespace Debugger
         /// <param name="e">The routed event arguments.</param>
         private void MenLoadA_Click(object sender, RoutedEventArgs e)
         {
-            if (!File.Exists(DebugRegister.DebugPath))
-            {
-                return;
-            }
+            if (!File.Exists(DebugRegister.DebugPath)) return;
 
             _dispatcherTimer.Stop();
             DebugProcessing.StopDebugging();

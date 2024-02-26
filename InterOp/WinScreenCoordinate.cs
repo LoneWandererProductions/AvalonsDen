@@ -31,10 +31,7 @@ namespace InterOp
         {
             get
             {
-                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-                {
-                    throw new PlatformNotSupportedException();
-                }
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) throw new PlatformNotSupportedException();
 
                 var w32Mouse = new Win32Points();
                 _ = Win32Api.GetPhysicalCursorPos(ref w32Mouse);

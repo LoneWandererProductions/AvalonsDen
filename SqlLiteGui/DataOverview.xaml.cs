@@ -52,10 +52,7 @@ namespace SQLiteGui
             Register.SelectionChanged(false, null);
 
             var tbi = TableData.SelectedItem as dynamic;
-            if (tbi == null)
-            {
-                return;
-            }
+            if (tbi == null) return;
 
             Register.SelectionChanged(true, tbi);
         }
@@ -69,10 +66,7 @@ namespace SQLiteGui
         {
             var check = SqLiteGuiProcessing.UpdateItem();
 
-            if (check)
-            {
-                RefreshTable?.Invoke(this, EventArgs.Empty);
-            }
+            if (check) RefreshTable?.Invoke(this, EventArgs.Empty);
         }
 
         /// <summary>
@@ -84,10 +78,7 @@ namespace SQLiteGui
         {
             var check = SqLiteGuiProcessing.DeleteItem();
 
-            if (check)
-            {
-                RefreshTable?.Invoke(this, EventArgs.Empty);
-            }
+            if (check) RefreshTable?.Invoke(this, EventArgs.Empty);
         }
 
         /// <summary>
@@ -99,10 +90,7 @@ namespace SQLiteGui
         {
             var check = SqLiteGuiProcessing.AddItem();
 
-            if (check)
-            {
-                RefreshTable?.Invoke(this, EventArgs.Empty);
-            }
+            if (check) RefreshTable?.Invoke(this, EventArgs.Empty);
         }
     }
 }

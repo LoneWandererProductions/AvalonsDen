@@ -154,13 +154,9 @@ namespace Mathematics
         public void UpCamera(double y = 0.05d)
         {
             if (CameraType)
-            {
                 Position += Up * y;
-            }
             else
-            {
                 Position.Y += y;
-            }
         }
 
         /// <summary>
@@ -171,13 +167,9 @@ namespace Mathematics
         public void DownCamera(double y = 0.05d)
         {
             if (CameraType)
-            {
                 Position -= Up * y;
-            }
             else
-            {
                 Position.Y -= y;
-            }
         }
 
         /// <summary>
@@ -187,13 +179,9 @@ namespace Mathematics
         public void LeftCamera(double x = 0.05d)
         {
             if (CameraType)
-            {
                 Position += Right * x;
-            }
             else
-            {
                 Position.X -= x;
-            }
         }
 
         /// <summary>
@@ -204,13 +192,9 @@ namespace Mathematics
         public void RightCamera(double x = 0.05d)
         {
             if (CameraType)
-            {
                 Position -= Right * x;
-            }
             else
-            {
                 Position.X += x;
-            }
         }
 
         /// <summary>
@@ -221,14 +205,10 @@ namespace Mathematics
         {
             //orbit
             if (CameraType)
-            {
                 Yaw -= value;
-            }
             //pointAt
             else
-            {
                 Yaw -= value;
-            }
         }
 
         /// <summary>
@@ -239,14 +219,10 @@ namespace Mathematics
         {
             //orbit
             if (CameraType)
-            {
                 Yaw += value;
-            }
             //pointAt
             else
-            {
                 Yaw += value;
-            }
         }
 
         /// <summary>
@@ -257,14 +233,10 @@ namespace Mathematics
         {
             //orbit
             if (CameraType)
-            {
                 Position += Forward * z;
-            }
             //pointAt
             else
-            {
                 Position += Forward * z;
-            }
         }
 
         /// <summary>
@@ -275,14 +247,10 @@ namespace Mathematics
         {
             //orbit
             if (CameraType)
-            {
                 Position -= Forward * z;
-            }
             //pointAt
             else
-            {
                 Position -= Forward * z;
-            }
         }
     }
 }

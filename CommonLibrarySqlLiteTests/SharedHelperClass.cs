@@ -25,10 +25,7 @@ namespace CommonLibrarySqlLiteTests
         /// <param name="fullPath">Full Path</param>
         internal static void CleanUp(string fullPath)
         {
-            if (File.Exists(fullPath))
-            {
-                File.Delete(fullPath);
-            }
+            if (File.Exists(fullPath)) File.Delete(fullPath);
         }
 
         /// <summary>
@@ -153,10 +150,7 @@ namespace CommonLibrarySqlLiteTests
             {
                 var tableSet = new TableSet();
 
-                for (var i = 0; i < 5; i++)
-                {
-                    tableSet.Row.Add(i.ToString());
-                }
+                for (var i = 0; i < 5; i++) tableSet.Row.Add(i.ToString());
 
                 columns.Add(tableSet);
             }
@@ -197,19 +191,13 @@ namespace CommonLibrarySqlLiteTests
         /// <returns>If Tables are equal or not</returns>
         internal static bool CompareTableMultipleSet(List<TableSet> tableOne, List<TableSet> tableTwo)
         {
-            if (tableOne.Count != tableTwo.Count)
-            {
-                return false; // Different number of items
-            }
+            if (tableOne.Count != tableTwo.Count) return false; // Different number of items
 
             for (var i = 0; i < tableOne.Count; i++)
             {
                 var one = tableOne[i];
                 var two = tableTwo[i];
-                if (!one.Row.SequenceEqual(two.Row))
-                {
-                    return false;
-                }
+                if (!one.Row.SequenceEqual(two.Row)) return false;
             }
 
             return true;
@@ -223,22 +211,13 @@ namespace CommonLibrarySqlLiteTests
         /// <returns>If Tables are equal or not</returns>
         internal static bool CheckPragmaTableInfo(DictionaryTableColumns pragma, DictionaryTableColumns headers)
         {
-            if (pragma.DColumns.Count != headers.DColumns.Count)
-            {
-                return false; // Different number of items
-            }
+            if (pragma.DColumns.Count != headers.DColumns.Count) return false; // Different number of items
 
             foreach (var res in pragma.DColumns)
             {
-                if (!headers.DColumns.TryGetValue(res.Key, out var head))
-                {
-                    return false; // key missing in b
-                }
+                if (!headers.DColumns.TryGetValue(res.Key, out var head)) return false; // key missing in b
 
-                if (!CompareValue(res.Value, head))
-                {
-                    return false; // value is different
-                }
+                if (!CompareValue(res.Value, head)) return false; // value is different
             }
 
             return true;
@@ -252,20 +231,11 @@ namespace CommonLibrarySqlLiteTests
         /// <returns>If Tables are equal or not</returns>
         private static bool CompareValue(TableColumns res, TableColumns head)
         {
-            if (res.DataType != head.DataType)
-            {
-                return false;
-            }
+            if (res.DataType != head.DataType) return false;
 
-            if (res.NotNull != head.NotNull)
-            {
-                return false;
-            }
+            if (res.NotNull != head.NotNull) return false;
 
-            if (res.PrimaryKey != head.PrimaryKey)
-            {
-                return false;
-            }
+            if (res.PrimaryKey != head.PrimaryKey) return false;
 
             return res.Unique == head.Unique;
         }

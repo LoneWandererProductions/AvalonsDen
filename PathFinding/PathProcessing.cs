@@ -27,17 +27,11 @@ namespace PathFinding
             var point = new MovePoint();
             var playerYColumn = 1;
 
-            if (newPoint.YColumn != 0)
-            {
-                playerYColumn = (newPoint.YColumn * 3) + 1;
-            }
+            if (newPoint.YColumn != 0) playerYColumn = newPoint.YColumn * 3 + 1;
 
             var playerXRow = 1;
 
-            if (newPoint.XRow != 0)
-            {
-                playerXRow = (newPoint.XRow * 3) + 1;
-            }
+            if (newPoint.XRow != 0) playerXRow = newPoint.XRow * 3 + 1;
 
             point.XRow = playerXRow;
             point.YColumn = playerYColumn;
@@ -60,10 +54,7 @@ namespace PathFinding
                 : length;
 
             var coordinateKeys = new List<int>();
-            for (var i = 0; i < x; i++)
-            {
-                coordinateKeys.Add((i * 3) + 1);
-            }
+            for (var i = 0; i < x; i++) coordinateKeys.Add(i * 3 + 1);
 
             return coordinateKeys;
         }
@@ -79,20 +70,16 @@ namespace PathFinding
             var grid = new PathNode[borderMap.GetUpperBound(0), borderMap.GetUpperBound(1)];
 
             for (var x = 0; x < borderMap.GetUpperBound(0); x++)
-            {
-                for (var y = 0; y < borderMap.GetUpperBound(1); y++)
+            for (var y = 0; y < borderMap.GetUpperBound(1); y++)
+                grid[x, y] = new PathNode
                 {
-                    grid[x, y] = new PathNode
-                    {
-                        Parent = null,
-                        XNodeRow = x,
-                        YNodeColumn = y,
-                        Cost = 0,
-                        Heuristic = 0,
-                        IsWall = borderMap[x, y] != 0
-                    };
-                }
-            }
+                    Parent = null,
+                    XNodeRow = x,
+                    YNodeColumn = y,
+                    Cost = 0,
+                    Heuristic = 0,
+                    IsWall = borderMap[x, y] != 0
+                };
 
             return grid;
         }
@@ -127,7 +114,7 @@ namespace PathFinding
         /// <returns>Fitting id of the Coordinate</returns>
         private static int CalculateId(int xRow, int yColumn, int length)
         {
-            return (yColumn * length) + xRow;
+            return yColumn * length + xRow;
         }
 
         /// <summary>

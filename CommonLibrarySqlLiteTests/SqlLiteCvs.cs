@@ -88,10 +88,7 @@ namespace CommonLibrarySqlLiteTests
             Trace.WriteLine("First:");
             foreach (var item in data.Row)
             {
-                foreach (var element in item.Row)
-                {
-                    Trace.Write(string.Concat(element, ","));
-                }
+                foreach (var element in item.Row) Trace.Write(string.Concat(element, ","));
 
                 Trace.WriteLine(Environment.NewLine);
             }
@@ -103,10 +100,7 @@ namespace CommonLibrarySqlLiteTests
             Trace.WriteLine("Second:");
             foreach (var item in result)
             {
-                foreach (var element in item)
-                {
-                    Trace.Write(string.Concat(element, ","));
-                }
+                foreach (var element in item) Trace.Write(string.Concat(element, ","));
 
                 Trace.WriteLine(Environment.NewLine);
             }

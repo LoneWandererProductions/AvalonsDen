@@ -642,10 +642,7 @@ namespace SQLiteHelper
             bool headers)
         {
             var check = _execute.CreateTable(tableAlias, tableHeaders);
-            if (!check)
-            {
-                return false;
-            }
+            if (!check) return false;
 
             var table = SqLiteHelper.LoadCsv(csv, headers);
             return _execute.InsertMultipleRow(tableAlias, table, true);
@@ -666,10 +663,7 @@ namespace SQLiteHelper
             var table = _execute.SimpleSelect(tableAlias);
             var info = _execute.PragmaTable_Info(tableAlias);
 
-            if (headers)
-            {
-                return SqLiteHelper.ExportCsv(table, info);
-            }
+            if (headers) return SqLiteHelper.ExportCsv(table, info);
 
             return SqLiteHelper.ExportCsv(table);
         }

@@ -216,20 +216,11 @@ namespace CommonLibrarySqlLiteTests
             Debug.WriteLine("2: " + lst[2]);
             Debug.WriteLine("3: " + lst[3]);
 
-            if (lst[0] != "1")
-            {
-                return false;
-            }
+            if (lst[0] != "1") return false;
 
-            if (lst[1] != "2")
-            {
-                return false;
-            }
+            if (lst[1] != "2") return false;
 
-            if (lst[2] != "3")
-            {
-                return false;
-            }
+            if (lst[2] != "3") return false;
 
             return lst[3] == "4";
         }
@@ -241,28 +232,16 @@ namespace CommonLibrarySqlLiteTests
         /// <returns>Status</returns>
         private static bool CheckResultsConvertObject(DictionaryTableColumns table)
         {
-            if (table.DColumns["First"].DataType != SqLiteDataTypes.Text)
-            {
-                return false;
-            }
+            if (table.DColumns["First"].DataType != SqLiteDataTypes.Text) return false;
 
             Debug.WriteLine("First");
-            if (table.DColumns["Second"].DataType != SqLiteDataTypes.Integer)
-            {
-                return false;
-            }
+            if (table.DColumns["Second"].DataType != SqLiteDataTypes.Integer) return false;
 
             Debug.WriteLine("Second");
-            if (table.DColumns["Third"].DataType != SqLiteDataTypes.DateTime)
-            {
-                return false;
-            }
+            if (table.DColumns["Third"].DataType != SqLiteDataTypes.DateTime) return false;
 
             Debug.WriteLine("Third");
-            if (table.DColumns["Fourth"].DataType != SqLiteDataTypes.Real)
-            {
-                return false;
-            }
+            if (table.DColumns["Fourth"].DataType != SqLiteDataTypes.Real) return false;
 
             Debug.WriteLine("Fourth");
             return table.DColumns["Fiveth"].DataType == SqLiteDataTypes.Decimal;
@@ -282,25 +261,13 @@ namespace CommonLibrarySqlLiteTests
             Debug.WriteLine("3: " + db[3] + " " + data[3]);
             Debug.WriteLine("4: " + db[4] + " " + data[4]);
 
-            if (db[0] != data[0])
-            {
-                return false;
-            }
+            if (db[0] != data[0]) return false;
 
-            if (db[1] != data[1])
-            {
-                return false;
-            }
+            if (db[1] != data[1]) return false;
 
-            if (db[2] != data[2])
-            {
-                return false;
-            }
+            if (db[2] != data[2]) return false;
 
-            if (db[3] != data[3])
-            {
-                return false;
-            }
+            if (db[3] != data[3]) return false;
 
             return db[4] == data[4];
         }

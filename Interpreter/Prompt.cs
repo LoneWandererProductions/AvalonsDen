@@ -176,10 +176,7 @@ namespace Interpreter
         /// <param name="e">Type</param>
         private void SendCommand(object sender, OutCommand e)
         {
-            if (_count == MaxLines)
-            {
-                Log.Remove(Log.Keys.First());
-            }
+            if (_count == MaxLines) Log.Remove(Log.Keys.First());
 
             _count++;
             Log.Add(_count, e.Command.ToString());
@@ -194,10 +191,7 @@ namespace Interpreter
         /// <param name="e">Type</param>
         private void SendLog(object sender, string e)
         {
-            if (_count == MaxLines)
-            {
-                Log.Remove(Log.Keys.First());
-            }
+            if (_count == MaxLines) Log.Remove(Log.Keys.First());
 
             _count++;
             Log.Add(_count, e);
@@ -214,10 +208,7 @@ namespace Interpreter
         /// </param>
         private void Dispose(bool disposing)
         {
-            if (Disposed)
-            {
-                return;
-            }
+            if (Disposed) return;
 
             if (disposing)
             {
@@ -226,10 +217,7 @@ namespace Interpreter
                 CollectedSpaces = null;
                 Log = null;
 
-                if (_prompt?.IsActive ?? false)
-                {
-                    _prompt.Close();
-                }
+                if (_prompt?.IsActive ?? false) _prompt.Close();
             }
 
             Disposed = true;
