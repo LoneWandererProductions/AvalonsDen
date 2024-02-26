@@ -37,31 +37,31 @@ namespace CommonControls
         public delegate void ItemRemove(DataItem item);
 
         /// <summary>
-        ///     The data collection (readonly). Value: DependencyProperty.Register DataCollection
+        ///     The data collection (readonly).
         /// </summary>
-        public static DependencyProperty DataCollection =
+        public static readonly DependencyProperty DataCollectionProperty =
             DependencyProperty.Register(nameof(DataCollection), typeof(List<DataItem>), typeof(DataList), null);
 
         /// <summary>
         ///     The list title Dependency Property
         /// </summary>
-        public static readonly DependencyProperty ListTitle = DependencyProperty.Register(
-            nameof(Title),
+        public static readonly DependencyProperty ListTitleProperty = DependencyProperty.Register(
+            nameof(ListTitle),
             typeof(string),
             typeof(DataList), null);
 
         /// <summary>
         ///     The unique elements
         /// </summary>
-        public static readonly DependencyProperty UniqueElements = DependencyProperty.Register(
-            nameof(Unique),
+        public static readonly DependencyProperty UniqueElementsProperty = DependencyProperty.Register(
+            nameof(UniqueElements),
             typeof(bool),
             typeof(DataList), null);
 
         /// <summary>
         ///     The unique elements
         /// </summary>
-        public static readonly DependencyProperty SelectedItem = DependencyProperty.Register(
+        public static readonly DependencyProperty SelectedItemProperty = DependencyProperty.Register(
             nameof(SelectedItem),
             typeof(DataItem),
             typeof(DataList), null);
@@ -69,7 +69,7 @@ namespace CommonControls
         /// <summary>
         ///     The selected items
         /// </summary>
-        public static DependencyProperty SelectedItems =
+        public static readonly DependencyProperty SelectedItemsProperty =
             DependencyProperty.Register(nameof(SelectedItems), typeof(List<DataItem>), typeof(DataList), null);
 
         /// <summary>
@@ -97,10 +97,10 @@ namespace CommonControls
         /// <summary>
         ///     Gets or sets the title.
         /// </summary>
-        public string Title
+        public string ListTitle
         {
-            get => (string)GetValue(ListTitle);
-            set => SetValue(ListTitle, value);
+            get => (string)GetValue(ListTitleProperty);
+            set => SetValue(ListTitleProperty, value);
         }
 
         /// <summary>
@@ -109,10 +109,10 @@ namespace CommonControls
         /// <value>
         ///     <c>true</c> if unique; otherwise, <c>false</c>.
         /// </value>
-        public bool Unique
+        public bool UniqueElements
         {
-            get => (bool)GetValue(UniqueElements);
-            set => SetValue(UniqueElements, value);
+            get => (bool)GetValue(UniqueElementsProperty);
+            set => SetValue(UniqueElementsProperty, value);
         }
 
         /// <summary>
@@ -121,10 +121,10 @@ namespace CommonControls
         /// <value>
         ///     The selection.
         /// </value>
-        public DataItem Selection
+        public DataItem SelectedItem
         {
-            get => (DataItem)GetValue(SelectedItem);
-            set => SetValue(SelectedItem, value);
+            get => (DataItem)GetValue(SelectedItemProperty);
+            set => SetValue(SelectedItemProperty, value);
         }
 
         /// <summary>
@@ -133,19 +133,19 @@ namespace CommonControls
         /// <value>
         ///     The selections.
         /// </value>
-        public List<DataItem> Selections
+        public List<DataItem> SelectedItems
         {
-            get => (List<DataItem>)GetValue(SelectedItems);
-            set => SetValue(SelectedItems, value);
+            get => (List<DataItem>)GetValue(SelectedItemsProperty);
+            set => SetValue(SelectedItemsProperty, value);
         }
 
         /// <summary>
         ///     Gets or sets the collection.
         /// </summary>
-        public List<DataItem> Collection
+        public List<DataItem> DataCollection
         {
-            private get { return (List<DataItem>)GetValue(DataCollection); }
-            set { SetValue(DataCollection, value); }
+            private get { return (List<DataItem>)GetValue(DataCollectionProperty); }
+            set { SetValue(DataCollectionProperty, value); }
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace CommonControls
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            _view = new DataListView(Collection, this, Unique, List);
+            _view = new DataListView(DataCollection, this, UniqueElements, List);
             DataContext = _view;
         }
 

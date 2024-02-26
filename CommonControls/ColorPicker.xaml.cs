@@ -33,21 +33,21 @@ namespace CommonControls
         /// <summary>
         ///     The h
         /// </summary>
-        public static readonly DependencyProperty H = DependencyProperty.Register(nameof(H),
+        public static readonly DependencyProperty HProperty = DependencyProperty.Register(nameof(H),
             typeof(string),
             typeof(ColorPicker), null);
 
         /// <summary>
         ///     The s
         /// </summary>
-        public static readonly DependencyProperty S = DependencyProperty.Register(nameof(S),
+        public static readonly DependencyProperty SProperty = DependencyProperty.Register(nameof(S),
             typeof(string),
             typeof(ColorPicker), null);
 
         /// <summary>
         ///     The v
         /// </summary>
-        public static readonly DependencyProperty V = DependencyProperty.Register(nameof(V),
+        public static readonly DependencyProperty VProperty = DependencyProperty.Register(nameof(V),
             typeof(string),
             typeof(ColorPicker), null);
 
@@ -153,7 +153,10 @@ namespace CommonControls
             get => _hue;
             set
             {
-                if (_hue.IsEqualTo(value, 10) || value * 180 / Math.PI is > 360 or < 0) return;
+                if (_hue.IsEqualTo(value, 10) || value * 180 / Math.PI is > 360 or < 0)
+                {
+                    return;
+                }
 
                 ColorPickerRegister.ColorChanged = true;
 
@@ -174,7 +177,10 @@ namespace CommonControls
             get => _sat;
             set
             {
-                if (_sat.IsEqualTo(value, 10) || value is > 1 or < 0) return;
+                if (_sat.IsEqualTo(value, 10) || value is > 1 or < 0)
+                {
+                    return;
+                }
 
                 ColorPickerRegister.ColorChanged = true;
 
@@ -195,7 +201,10 @@ namespace CommonControls
             get => _val;
             set
             {
-                if (_val.IsEqualTo(value, 10) || value is > 1 or < 0) return;
+                if (_val.IsEqualTo(value, 10) || value is > 1 or < 0)
+                {
+                    return;
+                }
 
                 ColorPickerRegister.ColorChanged = true;
 
@@ -216,7 +225,10 @@ namespace CommonControls
             get => _r;
             set
             {
-                if (_r == value || value is > 255 or < 0) return;
+                if (_r == value || value is > 255 or < 0)
+                {
+                    return;
+                }
 
                 ColorPickerRegister.ColorChanged = true;
 
@@ -237,7 +249,10 @@ namespace CommonControls
             get => _g;
             set
             {
-                if (_g == value || value is > 255 or < 0) return;
+                if (_g == value || value is > 255 or < 0)
+                {
+                    return;
+                }
 
                 ColorPickerRegister.ColorChanged = true;
 
@@ -258,7 +273,10 @@ namespace CommonControls
             get => _b;
             set
             {
-                if (_b == value || value is > 255 or < 0) return;
+                if (_b == value || value is > 255 or < 0)
+                {
+                    return;
+                }
 
                 ColorPickerRegister.ColorChanged = true;
 
@@ -278,7 +296,10 @@ namespace CommonControls
             get => _alpha;
             set
             {
-                if (_alpha == value || value is > 255 or < 0) return;
+                if (_alpha == value || value is > 255 or < 0)
+                {
+                    return;
+                }
 
                 ColorPickerRegister.ColorChanged = true;
 
@@ -306,7 +327,10 @@ namespace CommonControls
             get => _hex;
             set
             {
-                if (_hex == value) return;
+                if (_hex == value)
+                {
+                    return;
+                }
 
                 ColorPickerRegister.ColorChanged = true;
 
@@ -321,10 +345,10 @@ namespace CommonControls
         /// <value>
         ///     The Dependency hue.
         /// </value>
-        public double DepHue
+        public double H
         {
-            get => (double)GetValue(H);
-            set => SetValue(H, value);
+            get => (double)GetValue(HProperty);
+            set => SetValue(HProperty, value);
         }
 
         /// <summary>
@@ -333,10 +357,10 @@ namespace CommonControls
         /// <value>
         ///     The Dependency saturation.
         /// </value>
-        public double DepSat
+        public double S
         {
-            get => (double)GetValue(S);
-            set => SetValue(S, value);
+            get => (double)GetValue(SProperty);
+            set => SetValue(SProperty, value);
         }
 
         /// <summary>
@@ -345,10 +369,10 @@ namespace CommonControls
         /// <value>
         ///     The Dependency value.
         /// </value>
-        public double DepVal
+        public double V
         {
-            get => (double)GetValue(V);
-            set => SetValue(V, value);
+            get => (double)GetValue(VProperty);
+            set => SetValue(VProperty, value);
         }
 
         /// <inheritdoc />
@@ -436,7 +460,10 @@ namespace CommonControls
 
             _ = CanvasPreview.Children.Add(rectangle);
 
-            if (ColorPickerRegister.ColorChanged) OnColorChanged();
+            if (ColorPickerRegister.ColorChanged)
+            {
+                OnColorChanged();
+            }
         }
 
         /// <summary>

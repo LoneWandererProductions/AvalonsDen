@@ -10,23 +10,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AvalonRuntime\AvalonRuntime.csproj" />
-    <ProjectReference Include="..\CommonControls\CommonControls.csproj" />
     <ProjectReference Include="..\Debugger\Debugger.csproj" />
+    <ProjectReference Include="..\Imaging\Imaging.csproj" />
     <ProjectReference Include="..\InterOp\InterOp.csproj" />
     <ProjectReference Include="..\Resources\Resources.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Aurora.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Update="Aurora.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
 
 </Project>

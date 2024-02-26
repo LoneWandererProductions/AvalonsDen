@@ -138,7 +138,7 @@
                                  HorizontalAlignment="Stretch"
                                  Grid.Row="1"
                                  VerticalAlignment="Stretch"
-                                 Title="List of Characters"
+                                 ListTitle="List of Characters"
                                  Grid.RowSpan="17" />
         <local:CharStat x:Name="CtrlStats"
                         Grid.Column="7"

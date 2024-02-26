@@ -32,7 +32,7 @@ namespace Chapter
         {
             InitializeComponent();
             _handle = new SaveGameHandle();
-            ListBoxSaves.Collection = _handle.GetSaveFiles();
+            ListBoxSaves.DataCollection = _handle.GetSaveFiles();
         }
 
         /// <summary>

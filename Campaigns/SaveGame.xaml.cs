@@ -42,7 +42,7 @@ namespace Campaigns
         /// <param name="e">The routed event arguments.</param>
         private void SaveGame_Loaded(object sender, RoutedEventArgs e)
         {
-            ListBoxSave.Collection = SaveHandle.GetSaveFiles();
+            ListBoxSave.DataCollection = SaveHandle.GetSaveFiles();
         }
 
         /// <summary>

@@ -93,6 +93,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mathematics", "Mathematics\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imaging", "Imaging\Imaging.csproj", "{04BE09AE-1881-42B9-95A1-A2D954E8D9C6}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solaris", "Solaris\Solaris.csproj", "{2B65133C-F557-4874-849B-05DDC8063BB3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonLibrarySqlLiteTests", "CommonLibrarySqlLiteTests\CommonLibrarySqlLiteTests.csproj", "{2FB2A198-F0A3-40A6-9972-2A5C37D3C7C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -279,6 +283,14 @@ Global
 		{04BE09AE-1881-42B9-95A1-A2D954E8D9C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04BE09AE-1881-42B9-95A1-A2D954E8D9C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04BE09AE-1881-42B9-95A1-A2D954E8D9C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B65133C-F557-4874-849B-05DDC8063BB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B65133C-F557-4874-849B-05DDC8063BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B65133C-F557-4874-849B-05DDC8063BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B65133C-F557-4874-849B-05DDC8063BB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FB2A198-F0A3-40A6-9972-2A5C37D3C7C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FB2A198-F0A3-40A6-9972-2A5C37D3C7C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FB2A198-F0A3-40A6-9972-2A5C37D3C7C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FB2A198-F0A3-40A6-9972-2A5C37D3C7C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

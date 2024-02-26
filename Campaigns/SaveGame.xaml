@@ -30,7 +30,7 @@
                                  Grid.Column="0"
                                  HorizontalContentAlignment="Stretch"
                                  VerticalAlignment="Stretch"
-                                 Title="SaveGame" />
+                                 ListTitle="SaveGame" />
         <Button Content="Delete" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top" Grid.Column="1"
                 Click="ButtonDelete_Click" />
         <TextBox x:Name="TextBoxAddSave" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="0" TextWrapping="Wrap"

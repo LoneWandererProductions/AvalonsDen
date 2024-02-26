@@ -82,7 +82,7 @@ namespace Editors
                 One.ThumbHeight = 1;
             else
                 One.ThumbHeight = fract.Exponent + fract.Numerator;
-            One.ThumbLength = 2;
+            One.ThumbWidth = 2;
             One.ItemsSource = tileOne;
 
             fract = new ExtendedMath.Fraction(tileTwo.Count, 2);
@@ -92,7 +92,7 @@ namespace Editors
                 Two.ThumbHeight = 1;
             else
                 Two.ThumbHeight = fract.Exponent + fract.Numerator;
-            Two.ThumbLength = 2;
+            Two.ThumbWidth = 2;
             Two.ItemsSource = tileTwo;
 
             fract = new ExtendedMath.Fraction(tileThree.Count, 2);
@@ -102,7 +102,7 @@ namespace Editors
                 Three.ThumbHeight = 1;
             else
                 Three.ThumbHeight = fract.Exponent + fract.Numerator;
-            Three.ThumbLength = 2;
+            Three.ThumbWidth = 2;
             Three.ItemsSource = tileThree;
         }
 

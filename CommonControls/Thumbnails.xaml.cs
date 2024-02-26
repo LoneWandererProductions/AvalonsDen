@@ -51,29 +51,32 @@ namespace CommonControls
         /// <summary>
         ///     The Thumb Height (in lines)
         /// </summary>
-        public static readonly DependencyProperty DepThumbHeight = DependencyProperty.Register(nameof(DepThumbHeight),
+        public static readonly DependencyProperty DependencyThumbHeight = DependencyProperty.Register(
+            nameof(DependencyThumbHeight),
             typeof(int),
             typeof(Thumbnails), null);
 
         /// <summary>
         ///     The Thumb Length (in lines)
         /// </summary>
-        public static readonly DependencyProperty DepThumbLength = DependencyProperty.Register(nameof(DepThumbLength),
+        public static readonly DependencyProperty DependencyThumbWidth = DependencyProperty.Register(
+            nameof(DependencyThumbWidth),
             typeof(int),
             typeof(Thumbnails), null);
 
         /// <summary>
         ///     The Thumb Cell Size
         /// </summary>
-        public static readonly DependencyProperty DepThumbCellSize = DependencyProperty.Register(
-            nameof(DepThumbCellSize),
+        public static readonly DependencyProperty DependencyThumbCellSize = DependencyProperty.Register(
+            nameof(DependencyThumbCellSize),
             typeof(int),
             typeof(Thumbnails), null);
 
         /// <summary>
         ///     The Thumb Cell Size
         /// </summary>
-        public static readonly DependencyProperty DepThumbGrid = DependencyProperty.Register(nameof(DepThumbGrid),
+        public static readonly DependencyProperty DependencyThumbGrid = DependencyProperty.Register(
+            nameof(DependencyThumbGrid),
             typeof(bool),
             typeof(Thumbnails), null);
 
@@ -81,6 +84,13 @@ namespace CommonControls
         ///     The Thumb Cell Size
         /// </summary>
         public static readonly DependencyProperty SelectionBox = DependencyProperty.Register(nameof(SelectionBox),
+            typeof(bool),
+            typeof(Thumbnails), null);
+
+        /// <summary>
+        ///     The Thumb Cell Size
+        /// </summary>
+        public static readonly DependencyProperty IsSelected = DependencyProperty.Register(nameof(IsSelected),
             typeof(bool),
             typeof(Thumbnails), null);
 
@@ -95,6 +105,16 @@ namespace CommonControls
         ///     The refresh
         /// </summary>
         private static bool _refresh = true;
+
+        /// <summary>
+        ///     The original height
+        /// </summary>
+        private int _originalHeight;
+
+        /// <summary>
+        ///     The original width
+        /// </summary>
+        private int _originalWidth;
 
         /// <summary>
         ///     The selection
@@ -118,8 +138,8 @@ namespace CommonControls
         /// </value>
         public int ThumbHeight
         {
-            get => (int)GetValue(DepThumbHeight);
-            set => SetValue(DepThumbHeight, value);
+            get => (int)GetValue(DependencyThumbHeight);
+            set => SetValue(DependencyThumbHeight, value);
         }
 
         /// <summary>
@@ -128,10 +148,10 @@ namespace CommonControls
         /// <value>
         ///     The length.
         /// </value>
-        public int ThumbLength
+        public int ThumbWidth
         {
-            get => (int)GetValue(DepThumbLength);
-            set => SetValue(DepThumbLength, value);
+            get => (int)GetValue(DependencyThumbWidth);
+            set => SetValue(DependencyThumbWidth, value);
         }
 
         /// <summary>
@@ -142,8 +162,8 @@ namespace CommonControls
         /// </value>
         public int ThumbCellSize
         {
-            get => (int)GetValue(DepThumbCellSize);
-            set => SetValue(DepThumbCellSize, value);
+            get => (int)GetValue(DependencyThumbCellSize);
+            set => SetValue(DependencyThumbCellSize, value);
         }
 
         /// <summary>
@@ -155,8 +175,8 @@ namespace CommonControls
         public bool ThumbGrid
 
         {
-            get => (bool)GetValue(DepThumbGrid);
-            set => SetValue(DepThumbGrid, value);
+            get => (bool)GetValue(DependencyThumbGrid);
+            set => SetValue(DependencyThumbGrid, value);
         }
 
         /// <summary>
@@ -170,6 +190,19 @@ namespace CommonControls
         {
             get => (bool)GetValue(SelectionBox);
             set => SetValue(SelectionBox, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets a value indicating whether this instance is CheckBox selected.
+        /// </summary>
+        /// <value>
+        ///     <c>true</c> if this instance is CheckBox selected; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsCheckBoxSelected
+
+        {
+            get => (bool)GetValue(IsSelected);
+            set => SetValue(IsSelected, value);
         }
 
         /// <summary>
@@ -236,7 +269,10 @@ namespace CommonControls
         {
             var control = sender as Thumbnails;
             // add an Can Execute
-            if (!_refresh) return;
+            if (!_refresh)
+            {
+                return;
+            }
 
             control?.OnItemsSourceChanged();
         }
@@ -249,11 +285,17 @@ namespace CommonControls
         {
             _refresh = false;
 
-            if (!ItemsSource.ContainsKey(id)) return;
+            if (!ItemsSource.ContainsKey(id))
+            {
+                return;
+            }
 
             var image = ImageDct[string.Concat(ComCtlResources.ImageAdd, id)];
 
-            if (image != null) image.Source = null;
+            if (image != null)
+            {
+                image.Source = null;
+            }
 
             _ = ItemsSource.Remove(id);
 
@@ -265,8 +307,11 @@ namespace CommonControls
         /// </summary>
         private void OnItemsSourceChanged()
         {
-            ThumbLength = 0;
+            ThumbWidth = _originalWidth;
+            ThumbHeight = _originalHeight;
+
             LoadImages();
+
             //All Images Loaded
             ImageLoaded?.Invoke();
         }
@@ -278,6 +323,9 @@ namespace CommonControls
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+            _originalWidth = ThumbWidth;
+            _originalHeight = ThumbHeight;
+
             LoadImages();
         }
 
@@ -292,52 +340,68 @@ namespace CommonControls
                 return;
             }
 
+            var timer = new Stopwatch();
+            timer.Start();
+
             //Initiate all Values
             ExtendedGrid.CellSize = ThumbCellSize;
             var pics = new Dictionary<int, string>(ItemsSource);
+
             Keys = new Dictionary<string, int>(pics.Count);
             ImageDct = new Dictionary<string, Image>(pics.Count);
             Selection = new List<int>();
 
-            if (SelectBox) ChkBox = new Dictionary<int, CheckBox>(pics.Count);
+            if (SelectBox)
+            {
+                ChkBox = new Dictionary<int, CheckBox>(pics.Count);
+            }
 
             //Handle some special cases
-            if (ThumbCellSize == 0) ThumbCellSize = 100;
+            if (ThumbCellSize == 0)
+            {
+                ThumbCellSize = 100;
+            }
 
-            if (ThumbHeight == 0) ThumbHeight = 1;
+            if (ThumbHeight == 0 && ThumbWidth == 0)
+            {
+                ThumbHeight = 1;
+            }
 
             //here we are especial clever, if we add the Height in the Designer we can generate a custom Length
             //catch on reload
-            if (ThumbHeight * ThumbLength < pics.Count)
+            if (ThumbHeight * ThumbWidth < pics.Count)
             {
-                if (pics.Count == 1)
+                if (ThumbWidth == 1)
                 {
-                    ThumbLength = 1;
+                    ThumbHeight = pics.Count;
                 }
-                else
+
+                if (ThumbHeight == 1)
+                {
+                    ThumbWidth = pics.Count;
+                }
+
+                if (ThumbHeight != 1 && ThumbWidth != 1 && pics.Count > 1)
                 {
                     var fraction = new ExtendedMath.Fraction(pics.Count, ThumbHeight);
-                    ThumbLength = (int)Math.Ceiling(fraction.Decimal);
+                    ThumbWidth = (int)Math.Ceiling(fraction.Decimal);
                 }
             }
 
-            var exGrid = ExtendedGrid.ExtendGrid(ThumbLength, ThumbHeight, ThumbGrid);
+            var exGrid = ExtendedGrid.ExtendGrid(ThumbWidth, ThumbHeight, ThumbGrid);
             Thb.Children.Clear();
             _ = Thb.Children.Add(exGrid);
 
             for (var y = 0; y < ThumbHeight; y++)
-            for (var x = 0; x < ThumbLength; x++)
+            for (var x = 0; x < ThumbWidth; x++)
             {
                 //everything empty? well bail out, if not well we have work
-                if (pics.Count == 0) continue;
+                if (pics.Count == 0)
+                {
+                    continue;
+                }
 
                 var (key, name) = pics.First();
-
-                //Add Canvas to Grid
-                var myCanvas = new Canvas();
-                Grid.SetRow(myCanvas, y);
-                Grid.SetColumn(myCanvas, x);
-                _ = exGrid.Children.Add(myCanvas);
 
                 //Create new Image with Click Handler
                 var images = new Image();
@@ -346,22 +410,40 @@ namespace CommonControls
                 Keys.Add(images.Name, key);
                 ImageDct.Add(images.Name, images);
                 images.MouseDown += ImageClick_MouseDown;
-                if (SelectBox) images.MouseRightButtonDown += ImageClick_MouseRightButtonDown;
 
                 //Add Image to Canvas
-                _ = myCanvas.Children.Add(images);
+                Grid.SetRow(images, y);
+                Grid.SetColumn(images, x);
+                _ = exGrid.Children.Add(images);
 
                 //add an overlay here to get a selection frame
                 if (SelectBox)
                 {
-                    var checkbox = new CheckBox();
+                    images.MouseRightButtonDown += ImageClick_MouseRightButtonDown;
+
+                    var checkbox = new CheckBox
+                    {
+                        Height = 23,
+                        Width = 23,
+                        VerticalAlignment = VerticalAlignment.Top,
+                        HorizontalAlignment = HorizontalAlignment.Left,
+                        IsChecked = IsCheckBoxSelected
+                    };
+
+                    //add to our List of selected Items
+                    if (IsCheckBoxSelected)
+                    {
+                        Selection.Add(key);
+                    }
+
                     checkbox.Checked += CheckBox_Checked;
                     checkbox.Unchecked += CheckBox_Unchecked;
                     ChkBox.Add(key, checkbox);
 
                     checkbox.Name = string.Concat(ComCtlResources.ImageAdd, key);
-                    //Add checkbox to Canvas
-                    _ = myCanvas.Children.Add(checkbox);
+                    Grid.SetRow(checkbox, y);
+                    Grid.SetColumn(checkbox, x);
+                    _ = exGrid.Children.Add(checkbox);
                 }
 
                 _ = pics.Reduce();
@@ -389,7 +471,10 @@ namespace CommonControls
                 }
 
                 //handle error gracefully
-                if (myBitmapCell == null) continue;
+                if (myBitmapCell == null)
+                {
+                    continue;
+                }
 
                 images.ToolTip = name;
 
@@ -399,6 +484,10 @@ namespace CommonControls
                 _ = images.Dispatcher?.BeginInvoke(DispatcherPriority.Loaded,
                     (ThreadStart)(() => images.Source = myBitmapCell));
             }
+
+            timer.Stop();
+
+            Trace.WriteLine("End: " + timer.Elapsed);
         }
 
         /// <summary>
@@ -409,9 +498,15 @@ namespace CommonControls
         private void ImageClick_MouseDown(object sender, MouseButtonEventArgs e)
         {
             //get the button that was clicked
-            if (sender is not Image clickedButton) return;
+            if (sender is not Image clickedButton)
+            {
+                return;
+            }
 
-            if (!Keys.ContainsKey(clickedButton.Name)) return;
+            if (!Keys.ContainsKey(clickedButton.Name))
+            {
+                return;
+            }
 
             var id = Keys[clickedButton.Name];
 
@@ -428,9 +523,15 @@ namespace CommonControls
         private void ImageClick_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
             //get the button that was clicked
-            if (sender is not Image clickedButton) return;
+            if (sender is not Image clickedButton)
+            {
+                return;
+            }
 
-            if (!Keys.ContainsKey(clickedButton.Name)) return;
+            if (!Keys.ContainsKey(clickedButton.Name))
+            {
+                return;
+            }
 
             _selection = Keys[clickedButton.Name];
 
@@ -465,9 +566,15 @@ namespace CommonControls
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void DeselectAll_Click(object sender, RoutedEventArgs e)
         {
-            if (Selection.Count == 0) return;
+            if (Selection.Count == 0)
+            {
+                return;
+            }
 
-            foreach (var check in new List<int>(Selection).Select(id => ChkBox[id])) check.IsChecked = false;
+            foreach (var check in new List<int>(Selection).Select(id => ChkBox[id]))
+            {
+                check.IsChecked = false;
+            }
         }
 
         /// <summary>
@@ -478,9 +585,15 @@ namespace CommonControls
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             //get the button that was clicked
-            if (sender is not CheckBox clickedCheckBox) return;
+            if (sender is not CheckBox clickedCheckBox)
+            {
+                return;
+            }
 
-            if (!Keys.ContainsKey(clickedCheckBox.Name)) return;
+            if (!Keys.ContainsKey(clickedCheckBox.Name))
+            {
+                return;
+            }
 
             var id = Keys[clickedCheckBox.Name];
 
@@ -495,9 +608,15 @@ namespace CommonControls
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
             //get the button that was clicked
-            if (sender is not CheckBox clickedCheckBox) return;
+            if (sender is not CheckBox clickedCheckBox)
+            {
+                return;
+            }
 
-            if (!Keys.ContainsKey(clickedCheckBox.Name)) return;
+            if (!Keys.ContainsKey(clickedCheckBox.Name))
+            {
+                return;
+            }
 
             var id = Keys[clickedCheckBox.Name];
 

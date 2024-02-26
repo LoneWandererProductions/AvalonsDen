@@ -64,8 +64,7 @@ namespace CommonControls
         /// </summary>
         public static readonly DependencyProperty AutoplayGif = DependencyProperty.Register(nameof(AutoplayGifImage),
             typeof(bool),
-            typeof(ImageZoom), new PropertyMetadata(OnAutoplayGifSourcePropertyChanged));
-
+            typeof(ImageZoom), null);
 
         /// <summary>
         ///     The image Start Point
@@ -95,7 +94,10 @@ namespace CommonControls
         public ImageZoom()
         {
             InitializeComponent();
-            if (BtmImage.Source == null) return;
+            if (BtmImage.Source == null)
+            {
+                return;
+            }
 
             MainCanvas.Height = BtmImage.Source.Height;
             MainCanvas.Width = BtmImage.Source.Width;
@@ -151,15 +153,6 @@ namespace CommonControls
         }
 
         /// <summary>
-        ///     Called when [autoplay GIF source property changed].
-        /// </summary>
-        /// <param name="d">The d.</param>
-        /// <param name="e">The <see cref="DependencyPropertyChangedEventArgs" /> instance containing the event data.</param>
-        private static void OnAutoplayGifSourcePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-        }
-
-        /// <summary>
         ///     Occurs when [selected frame] was changed
         /// </summary>
         public event DelegateFrame SelectedFrame;
@@ -204,7 +197,20 @@ namespace CommonControls
                 return;
             }
 
+            //reset position
+            var matrix = BtmImage.RenderTransform.Value;
+            matrix.OffsetX = 0;
+            matrix.OffsetY = 0;
+            BtmImage.RenderTransform = new MatrixTransform(matrix);
+
+            //reset Scrollbar
+            ScrollView.ScrollToTop();
+            ScrollView.UpdateLayout();
+
             BtmImage.GifSource = ImageGifPath;
+
+            MainCanvas.Height = BtmImage.Source.Height;
+            MainCanvas.Width = BtmImage.Source.Width;
         }
 
         /// <summary>
@@ -215,7 +221,10 @@ namespace CommonControls
             BtmImage.StopAnimation();
             BtmImage.Source = ItemsSource;
 
-            if (BtmImage.Source == null) return;
+            if (BtmImage.Source == null)
+            {
+                return;
+            }
 
             //reset Scaling
             Scale.ScaleX = 1;
@@ -252,10 +261,12 @@ namespace CommonControls
             switch (ZoomTool)
             {
                 case SelectionTools.Move:
+                case SelectionTools.SelectPixel:
                     // nothing
                     break;
 
                 case SelectionTools.SelectRectangle:
+                case SelectionTools.Erase:
                 {
                     // Get the Position on the Image
                     _imageStartPoint = e.GetPosition(BtmImage);
@@ -268,10 +279,7 @@ namespace CommonControls
 
                     // Make the drag selection box visible.
                     SelectionBox.Visibility = Visibility.Visible;
-                    break;
                 }
-                case SelectionTools.SelectPixel:
-                    // nothing
                     break;
                 default:
                     // nothing
@@ -303,6 +311,7 @@ namespace CommonControls
                     break;
 
                 case SelectionTools.SelectRectangle:
+                case SelectionTools.Erase:
                 {
                     SelectionBox.Visibility = Visibility.Collapsed;
 
@@ -333,17 +342,29 @@ namespace CommonControls
                     }
                     //cleanups, In case we overstepped the boundaries
 
-                    if (frame.X < 0) frame.X = 0;
+                    if (frame.X < 0)
+                    {
+                        frame.X = 0;
+                    }
 
-                    if (frame.Y < 0) frame.Y = 0;
+                    if (frame.Y < 0)
+                    {
+                        frame.Y = 0;
+                    }
 
-                    if (frame.Width > ItemsSource.Width) frame.Width = (int)ItemsSource.Width;
+                    if (frame.Width > ItemsSource.Width)
+                    {
+                        frame.Width = (int)ItemsSource.Width;
+                    }
 
-                    if (frame.Height < 0) frame.Height = (int)ItemsSource.Height;
+                    if (frame.Height < 0)
+                    {
+                        frame.Height = (int)ItemsSource.Height;
+                    }
 
                     SelectedFrame?.Invoke(frame);
-                    break;
                 }
+                    break;
                 case SelectionTools.SelectPixel:
                     endpoint = e.GetPosition(BtmImage);
                     SelectedPoint?.Invoke(endpoint);
@@ -361,7 +382,10 @@ namespace CommonControls
         /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
         {
-            if (!_mouseDown) return;
+            if (!_mouseDown)
+            {
+                return;
+            }
 
             switch (ZoomTool)
             {
@@ -376,6 +400,7 @@ namespace CommonControls
                 }
 
                 case SelectionTools.SelectRectangle:
+                case SelectionTools.Erase:
                 {
                     // When the mouse is held down, reposition the drag selection box.
 
@@ -402,9 +427,8 @@ namespace CommonControls
                         Canvas.SetTop(SelectionBox, mousePos.Y);
                         SelectionBox.Height = _startPoint.Y - mousePos.Y;
                     }
-
-                    break;
                 }
+                    break;
                 case SelectionTools.SelectPixel:
                     break;
                 default:
@@ -491,6 +515,11 @@ namespace CommonControls
         /// <summary>
         ///     The select Color of Point
         /// </summary>
-        SelectPixel = 2
+        SelectPixel = 2,
+
+        /// <summary>
+        ///     The erase
+        /// </summary>
+        Erase = 3
     }
 }

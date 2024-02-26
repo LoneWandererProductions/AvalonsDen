@@ -31,7 +31,7 @@
                                  VerticalAlignment="Stretch"
                                  HorizontalAlignment="Stretch"
                                  Grid.RowSpan="6"
-                                 Grid.Column="0"
-                                 Title="LoadGame" />
+                                 Grid.Column="0" ListTitle="LoadGame" />
+
     </Grid>
 </UserControl>
