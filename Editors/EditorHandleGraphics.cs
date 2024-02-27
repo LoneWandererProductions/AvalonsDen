@@ -13,7 +13,7 @@ using System.Windows.Input;
 using AvalonRuntime;
 using CommonControls;
 using Debugger;
-using EditorMap;
+using EditorView;
 using FileHandler;
 using MapGenerator;
 using Renderer;

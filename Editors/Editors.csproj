@@ -16,12 +16,11 @@
   <ItemGroup>
     <ProjectReference Include="..\AvalonRuntime\AvalonRuntime.csproj" />
     <ProjectReference Include="..\CommonControls\CommonControls.csproj" />
-    <ProjectReference Include="..\EditorCampaign\EditorCampaign.csproj" />
     <ProjectReference Include="..\EditorCharacter\EditorCharacter.csproj" />
     <ProjectReference Include="..\EditorDialogTree\EditorDialogTree.csproj" />
     <ProjectReference Include="..\EditorEvent\EditorEvent.csproj" />
     <ProjectReference Include="..\EditorItems\EditorItems.csproj" />
-    <ProjectReference Include="..\EditorMap\EditorMap.csproj" />
+    <ProjectReference Include="..\EditorView\EditorView.csproj" />
     <ProjectReference Include="..\Interpreter\Interpreter.csproj" />
     <ProjectReference Include="..\MapGenerator\MapGenerator.csproj" />
     <ProjectReference Include="..\Renderer\Renderer.csproj" />

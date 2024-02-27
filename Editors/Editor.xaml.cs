@@ -11,12 +11,11 @@
 using System.ComponentModel;
 using System.Windows;
 using Debugger;
-using EditorCampaign;
 using EditorCharacter;
 using EditorDialogTree;
 using EditorEvent;
 using EditorItems;
-using EditorMap;
+using EditorView;
 using SQLiteGui;
 
 namespace Editors
