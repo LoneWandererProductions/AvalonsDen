@@ -93,7 +93,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solaris", "Solaris\Solaris.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonLibrarySqlLiteTests", "CommonLibrarySqlLiteTests\CommonLibrarySqlLiteTests.csproj", "{2FB2A198-F0A3-40A6-9972-2A5C37D3C7C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditorView", "EditorView\EditorView.csproj", "{1D4574B8-5F83-4AC2-A9B9-573A4BF22C26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EditorView", "EditorView\EditorView.csproj", "{1D4574B8-5F83-4AC2-A9B9-573A4BF22C26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryHandler", "InventoryHandler\InventoryHandler.csproj", "{7CEC64B2-FA1D-468A-91FA-36479FCA6CEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -285,6 +287,10 @@ Global
 		{1D4574B8-5F83-4AC2-A9B9-573A4BF22C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D4574B8-5F83-4AC2-A9B9-573A4BF22C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D4574B8-5F83-4AC2-A9B9-573A4BF22C26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CEC64B2-FA1D-468A-91FA-36479FCA6CEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CEC64B2-FA1D-468A-91FA-36479FCA6CEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CEC64B2-FA1D-468A-91FA-36479FCA6CEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CEC64B2-FA1D-468A-91FA-36479FCA6CEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
