@@ -291,10 +291,18 @@ namespace InventoryHandler
         public int ItemId { get; set; }
 
         public string Tooltip { get; set; }
-
-        public object Clone()
+    
+        public ItemA Clone()
         {
-            throw new NotImplementedException();
+            ItemA clone = (ItemA)this.MemberwiseClone();
+    
+            // Deep copy for the List<int>
+            if (Slots != null)
+            {
+                clone.Slots = new List<int>(Slots);
+            }
+            
+            return clone;
         }
     }
 }
