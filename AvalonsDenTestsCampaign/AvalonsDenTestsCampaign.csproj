@@ -20,6 +20,7 @@
     <ProjectReference Include="..\CampaignDriver\CampaignDriver.csproj" />
     <ProjectReference Include="..\Campaigns\Campaigns.csproj" />
     <ProjectReference Include="..\FileHandler\FileHandler.csproj" />
+    <ProjectReference Include="..\InventoryHandler\InventoryHandler.csproj" />
     <ProjectReference Include="..\Loader\Loader.csproj" />
     <ProjectReference Include="..\MapGenerator\MapGenerator.csproj" />
     <ProjectReference Include="..\Serializer\Serializer.csproj" />

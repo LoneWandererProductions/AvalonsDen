@@ -56,7 +56,7 @@ namespace InventoryHandler
         /// <value>
         ///     itemslots Used
         /// </value>
-        private List<int> Backpack { get; set; } = new();
+        private List<int> Backpack { get; } = new();
 
         /// <summary>
         ///     Auto add ItemA to Inventory
@@ -66,21 +66,17 @@ namespace InventoryHandler
         /// <param name="item">The item we'd like to add.</param>
         /// <param name="position">Optional Parameter, if we add a position we handle it.</param>
         /// <returns>Was item added or not, if not, no slot was available.</returns>
-        public bool AddItem(ItemA item, int? position = null)
+        public bool AddItem(ItemA item, int position = -1)
         {
-            if (position.HasValue && position > 20)
+            if (position != -1 && position > 20)
             {
-                if(Inventory.ContainsKey(position))
-                {
+                if (Inventory.ContainsKey(position))
                     //slot not empty? well find an empty spot
-                    MoveToInventory(item, true);                    
-                }
+                    MoveToInventory(item, true);
                 else
-                {
                     //if empty just slot it into position
                     Inventory.Add(position, item);
-                }
-                
+
                 return true;
             }
 
@@ -211,7 +207,7 @@ namespace InventoryHandler
 
         private void MoveToInventory(ItemA item, bool recurse)
         {
-            if (item.MaxSlot > 1 && !recurse)
+            if (item.MaxStack > 1 && !recurse)
             {
                 //just check the first item with the same Id if already max add at the end
                 //find similar items which are not stacked to max Stack
@@ -219,32 +215,30 @@ namespace InventoryHandler
                 foreach (var kvp in Inventory)
                 {
                     var cache = kvp.Value;
-                    if(cache.Id != item.Id) continue;
-                    if(cache.MaxSlot == item.Stack) continue;
+                    if (cache.ItemId != item.ItemId) continue;
+                    if (cache.MaxStack == item.Stack) continue;
 
                     //found the first which is not max stack
                     var top = item.Stack + cache.Stack;
-                    
-                    if(top <= cache.MaxStack)
+
+                    if (top <= cache.MaxStack)
                     {
-                        Inventory[cache.Id].Stack = top;
+                        Inventory[cache.ItemId].Stack = top;
                         //add all the weight
-                        Addweight(item.Weight * item.Stack);                        
+                        AddWeight(item.Weight * item.Stack);
                         //all done and bail
                         return;
                     }
-                    else
-                    {
-                        Addweight(cache.Weight * (cache.MaxStack - cache.Stack));
-                        Inventory[cache.Id].Stack = cache.MaxStack;
-                        
-                        var newItem = Item.Clone();
-                        newItem.Stack = cache.MaxStack - top;
 
-                        //still more, but who cares, just add it at the end
-                        //here we bail and do it again
-                        MoveToInventory(newItem, true);
-                    }
+                    AddWeight(cache.Weight * (cache.MaxStack - cache.Stack));
+                    Inventory[cache.ItemId].Stack = cache.MaxStack;
+
+                    var newItem = item.Clone() as ItemA;
+                    newItem.Stack = cache.MaxStack - top;
+
+                    //still more, but who cares, just add it at the end
+                    //here we bail and do it again
+                    MoveToInventory(newItem, true);
                 }
 
                 AddToNewSlot(item);
@@ -253,22 +247,22 @@ namespace InventoryHandler
             else
             {
                 AddToNewSlot(item);
-                Addweight(item.Weight * item.Stack);
+                AddWeight(item.Weight * item.Stack);
             }
         }
-        
-        private static void AddToNewSlot(ItemA item)
+
+        private void AddToNewSlot(ItemA item)
         {
-             var id = GetFirstAvailableIndex(Backpack);
-             Backpack.Add(id);
-             Inventory.Add(id, item);
+            var id = GetFirstAvailableIndex(Backpack);
+            Backpack.Add(id);
+            Inventory.Add(id, item);
         }
 
-        private static void Addweight(int weight)
+        private void AddWeight(int weight)
         {
             Weight += weight;
         }
-        
+
         /// <summary>
         ///     Gets the first index of the available.
         /// </summary>
@@ -321,24 +315,21 @@ namespace InventoryHandler
 
         public int Stack { get; set; }
 
-        public int MaxStack  { get; set; }
+        public int MaxStack { get; set; }
 
         public int Weight { get; set; }
 
         public int ItemId { get; set; }
 
         public string Tooltip { get; set; }
-    
-        public ItemA Clone()
+
+        public object Clone()
         {
-            ItemA clone = (ItemA)this.MemberwiseClone();
-    
+            var clone = (ItemA) MemberwiseClone();
+
             // Deep copy for the List<int>
-            if (Slots != null)
-            {
-                clone.Slots = new List<int>(Slots);
-            }
-            
+            if (Slots != null) clone.Slots = new List<int>(Slots);
+
             return clone;
         }
     }
