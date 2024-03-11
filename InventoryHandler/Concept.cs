@@ -61,8 +61,17 @@ namespace InventoryHandler
         public bool AddItem(ItemA item, int position)
         {
             if (position > 20)
-                //TODO
-                //TODO do some stuff with the inventory
+                if(Inventory.ContainsKey(position))
+                {
+                    //slot not empty? well find an empty spot
+                    MoveToInventory(item, true)                    
+                }
+                else
+                {
+                    //if empty just slot it into position
+                    Inventory.Add(position, item);
+                }
+            
                 return true;
 
             if (item.SingleSlot)
