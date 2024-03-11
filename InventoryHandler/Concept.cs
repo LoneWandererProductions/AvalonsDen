@@ -58,30 +58,44 @@ namespace InventoryHandler
         /// </value>
         private List<int> Backpack { get; set; }
 
-        public bool AddItem(ItemA item, int position)
+        /// <summary>
+        ///     Auto add ItemA to Inventory
+        ///     If allowed Slot is free, it will go to Inventory, if not. It will go to the inventory
+        ///     In any case the item will be at least moved to the Inventory. It returns false, if it was moved to inventory
+        /// </summary>
+        /// <param name="item">The item we'd like to add.</param>
+        /// <param name="position">Optional Parameter, if we add a position we handle it.</param>
+        /// <returns>Was item added or not, if not, no slot was available.</returns>
+        public bool AddItem(ItemA item, int? position = null)
         {
-            if (position > 20)
-                if(Inventory.ContainsKey(position))
+            if(position == null)
+            {
+                if (position > 20)
                 {
-                    //slot not empty? well find an empty spot
-                    MoveToInventory(item, true)                    
-                }
-                else
-                {
-                    //if empty just slot it into position
-                    Inventory.Add(position, item);
-                }
-            
-                return true;
+                    if(Inventory.ContainsKey(position))
+                    {
+                        //slot not empty? well find an empty spot
+                        MoveToInventory(item, true)                    
+                    }
+                    else
+                    {
+                        //if empty just slot it into position
+                        Inventory.Add(position, item);
+                    }
+                
+                    return true;
+            }
 
             if (item.SingleSlot)
             {
-                //Todo improve
                 if (item.MultiSlot) return HandleMultiSlot(item);
                 return HandleSingleSlot(item);
             }
 
             return HandleDualSlot(item);
+            }
+            
+            return true;
         }
 
         /// <summary>
@@ -100,24 +114,6 @@ namespace InventoryHandler
             }
 
             return null;
-        }
-
-        /// <summary>
-        ///     Auto add ItemA to Inventory
-        ///     If allowed Slot is free, it will go to Inventory, if not. It will go to the inventory
-        ///     In any case the item will be at least moved to the Inventory. It returns false, if it was moved to inventory
-        /// </summary>
-        /// <param name="item">The item we'd like to add.</param>
-        /// <returns>Was item added or not, if not, no slot was available.</returns>
-        public bool AddItem(ItemA item)
-        {
-            if (item.SingleSlot)
-            {
-                if (item.MultiSlot) return HandleMultiSlot(item);
-                return HandleSingleSlot(item);
-            }
-
-            return HandleDualSlot(item);
         }
 
         private bool HandleSingleSlot(ItemA item)
