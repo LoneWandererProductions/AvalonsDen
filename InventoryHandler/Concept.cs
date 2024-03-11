@@ -214,9 +214,8 @@ namespace InventoryHandler
             if (item.MaxSlot > 1 && !recurse)
             {
                 //just check the first item with the same Id if already max add at the end
-                //Todo, find similar items which are not stacked to max Stack
+                //find similar items which are not stacked to max Stack
                 //use up all items with less than max stack, and in the end add the leftovers.
-                //if done call:
                 foreach (var kvp in Inventory)
                 {
                     var cache = kvp.Value;
@@ -225,34 +224,52 @@ namespace InventoryHandler
 
                     //found the first which is not max stack
                     var top = item.Stack + cache.Stack;
-                    if(top <= cache.MaxSlot)
+                    
+                    if(top <= cache.MaxStack)
                     {
                         Inventory[cache.Id].Stack = top;
-                        //all done
+                        //add all the weight
+                        Addweight(item.Weight * item.Stack);                        
+                        //all done and bail
                         return;
                     }
                     else
                     {
-                        Inventory[cache.Id].Stack = cache.MaxSlot;
+                        Addweight(cache.Weight * (cache.MaxStack - cache.Stack));
+                        Inventory[cache.Id].Stack = cache.MaxStack;
+                        
                         var newItem = Item.Clone();
-                        newItem.Stack = cache.MaxSlot - top;
+                        newItem.Stack = cache.MaxStack - top;
+
+                        //still more, but who cares, just add it at the end
+                        //here we bail and do it again
                         MoveToInventory(newItem, true);
                     }
                 }
+
+                AddToNewSlot(item);
             }
             //default path, if we already topped up
             else
             {
-                var id = GetFirstAvailableIndex(Backback);
-
-                Backback.Add(id);
-                Inventory.Add(id, item);
+                AddToNewSlot(item);
+                Addweight(item.Weight * item.Stack);
             }
-
-            //TODO check
-            Weight += item.Weight * item.Stack;
+        }
+        
+        private static void AddToNewSlot(ItemA item)
+        {
+             AddToNewSlot(item);
+             var id = GetFirstAvailableIndex(Backback);
+             Backback.Add(id);
+             Inventory.Add(id, item);
         }
 
+        private static void Addweight(int weight)
+        {
+            Weight += weight;
+        }
+        
         /// <summary>
         ///     Gets the first index of the available.
         /// </summary>
@@ -305,7 +322,7 @@ namespace InventoryHandler
 
         public int Stack { get; set; }
 
-        public int MaxSlot { get; set; }
+        public int MaxStack  { get; set; }
 
         public int Weight { get; set; }
 
