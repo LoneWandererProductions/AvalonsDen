@@ -217,7 +217,28 @@ namespace InventoryHandler
                 //Todo, find similar items which are not stacked to max Stack
                 //use up all items with less than max stack, and in the end add the leftovers.
                 //if done call:
-                MoveToInventory(item, true);
+                foreach (var kvp in Inventory)
+                {
+                    var cache = kvp.Value;
+                    if(cache.Id != item.Id) continue;
+                    if(cache.MaxSlot == item.Stack) continue;
+
+                    //found the first which is not max stack
+                    var top = item.Stack + cache.Stack;
+                    if(top <= cache.MaxSlot)
+                    {
+                        Inventory[cache.Id].Stack = top;
+                        //all done
+                        return;
+                    }
+                    else
+                    {
+                        Inventory[cache.Id].Stack = cache.MaxSlot;
+                        var newItem = Item.Clone();
+                        newItem.Stack = cache.MaxSlot - top;
+                        MoveToInventory(newItem, true);
+                    }
+                }
             }
             //default path, if we already topped up
             else
