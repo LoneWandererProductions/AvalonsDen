@@ -56,7 +56,7 @@ namespace InventoryHandler
         /// <value>
         ///     itemslots Used
         /// </value>
-        private List<int> Backback { get; set; }
+        private List<int> Backpack { get; set; }
 
         public bool AddItem(ItemA item, int position)
         {
@@ -260,7 +260,7 @@ namespace InventoryHandler
         private static void AddToNewSlot(ItemA item)
         {
              AddToNewSlot(item);
-             var id = GetFirstAvailableIndex(Backback);
+             var id = GetFirstAvailableIndex(Backpack);
              Backback.Add(id);
              Inventory.Add(id, item);
         }
@@ -277,7 +277,7 @@ namespace InventoryHandler
         /// <returns>First available Slot</returns>
         private static int GetFirstAvailableIndex(IEnumerable<int> lst)
         {
-            return Enumerable.Range(0, int.MaxValue)
+            return Enumerable.Range(20, int.MaxValue)
                 .Except(lst)
                 .FirstOrDefault();
         }
