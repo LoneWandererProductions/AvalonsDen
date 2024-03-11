@@ -266,7 +266,7 @@ namespace InventoryHandler
         {
              AddToNewSlot(item);
              var id = GetFirstAvailableIndex(Backpack);
-             Backback.Add(id);
+             Backpack.Add(id);
              Inventory.Add(id, item);
         }
 
