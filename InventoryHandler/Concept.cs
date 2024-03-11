@@ -73,7 +73,7 @@ namespace InventoryHandler
                 if(Inventory.ContainsKey(position))
                 {
                     //slot not empty? well find an empty spot
-                    MoveToInventory(item, true)                    
+                    MoveToInventory(item, true);                    
                 }
                 else
                 {
@@ -259,7 +259,6 @@ namespace InventoryHandler
         
         private static void AddToNewSlot(ItemA item)
         {
-             AddToNewSlot(item);
              var id = GetFirstAvailableIndex(Backpack);
              Backpack.Add(id);
              Inventory.Add(id, item);
