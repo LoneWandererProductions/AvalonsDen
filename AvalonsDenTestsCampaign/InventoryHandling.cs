@@ -191,7 +191,7 @@ namespace AvalonsDenTestsCampaign
                 }
             };
 
-            var inv = InventoryHandler.AddToInventory(partyInventory, inventoryItem);
+            var inv = GameEngine.InventoryHandler.AddToInventory(partyInventory, inventoryItem);
 
             Assert.AreEqual(3, inv.Count, "False amount of Items");
 
