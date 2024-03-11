@@ -68,22 +68,20 @@ namespace InventoryHandler
         /// <returns>Was item added or not, if not, no slot was available.</returns>
         public bool AddItem(ItemA item, int? position = null)
         {
-            if(position == null)
+            if (position > 20)
             {
-                if (position > 20)
+                if(Inventory.ContainsKey(position))
                 {
-                    if(Inventory.ContainsKey(position))
-                    {
-                        //slot not empty? well find an empty spot
-                        MoveToInventory(item, true)                    
-                    }
-                    else
-                    {
-                        //if empty just slot it into position
-                        Inventory.Add(position, item);
-                    }
+                    //slot not empty? well find an empty spot
+                    MoveToInventory(item, true)                    
+                }
+                else
+                {
+                    //if empty just slot it into position
+                    Inventory.Add(position, item);
+                }
                 
-                    return true;
+                return true;
             }
 
             if (item.SingleSlot)
@@ -93,9 +91,6 @@ namespace InventoryHandler
             }
 
             return HandleDualSlot(item);
-            }
-            
-            return true;
         }
 
         /// <summary>
