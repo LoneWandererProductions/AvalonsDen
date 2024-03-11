@@ -68,7 +68,7 @@ namespace InventoryHandler
         /// <returns>Was item added or not, if not, no slot was available.</returns>
         public bool AddItem(ItemA item, int? position = null)
         {
-            if (position > 20)
+            if (position.HasValue && position > 20)
             {
                 if(Inventory.ContainsKey(position))
                 {
