@@ -56,7 +56,7 @@ namespace InventoryHandler
         /// <value>
         ///     itemslots Used
         /// </value>
-        private List<int> Backpack { get; set; }
+        private List<int> Backpack { get; set; } = new();
 
         /// <summary>
         ///     Auto add ItemA to Inventory
