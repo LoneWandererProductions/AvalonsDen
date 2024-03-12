@@ -72,6 +72,8 @@ namespace AvalonsDenTestsCampaign
             };
             concept.Inventory.Add(22, item);
 
+            //TODO
+
         }
     }
 }
