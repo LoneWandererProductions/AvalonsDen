@@ -20,6 +20,7 @@ namespace InventoryHandler
         /// <summary>
         ///     First 18 Slots are reserved for the character Slots
         ///     All the rest is Inventory Space.
+        ///     id: -1 means that stuff is only used in the inventory
         ///     id: 0-5, Artifact 0-5, interchangeable
         ///     id: 6, Head
         ///     id: 8, Shoulder

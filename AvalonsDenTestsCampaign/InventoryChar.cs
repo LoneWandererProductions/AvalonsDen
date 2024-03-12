@@ -22,10 +22,14 @@ namespace AvalonsDenTestsCampaign
         [TestMethod]
         public void Inventory()
         {
+            //all Artefacts beyond 5
             var limit = new List<int>
             {
+                0,
+                1,
                 2,
-                3
+                3,
+                4
             };
 
             var concept = new Concept
@@ -35,6 +39,22 @@ namespace AvalonsDenTestsCampaign
                 Limitations = limit
             };
 
+            //add some stuff to Inventory
+            var item = new ItemA
+            {
+                Weight = 1,
+                ItemId = 1,
+                Slot = -1
+            };
+            concept.Inventory.Add(21, item);
+
+            item = new ItemA
+            {
+                Weight = 1,
+                ItemId = 1,
+                Slots = new List<int> { 0, 1, 3, 4, 5 }
+            };
+            concept.Inventory.Add(22, item);
 
         }
     }
