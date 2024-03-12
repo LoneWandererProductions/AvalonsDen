@@ -37,8 +37,8 @@ namespace AvalonsDenTests
         {
             var testContain = new Dictionary<Coordinates, int>
             {
-                { ResourcesGeneral.CoordinateTwo, 0 },
-                { ResourcesGeneral.CoordinateThree, 2 }
+                {ResourcesGeneral.CoordinateTwo, 0},
+                {ResourcesGeneral.CoordinateThree, 2}
             };
 
             var check = testContain.ContainsKey(ResourcesGeneral.CoordinateOne);

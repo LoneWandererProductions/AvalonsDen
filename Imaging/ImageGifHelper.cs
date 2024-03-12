@@ -22,12 +22,12 @@ namespace Imaging
         {
             var lst = new List<byte>
             {
-                (byte)'G',
-                (byte)'I',
-                (byte)'F',
-                (byte)'8',
-                (byte)'9',
-                (byte)'a'
+                (byte) 'G',
+                (byte) 'I',
+                (byte) 'F',
+                (byte) '8',
+                (byte) '9',
+                (byte) 'a'
             };
             return lst;
         }
@@ -44,7 +44,7 @@ namespace Imaging
             {
                 // The second 2 bytes are the height of the canvas
                 // The first 2 bytes are the width of the canvas (the entire .GIF)
-                (byte)width, (byte)height
+                (byte) width, (byte) height
             };
 
             // The first 2 bytes are the width of the canvas (the entire .GIF)
@@ -120,7 +120,7 @@ namespace Imaging
             //here we will use the ColorHsv Object and Image Analysis to get the color Table.
             //Example: ff ff ff 00 00 00 ff 00 00 00 ff 00
             // #0000FF -> From  HSV
-            for (var i = ColorTable.Count; i < (int)Math.Pow(2.0, bytes[0] + 1); i++)
+            for (var i = ColorTable.Count; i < (int) Math.Pow(2.0, bytes[0] + 1); i++)
             {
                 lst.Add(Color.Red);
                 lst.Add(Color.Green);
@@ -157,17 +157,17 @@ namespace Imaging
                 0x21, // GIF extension code
                 0xff, // Application extension label
                 0x0b, // Length of application block (to follow)
-                (byte)'N',
-                (byte)'E',
-                (byte)'T',
-                (byte)'S',
-                (byte)'C',
-                (byte)'A',
-                (byte)'P',
-                (byte)'E',
-                (byte)'2',
-                (byte)'.',
-                (byte)'0',
+                (byte) 'N',
+                (byte) 'E',
+                (byte) 'T',
+                (byte) 'S',
+                (byte) 'C',
+                (byte) 'A',
+                (byte) 'P',
+                (byte) 'E',
+                (byte) '2',
+                (byte) '.',
+                (byte) '0',
                 3, // Length of data sub-block (3 bytes of data to follow)
                 1
             };
@@ -246,7 +246,7 @@ namespace Imaging
 
             lst.AddRange(bytes);
 
-            lst.Add((byte)delay); // Delay time, in centiseconds
+            lst.Add((byte) delay); // Delay time, in centiseconds
             lst.Add(0); // Transparent color index
             lst.Add(0); // Block terminator
 
@@ -279,9 +279,9 @@ namespace Imaging
             // colors we want to use
 
             // log2(total colors) - 1
-            var ret = (byte)Math.Ceiling(Math.Log(total, 2.0) - 1.0);
+            var ret = (byte) Math.Ceiling(Math.Log(total, 2.0) - 1.0);
 
-            return new BitArray(new[] { ret });
+            return new BitArray(new[] {ret});
         }
     }
 }

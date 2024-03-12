@@ -103,13 +103,13 @@ namespace CommonControls
                 var pen = Pens.Black;
 
                 var wheelPosition = GetWheelPosition();
-                g.DrawEllipse(pen, (float)wheelPosition.X - 5, (float)wheelPosition.Y - 5, 15, 15);
+                g.DrawEllipse(pen, (float) wheelPosition.X - 5, (float) wheelPosition.Y - 5, 15, 15);
 
                 //change Color of cursor depending of Background Color
                 pen = _val < 0.5 ? Pens.White : Pens.Black;
 
                 var trianglePosition = GetTrianglePosition();
-                g.DrawEllipse(pen, (float)trianglePosition.X - 5, (float)trianglePosition.Y - 5, 10, 10);
+                g.DrawEllipse(pen, (float) trianglePosition.X - 5, (float) trianglePosition.Y - 5, 10, 10);
             }
 
             return new Bitmap(img);
@@ -191,7 +191,7 @@ namespace CommonControls
 
             if (distanceFromCenter > OuterRadius)
                 // Outside
-                return new PickResult { Area = Area.Outside };
+                return new PickResult {Area = Area.Outside};
 
             if (distanceFromCenter > InnerRadius)
             {
@@ -201,23 +201,23 @@ namespace CommonControls
 
                 var hue = angle;
 
-                return new PickResult { Area = Area.Wheel, Hue = hue };
+                return new PickResult {Area = Area.Wheel, Hue = hue};
             }
 
             // Inside
             var x1 = (x - Center) * 1.0 / InnerRadius;
             var y1 = (y - Center) * 1.0 / InnerRadius;
-            if (0 * x1 + 2 * y1 > 1) return new PickResult { Area = Area.Outside };
+            if (0 * x1 + 2 * y1 > 1) return new PickResult {Area = Area.Outside};
 
-            if (sqrt3 * x1 + -1 * y1 > 1) return new PickResult { Area = Area.Outside };
+            if (sqrt3 * x1 + -1 * y1 > 1) return new PickResult {Area = Area.Outside};
 
-            if (-sqrt3 * x1 + -1 * y1 > 1) return new PickResult { Area = Area.Outside };
+            if (-sqrt3 * x1 + -1 * y1 > 1) return new PickResult {Area = Area.Outside};
 
             // Triangle
             var sat = (1 - 2 * y1) / (sqrt3 * x1 - y1 + 2);
             var val = (sqrt3 * x1 - y1 + 2) / 3;
 
-            return new PickResult { Area = Area.Triangle, Sat = sat, Val = val };
+            return new PickResult {Area = Area.Triangle, Sat = sat, Val = val};
         }
 
         /// <summary>
@@ -254,7 +254,7 @@ namespace CommonControls
         /// <returns>Position in wheel</returns>
         private static Point GetWheelPosition()
         {
-            var middleRadius = (double)(InnerRadius + OuterRadius) / 2;
+            var middleRadius = (double) (InnerRadius + OuterRadius) / 2;
 
             return new Point
             {
@@ -288,10 +288,10 @@ namespace CommonControls
         private static Color Rgb(double red, double green, double blue, double alpha)
         {
             return Color.FromArgb(
-                Math.Min(255, (int)(alpha * 256)),
-                Math.Min(255, (int)(red * 256)),
-                Math.Min(255, (int)(green * 256)),
-                Math.Min(255, (int)(blue * 256)));
+                Math.Min(255, (int) (alpha * 256)),
+                Math.Min(255, (int) (red * 256)),
+                Math.Min(255, (int) (green * 256)),
+                Math.Min(255, (int) (blue * 256)));
         }
     }
 

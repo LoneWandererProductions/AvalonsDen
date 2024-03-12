@@ -6,9 +6,9 @@
  * PROGRAMER:   Peter Geinitz (Wayfarer)
  */
 
+using System.Collections.Generic;
 using InventoryHandler;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
 
 namespace AvalonsDenTestsCampaign
 {
@@ -18,7 +18,6 @@ namespace AvalonsDenTestsCampaign
     [TestClass]
     public sealed class InventoryChar
     {
-
         [TestMethod]
         public void Inventory()
         {
@@ -40,40 +39,19 @@ namespace AvalonsDenTestsCampaign
             };
 
             //add some stuff to Inventory
-            var item = new ItemA
-            {
-                Weight = 1,
-                ItemId = 1,
-                Slot = 20, //inventory
-                Stack =3,
-                MaxStack =3
-            };
+            var item = new ItemA(null, 3, 3, 1, 1,20);
             concept.Inventory.Add(21, item);
 
-            //artefact
-            item = new ItemA
-            {
-                Weight = 1,
-                ItemId = 2,
-                Slots = new List<int> { 0, 1, 3, 4, 5 },
-                Stack = 1,
-                MaxStack = 1
-            };
+            //artifact
+            item = new ItemA(new List<int> { 0, 1, 3, 4, 5 }, 1, 3, 1, 1, 5);
             concept.Inventory.Add(22, item);
 
             //helmet
-            var helmet = new ItemA
-            {
-                Weight = 1,
-                ItemId = 3,
-                Slot =6,
-                Stack = 1,
-                MaxStack = 1
-            };
-            concept.Inventory.Add(22, item);
+            var helmet = new ItemA(null, 1, 1, 1, 3, 6);
+
+            concept.Inventory.Add(22, helmet);
 
             //TODO
-
         }
     }
 }

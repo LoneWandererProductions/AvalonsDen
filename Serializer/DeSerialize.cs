@@ -91,7 +91,7 @@ namespace Serializer
                 var data = typeof(List<T>);
                 var ser = new XmlSerializer(data);
                 using Stream tr = File.OpenRead(path);
-                return (List<T>)ser.Deserialize(tr);
+                return (List<T>) ser.Deserialize(tr);
             }
             catch (InvalidOperationException ex)
             {
@@ -140,7 +140,7 @@ namespace Serializer
             try
             {
                 var xs = new XmlSerializer(typeof(List<Item>));
-                var lst = (List<Item>)xs.Deserialize(sr);
+                var lst = (List<Item>) xs.Deserialize(sr);
 
                 var dct = new Dictionary<TKey, TValue>();
 
@@ -203,7 +203,7 @@ namespace Serializer
 
             using var reader = new StringReader(serialized);
             using var stm = new XmlTextReader(reader);
-            return (T)serializer.Deserialize(stm);
+            return (T) serializer.Deserialize(stm);
         }
     }
 }

@@ -152,7 +152,7 @@ namespace Solaris
         /// </value>
         public int PolarisHeight
         {
-            get => (int)GetValue(PolarisHeightProperty);
+            get => (int) GetValue(PolarisHeightProperty);
             set => SetValue(PolarisHeightProperty, value);
         }
 
@@ -164,7 +164,7 @@ namespace Solaris
         /// </value>
         public int PolarisWidth
         {
-            get => (int)GetValue(PolarisWidthProperty);
+            get => (int) GetValue(PolarisWidthProperty);
             set => SetValue(PolarisWidthProperty, value);
         }
 
@@ -176,7 +176,7 @@ namespace Solaris
         /// </value>
         public int PolarisTextureSize
         {
-            get => (int)GetValue(PolarisTextureSizeProperty);
+            get => (int) GetValue(PolarisTextureSizeProperty);
             set => SetValue(PolarisTextureSizeProperty, value);
         }
 
@@ -188,7 +188,7 @@ namespace Solaris
         /// </value>
         public Dictionary<int, List<int>> PolarisMap
         {
-            get => (Dictionary<int, List<int>>)GetValue(PolarisMapProperty);
+            get => (Dictionary<int, List<int>>) GetValue(PolarisMapProperty);
             set
             {
                 if (value == null) return;
@@ -213,7 +213,7 @@ namespace Solaris
         /// </value>
         public Dictionary<int, Texture> PolarisTextures
         {
-            get => (Dictionary<int, Texture>)GetValue(PolarisTexturesProperty);
+            get => (Dictionary<int, Texture>) GetValue(PolarisTexturesProperty);
             set => SetValue(PolarisTexturesProperty, value);
         }
 
@@ -225,7 +225,7 @@ namespace Solaris
         /// </value>
         public bool PolarisGrid
         {
-            get => (bool)GetValue(PolarisGridProperty);
+            get => (bool) GetValue(PolarisGridProperty);
             set
             {
                 SetValue(PolarisGridProperty, value);
@@ -243,7 +243,7 @@ namespace Solaris
         /// </value>
         public bool PolarisNumber
         {
-            get => (bool)GetValue(PolarisNumberProperty);
+            get => (bool) GetValue(PolarisNumberProperty);
             set
             {
                 SetValue(PolarisNumberProperty, value);
@@ -261,7 +261,7 @@ namespace Solaris
         /// </value>
         public KeyValuePair<int, int> PolarisAdd
         {
-            get => (KeyValuePair<int, int>)GetValue(PolarisAddProperty);
+            get => (KeyValuePair<int, int>) GetValue(PolarisAddProperty);
             set
             {
                 SetValue(PolarisAddProperty, value);
@@ -287,7 +287,7 @@ namespace Solaris
         /// </value>
         public KeyValuePair<int, int> PolarisRemove
         {
-            get => (KeyValuePair<int, int>)GetValue(PolarisRemoveProperty);
+            get => (KeyValuePair<int, int>) GetValue(PolarisRemoveProperty);
             set
             {
                 SetValue(PolarisRemoveProperty, value);
@@ -312,7 +312,7 @@ namespace Solaris
         /// </value>
         public KeyValuePair<int, int> PolarisAddDisplay
         {
-            get => (KeyValuePair<int, int>)GetValue(PolarisAddDisplayProperty);
+            get => (KeyValuePair<int, int>) GetValue(PolarisAddDisplayProperty);
             set
             {
                 SetValue(PolarisAddDisplayProperty, value);
@@ -331,7 +331,7 @@ namespace Solaris
         /// </value>
         public int PolarisRemoveDisplay
         {
-            get => (int)GetValue(PolarisRemoveDisplayProperty);
+            get => (int) GetValue(PolarisRemoveDisplayProperty);
             set
             {
                 SetValue(PolarisRemoveDisplayProperty, value);
@@ -374,12 +374,12 @@ namespace Solaris
             if (position.X < PolarisTextureSize)
                 _cursor.X = 0;
             else
-                _cursor.X = (int)position.X / PolarisTextureSize;
+                _cursor.X = (int) position.X / PolarisTextureSize;
 
             if (position.Y < PolarisTextureSize)
                 _cursor.Y = 0;
             else
-                _cursor.Y = (int)position.X / PolarisTextureSize;
+                _cursor.Y = (int) position.X / PolarisTextureSize;
         }
     }
 }

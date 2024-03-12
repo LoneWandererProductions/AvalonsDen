@@ -150,14 +150,14 @@ namespace TransitionEngine
             }
 
             //                                  Place    ,   Tile
-            var dct = new Dictionary<int, int> { { masterId, tileId } };
+            var dct = new Dictionary<int, int> {{masterId, tileId}};
 
             tilePlacement.Remove(0);
 
             foreach (var tile in tilePlacement)
             {
                 // Tile / Direction
-                var dict = new Dictionary<int, int> { { tile.Key, tile.Value } };
+                var dict = new Dictionary<int, int> {{tile.Key, tile.Value}};
 
                 Debug.WriteLine(TransitionEngineResources.KeyName + tile.Key);
 
@@ -187,7 +187,7 @@ namespace TransitionEngine
         internal static Dictionary<int, int> GetAllMultiTransitions(int tileId)
         {
             //                                              Tile Id,   Direction
-            var tilePlacement = new Dictionary<int, int> { { tileId, TransitionEngineResources.CoordinateDirection } };
+            var tilePlacement = new Dictionary<int, int> {{tileId, TransitionEngineResources.CoordinateDirection}};
 
             while (true)
             {
@@ -282,7 +282,7 @@ namespace TransitionEngine
                 //nothing fancy just add the transitions to the dictionary
                 else
                 {
-                    var tileLst = new List<int> { tile.Value };
+                    var tileLst = new List<int> {tile.Value};
                     tileDct.Add(tile.Key, tileLst);
                 }
             }

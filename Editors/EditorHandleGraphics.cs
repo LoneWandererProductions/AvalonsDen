@@ -229,7 +229,7 @@ namespace Editors
             if (changedButton == MouseButton.Right)
             {
                 //Idle
-                _menuItems = new List<int> { EditorResources.Idle };
+                _menuItems = new List<int> {EditorResources.Idle};
 
                 menu.Add(new MenuItems
                 {

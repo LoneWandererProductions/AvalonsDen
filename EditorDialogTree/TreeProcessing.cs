@@ -162,7 +162,7 @@ namespace EditorDialogTree
         /// <returns>The max Level<see cref="int" />.</returns>
         private static int MaxLevel(Dictionary<int, Node> tree)
         {
-            return tree.Values.Select(leaf => leaf.Level).Concat(new[] { 1 }).Max();
+            return tree.Values.Select(leaf => leaf.Level).Concat(new[] {1}).Max();
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace EditorDialogTree
         /// <returns>The Max Id<see cref="int" />.</returns>
         private static int MaxId(Dictionary<int, Node> tree)
         {
-            return tree.Values.Select(leaf => leaf.Id).Concat(new[] { 1 }).Max();
+            return tree.Values.Select(leaf => leaf.Id).Concat(new[] {1}).Max();
         }
 
         /// <summary>

@@ -1,20 +1,72 @@
-﻿using System;
+﻿using ExtendedSystemObjects;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace InventoryHandler
 {
     public sealed class ItemA : ICloneable
     {
         /// <summary>
-        /// The slots
+        ///     The slot
+        /// </summary>
+        private int _slot = -1;
+
+        /// <summary>
+        ///     The slots
         /// </summary>
         private List<int> _slots = new();
 
         /// <summary>
-        /// The slot
+        ///     Constructor for creating an ItemA with all attributes.
         /// </summary>
-        private int _slot = -1;
+        /// <param name="slot">The allowed slot for this item.</param>
+        /// <param name="slots">The list of slots that are allowed.</param>
+        /// <param name="singleSlot">Whether the item uses a single slot.</param>
+        /// <param name="multiSlot">Whether the item can be interchanged in various slots.</param>
+        /// <param name="name">The name of the item.</param>
+        /// <param name="stack">The stack size of the item.</param>
+        /// <param name="maxStack">The maximum stack size allowed for the item.</param>
+        /// <param name="weight">The weight of the item.</param>
+        /// <param name="itemId">The ID of the item.</param>
+        /// <param name="tooltip">The tooltip information for the item.</param>
+        public ItemA(
+            List<int>? slots,
+            int stack,
+            int maxStack,
+            int weight,
+            int itemId,
+            int slot = -1,
+            bool singleSlot = true,
+            bool multiSlot = false,
+            string name = "",
+            string tooltip = "")
+        {
+            Slot = slot;
+            Slots = slots;
+            SingleSlot = singleSlot;
+            MultiSlot = multiSlot;
+            Name = name;
+            Stack = stack;
+            MaxStack = maxStack;
+            Weight = weight;
+            ItemId = itemId;
+            Tooltip = tooltip;
+
+            // Ensure required attributes are set, slot or Slots
+            if (Slot == -1 && slots.IsNullOrEmpty())
+                throw new ArgumentException(
+                    $"RequiredAttribute must be set.{nameof(Slot)} or  RequiredAttribute must be set.{nameof(Slots)}");
+            if (stack == 0) throw new ArgumentException("RequiredAttribute must be set.", nameof(stack));
+            if (maxStack == 0) throw new ArgumentException("RequiredAttribute must be set.", nameof(maxStack));
+            if (maxStack < stack)
+                throw new ArgumentException($"Logical Error. {nameof(stack)} must be smaller than {nameof(maxStack)}.");
+            if (itemId == -1) throw new ArgumentException("RequiredAttribute must be set.", nameof(ItemId));
+        }
+
+        public ItemA()
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         ///     The allowed Slot, that are allowed for this item.
@@ -29,9 +81,7 @@ namespace InventoryHandler
             {
                 // Ensure mutual exclusivity
                 if (_slots.Count > 0)
-                {
                     throw new InvalidOperationException("SingleValue and MultipleValues are mutually exclusive.");
-                }
                 _slot = value;
             }
         }
@@ -50,9 +100,7 @@ namespace InventoryHandler
             {
                 // Ensure mutual exclusivity
                 if (Slot != -1)
-                {
                     throw new InvalidOperationException("SingleValue and MultipleValues are mutually exclusive.");
-                }
 
                 _slots = value;
             }
@@ -74,7 +122,7 @@ namespace InventoryHandler
         /// </value>
         public bool MultiSlot { get; set; }
 
-        public int Name { get; set; }
+        public string Name { get; set; }
 
         public int Stack { get; set; }
 
@@ -85,69 +133,6 @@ namespace InventoryHandler
         public int ItemId { get; set; } = -1;
 
         public string Tooltip { get; set; }
-
-        /// <summary>
-        /// Constructor for creating an ItemA with all attributes.
-        /// </summary>
-        /// <param name="slot">The allowed slot for this item.</param>
-        /// <param name="slots">The list of slots that are allowed.</param>
-        /// <param name="singleSlot">Whether the item uses a single slot.</param>
-        /// <param name="multiSlot">Whether the item can be interchanged in various slots.</param>
-        /// <param name="name">The name of the item.</param>
-        /// <param name="stack">The stack size of the item.</param>
-        /// <param name="maxStack">The maximum stack size allowed for the item.</param>
-        /// <param name="weight">The weight of the item.</param>
-        /// <param name="itemId">The ID of the item.</param>
-        /// <param name="tooltip">The tooltip information for the item.</param>
-        public ItemA(
-            int slot,
-            List<int> slots,
-            bool singleSlot,
-            bool multiSlot,
-            int name,
-            int stack,
-            int maxStack,
-            int weight,
-            int itemId,
-            string tooltip)
-        {
-            Slot = slot;
-            Slots = slots;
-            SingleSlot = singleSlot;
-            MultiSlot = multiSlot;
-            Name = name;
-            Stack = stack;
-            MaxStack = maxStack;
-            Weight = weight;
-            ItemId = itemId;
-            Tooltip = tooltip;
-
-            // Ensure required attributes are set, slot or Slots
-            if (Slot == -1 && Slots.Count == 0)
-            {
-                throw new ArgumentException($"RequiredAttribute must be set.{nameof(Slot)} or  RequiredAttribute must be set.{nameof(Slots)}");
-            }
-            if (stack == 0)
-            {
-                throw new ArgumentException("RequiredAttribute must be set.", nameof(stack));
-            }
-            if (stack == 0)
-            {
-                throw new ArgumentException("RequiredAttribute must be set.", nameof(maxStack));
-            }
-            if (maxStack == 0)
-            {
-                throw new ArgumentException("RequiredAttribute must be set.", nameof(maxStack));
-            }
-            if (maxStack < stack)
-            {
-                throw new ArgumentException($"Logical Error. {nameof(stack)} must be smaller than {nameof(maxStack)}.");
-            }
-            if (itemId == -1)
-            {
-                throw new ArgumentException("RequiredAttribute must be set.", nameof(ItemId));
-            }
-        }
 
 
         public object Clone()

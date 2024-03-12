@@ -99,7 +99,7 @@ namespace CommonControls
         /// </summary>
         public string ListTitle
         {
-            get => (string)GetValue(ListTitleProperty);
+            get => (string) GetValue(ListTitleProperty);
             set => SetValue(ListTitleProperty, value);
         }
 
@@ -111,7 +111,7 @@ namespace CommonControls
         /// </value>
         public bool UniqueElements
         {
-            get => (bool)GetValue(UniqueElementsProperty);
+            get => (bool) GetValue(UniqueElementsProperty);
             set => SetValue(UniqueElementsProperty, value);
         }
 
@@ -123,7 +123,7 @@ namespace CommonControls
         /// </value>
         public DataItem SelectedItem
         {
-            get => (DataItem)GetValue(SelectedItemProperty);
+            get => (DataItem) GetValue(SelectedItemProperty);
             set => SetValue(SelectedItemProperty, value);
         }
 
@@ -135,7 +135,7 @@ namespace CommonControls
         /// </value>
         public List<DataItem> SelectedItems
         {
-            get => (List<DataItem>)GetValue(SelectedItemsProperty);
+            get => (List<DataItem>) GetValue(SelectedItemsProperty);
             set => SetValue(SelectedItemsProperty, value);
         }
 
@@ -144,7 +144,7 @@ namespace CommonControls
         /// </summary>
         public List<DataItem> DataCollection
         {
-            private get { return (List<DataItem>)GetValue(DataCollectionProperty); }
+            private get { return (List<DataItem>) GetValue(DataCollectionProperty); }
             set { SetValue(DataCollectionProperty, value); }
         }
 

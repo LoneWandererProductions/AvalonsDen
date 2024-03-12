@@ -313,7 +313,7 @@ namespace AvalonsDenTests
             var one = ArtShared.IdToCoordinate(5, 4, 3, 13);
             var two = ArtShared.IdToCoordinate(6, 4, 3, 8);
 
-            var oneTile = new List<Coordinates> { one, two };
+            var oneTile = new List<Coordinates> {one, two};
 
             var oneM = HelperMethods.GenerateStringFromList(map.Borders);
             Debug.WriteLine(oneM);

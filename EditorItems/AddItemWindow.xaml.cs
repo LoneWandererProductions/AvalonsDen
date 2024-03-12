@@ -96,7 +96,7 @@ namespace EditorItems
         /// <param name="e">Type</param>
         private void CmbBxTable_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var item = (ComboBoxItem)CmbBxTable.SelectedItem;
+            var item = (ComboBoxItem) CmbBxTable.SelectedItem;
             var name = item.Content.ToString();
             if (string.IsNullOrEmpty(name)) return;
 

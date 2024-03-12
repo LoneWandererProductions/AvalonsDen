@@ -51,7 +51,7 @@ namespace Imaging
 
             try
             {
-                var bmp = new BitmapImage { CreateOptions = BitmapCreateOptions.DelayCreation };
+                var bmp = new BitmapImage {CreateOptions = BitmapCreateOptions.DelayCreation};
                 bmp.BeginInit();
                 bmp.CacheOption = BitmapCacheOption.OnLoad;
                 bmp.UriSource = new Uri(path);
@@ -99,7 +99,7 @@ namespace Imaging
 
             try
             {
-                var bmp = new BitmapImage { CreateOptions = BitmapCreateOptions.DelayCreation };
+                var bmp = new BitmapImage {CreateOptions = BitmapCreateOptions.DelayCreation};
                 bmp.BeginInit();
                 bmp.DecodePixelHeight = height;
                 bmp.DecodePixelWidth = width;
@@ -143,7 +143,7 @@ namespace Imaging
                 throw new IOException(ImagingResources.ErrorMissingFile, innerException);
             }
 
-            var bmp = new BitmapImage { CreateOptions = BitmapCreateOptions.DelayCreation };
+            var bmp = new BitmapImage {CreateOptions = BitmapCreateOptions.DelayCreation};
 
             try
             {
@@ -203,7 +203,7 @@ namespace Imaging
                 throw new IOException(ImagingResources.ErrorMissingFile, innerException);
             }
 
-            var bmp = new BitmapImage { CreateOptions = BitmapCreateOptions.DelayCreation };
+            var bmp = new BitmapImage {CreateOptions = BitmapCreateOptions.DelayCreation};
 
             try
             {
@@ -392,8 +392,8 @@ namespace Imaging
                 throw new ArgumentNullException(ImagingResources.ErrorWrongParameters, innerException);
             }
 
-            var width = (int)(image.Width * scaling);
-            var height = (int)(image.Height * scaling);
+            var width = (int) (image.Width * scaling);
+            var height = (int) (image.Height * scaling);
 
             //needed because of: A Graphics object cannot be created from an image that has an indexed pixel format
             var btm = new Bitmap(width, height);
@@ -772,15 +772,15 @@ namespace Imaging
             var hOver = image.Height / 2.0f;
 
             // Get the coordinates of the corners, taking the origin to be the centre of the bitmap.
-            PointF[] corners = { new(-wOver, -hOver), new(+wOver, -hOver), new(+wOver, +hOver), new(-wOver, +hOver) };
+            PointF[] corners = {new(-wOver, -hOver), new(+wOver, -hOver), new(+wOver, +hOver), new(-wOver, +hOver)};
 
             for (var i = 0; i < 4; i++)
             {
                 var point = corners[i];
                 corners[i] =
                     new PointF(
-                        (float)(point.X * ExtendedMath.CalcCos(degree) - point.Y * ExtendedMath.CalcSin(degree)),
-                        (float)(point.X * ExtendedMath.CalcSin(degree) + point.Y * ExtendedMath.CalcCos(degree)));
+                        (float) (point.X * ExtendedMath.CalcCos(degree) - point.Y * ExtendedMath.CalcSin(degree)),
+                        (float) (point.X * ExtendedMath.CalcSin(degree) + point.Y * ExtendedMath.CalcCos(degree)));
             }
 
             // Find the min and max x and y coordinates.
@@ -801,7 +801,7 @@ namespace Imaging
             // Get the size of the new bitmap.
             var newSize = new SizeF(maxX - minX, maxY - minY);
             // create it.
-            var btm = new Bitmap((int)Math.Ceiling(newSize.Width), (int)Math.Ceiling(newSize.Height));
+            var btm = new Bitmap((int) Math.Ceiling(newSize.Width), (int) Math.Ceiling(newSize.Height));
             //fix Resolution
             btm.SetResolution(image.HorizontalResolution, image.VerticalResolution);
 

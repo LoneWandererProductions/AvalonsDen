@@ -84,13 +84,13 @@ namespace EditorEvent
         internal static EventTypeExtended GetEventTypeExtended(
             ObservableCollection<EventTypeExtended> eventTypeCollection)
         {
-            if (eventTypeCollection.Count == 0) return new EventTypeExtended { Id = 0 };
+            if (eventTypeCollection.Count == 0) return new EventTypeExtended {Id = 0};
 
             var lst = new List<int>();
 
             foreach (var eventType in eventTypeCollection) lst.Add(eventType.Id);
 
-            return new EventTypeExtended { Id = Utility.GetFirstAvailableIndex(lst) };
+            return new EventTypeExtended {Id = Utility.GetFirstAvailableIndex(lst)};
         }
 
         /// <summary>
@@ -102,13 +102,13 @@ namespace EditorEvent
             ObservableCollection<CoordinatesDisplay> observableCoordinates)
         {
             //Key is Event Id and it must be unique
-            if (observableCoordinates.Count == 0) return new CoordinatesDisplay { EventId = 0 };
+            if (observableCoordinates.Count == 0) return new CoordinatesDisplay {EventId = 0};
 
             var lst = new List<int>();
 
             foreach (var eventId in observableCoordinates) lst.Add(eventId.EventId);
 
-            return new CoordinatesDisplay { EventId = Utility.GetFirstAvailableIndex(lst) };
+            return new CoordinatesDisplay {EventId = Utility.GetFirstAvailableIndex(lst)};
         }
 
         /// <summary>
@@ -261,16 +261,16 @@ namespace EditorEvent
                     EditorEventResources.WarningCoordinatesDisplayIsEmpty);
 
             foreach (var item in from item in eventType
-                     let lst = eventTypeExtension.Where(x => x.Id == item.IdForFurtherEventInfo)
-                     where !lst.Any()
-                     select item)
+                let lst = eventTypeExtension.Where(x => x.Id == item.IdForFurtherEventInfo)
+                where !lst.Any()
+                select item)
                 SendMessage?.Invoke(nameof(CheckIdForFurtherEventInfo),
                     string.Concat(EditorEventResources.ErrorIdForFurtherEventInfoIsNotAvailable, item.Id));
 
             foreach (var item in from item in eventType
-                     let lst = coordinates.Where(x => x.EventId == item.Id)
-                     where !lst.Any()
-                     select item)
+                let lst = coordinates.Where(x => x.EventId == item.Id)
+                where !lst.Any()
+                select item)
                 SendMessage?.Invoke(nameof(CheckIdForFurtherEventInfo),
                     string.Concat(EditorEventResources.WarningCoordinateForEventNotAvailable, item.Id));
         }

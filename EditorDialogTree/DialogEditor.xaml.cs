@@ -108,7 +108,7 @@ namespace EditorDialogTree
 
             Register.DialogStructure = new Dictionary<int, Node>
             {
-                { 1, new Node { Id = 1, Level = 1 } }
+                {1, new Node {Id = 1, Level = 1}}
             };
 
             DialogEditorHandler.AddElement(1, 1);
@@ -422,7 +422,7 @@ namespace EditorDialogTree
         /// <param name="e">Event Parameter</param>
         private void Btn_Click(object sender, RoutedEventArgs e)
         {
-            var name = ((Button)sender).Name;
+            var name = ((Button) sender).Name;
 
             var id = _buttonDialogDct[name];
             //combine Visual with Data Element
@@ -453,7 +453,7 @@ namespace EditorDialogTree
         /// <param name="e">Event Parameter</param>
         private void AddRow_Click(object sender, RoutedEventArgs e)
         {
-            var name = ((Button)sender).Name;
+            var name = ((Button) sender).Name;
             var level = _buttonAddDct[name];
             var id = TreeProcessing.AddElement(level);
             DialogEditorHandler.InsertTree(id, level);

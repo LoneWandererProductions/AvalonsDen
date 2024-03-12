@@ -6,7 +6,7 @@ namespace InventoryHandler
     public class Concept
     {
         /// <summary>
-        /// The identifier mapping
+        ///     The identifier mapping
         /// </summary>
         private readonly Dictionary<int, string> idMapping = new()
         {
@@ -28,15 +28,15 @@ namespace InventoryHandler
             {16, "Chest"},
             {17, "Gloves"},
             {18, "Trousers"},
-            {19, "Shoes"},
+            {19, "Shoes"}
         };
 
         /// <summary>
-        /// Gets or sets the nameof the character
-        /// Optional Data
+        ///     Gets or sets the nameof the character
+        ///     Optional Data
         /// </summary>
         /// <value>
-        /// The name.
+        ///     The name.
         /// </value>
         public string Name { get; set; }
 
@@ -155,8 +155,7 @@ namespace InventoryHandler
 
             if (max > item.Stack)
             {
-                var cache = new ItemA();
-                cache = item;
+                var cache = item.Clone() as ItemA;
                 cache.Stack -= max;
                 item.Stack = max;
                 MoveToInventory(cache, false);
@@ -187,8 +186,7 @@ namespace InventoryHandler
 
                     if (max > item.Stack)
                     {
-                        var cache = new ItemA();
-                        cache = item;
+                        var cache = item.Clone() as ItemA;
                         cache.Stack -= max;
                         item.Stack = max;
                         MoveToInventory(cache, false);
@@ -226,8 +224,7 @@ namespace InventoryHandler
 
             if (max > item.Stack)
             {
-                var cache = new ItemA();
-                cache = item;
+                var cache = item.Clone() as ItemA;
                 cache.Stack -= max;
                 item.Stack = max;
                 MoveToInventory(cache, false);
