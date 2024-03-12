@@ -65,8 +65,8 @@ namespace Chapter
         {
             //Get all the needed Data
             _handle = new SaveGameHandle();
+            //todo
             SaveInfos save = null; //_handle.LoadSaveFile(ListBoxSaves.GetName(ListBoxSaves.SelectedItem));
-            if (save == null) return;
 
             //run this shit show
             var campaign = new CampaignsHandler();

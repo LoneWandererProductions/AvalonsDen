@@ -83,7 +83,7 @@ namespace EditorItems
         /// <param name="e">The routed event arguments.</param>
         private void Btn_Click_Save(object sender, RoutedEventArgs e)
         {
-            EditorItemsProcessing.SaveImages((Images) DataContext);
+            EditorItemsProcessing.SaveImages((Images)DataContext);
         }
 
         /// <summary>

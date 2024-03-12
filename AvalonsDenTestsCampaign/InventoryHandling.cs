@@ -15,7 +15,6 @@ using DatabaseDriver;
 using EventEngine;
 using ExtendedSystemObjects;
 using FileHandler;
-using GameEngine;
 using Loader;
 using MapGenerator;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

@@ -55,7 +55,7 @@ namespace EditorItems
         {
             var dbIn = HandlerInputSingleton.Instance;
             var id = Utility.GetFirstAvailableIndex(_index);
-            var armor = new Armor {Id = id, ImageId = id};
+            var armor = new Armor { Id = id, ImageId = id };
             var check = dbIn.AddItemToArmor(armor);
 
             if (!check) return;
@@ -71,7 +71,7 @@ namespace EditorItems
         {
             var dbIn = HandlerInputSingleton.Instance;
             var id = Utility.GetFirstAvailableIndex(_index);
-            var weapon = new Weapon {Id = id, ImageId = id};
+            var weapon = new Weapon { Id = id, ImageId = id };
             var check = dbIn.AddItemToWeapon(weapon);
 
             if (!check) return;
@@ -87,7 +87,7 @@ namespace EditorItems
         {
             var dbIn = HandlerInputSingleton.Instance;
             var id = Utility.GetFirstAvailableIndex(_index);
-            var miscellaneous = new Miscellaneous {Id = id, ImageId = id};
+            var miscellaneous = new Miscellaneous { Id = id, ImageId = id };
             var check = dbIn.AddItemToMiscellaneous(miscellaneous);
 
             if (!check) return;
@@ -103,7 +103,7 @@ namespace EditorItems
         {
             var dbIn = HandlerInputSingleton.Instance;
             var id = Utility.GetFirstAvailableIndex(_imageIndex);
-            var images = new Images {IdImage = id};
+            var images = new Images { IdImage = id };
             var check = dbIn.AddItemToImage(images);
 
             if (!check) return;

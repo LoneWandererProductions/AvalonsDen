@@ -10,25 +10,25 @@ namespace InventoryHandler
         /// </summary>
         private readonly Dictionary<int, string> idMapping = new()
         {
-            {0, "Artifact 0"},
-            {1, "Artifact 1"},
-            {2, "Artifact 2"},
-            {3, "Artifact 3"},
-            {4, "Artifact 4"},
-            {5, "Artifact 5"},
-            {6, "Head"},
-            {8, "Shoulder"},
-            {9, "Amulet"},
-            {10, "Left Hand"},
-            {11, "Right Hand"},
-            {12, "Off Hand"},
-            {13, "Ring Left"},
-            {14, "Ring Right"},
-            {15, "Belt"},
-            {16, "Chest"},
-            {17, "Gloves"},
-            {18, "Trousers"},
-            {19, "Shoes"}
+            { 0, "Artifact 0" },
+            { 1, "Artifact 1" },
+            { 2, "Artifact 2" },
+            { 3, "Artifact 3" },
+            { 4, "Artifact 4" },
+            { 5, "Artifact 5" },
+            { 6, "Head" },
+            { 8, "Shoulder" },
+            { 9, "Amulet" },
+            { 10, "Left Hand" },
+            { 11, "Right Hand" },
+            { 12, "Off Hand" },
+            { 13, "Ring Left" },
+            { 14, "Ring Right" },
+            { 15, "Belt" },
+            { 16, "Chest" },
+            { 17, "Gloves" },
+            { 18, "Trousers" },
+            { 19, "Shoes" }
         };
 
         /// <summary>

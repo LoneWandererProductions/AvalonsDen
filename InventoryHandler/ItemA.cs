@@ -1,6 +1,6 @@
-﻿using ExtendedSystemObjects;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using ExtendedSystemObjects;
 
 namespace InventoryHandler
 {
@@ -137,7 +137,7 @@ namespace InventoryHandler
 
         public object Clone()
         {
-            var clone = (ItemA) MemberwiseClone();
+            var clone = (ItemA)MemberwiseClone();
 
             // Deep copy for the List<int>
             if (Slots != null) clone.Slots = new List<int>(Slots);

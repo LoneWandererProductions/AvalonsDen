@@ -138,7 +138,7 @@ namespace CommonControls
         /// </value>
         public int ThumbHeight
         {
-            get => (int) GetValue(DependencyThumbHeight);
+            get => (int)GetValue(DependencyThumbHeight);
             set => SetValue(DependencyThumbHeight, value);
         }
 
@@ -150,7 +150,7 @@ namespace CommonControls
         /// </value>
         public int ThumbWidth
         {
-            get => (int) GetValue(DependencyThumbWidth);
+            get => (int)GetValue(DependencyThumbWidth);
             set => SetValue(DependencyThumbWidth, value);
         }
 
@@ -162,7 +162,7 @@ namespace CommonControls
         /// </value>
         public int ThumbCellSize
         {
-            get => (int) GetValue(DependencyThumbCellSize);
+            get => (int)GetValue(DependencyThumbCellSize);
             set => SetValue(DependencyThumbCellSize, value);
         }
 
@@ -175,7 +175,7 @@ namespace CommonControls
         public bool ThumbGrid
 
         {
-            get => (bool) GetValue(DependencyThumbGrid);
+            get => (bool)GetValue(DependencyThumbGrid);
             set => SetValue(DependencyThumbGrid, value);
         }
 
@@ -188,7 +188,7 @@ namespace CommonControls
         public bool SelectBox
 
         {
-            get => (bool) GetValue(SelectionBox);
+            get => (bool)GetValue(SelectionBox);
             set => SetValue(SelectionBox, value);
         }
 
@@ -201,7 +201,7 @@ namespace CommonControls
         public bool IsCheckBoxSelected
 
         {
-            get => (bool) GetValue(IsSelected);
+            get => (bool)GetValue(IsSelected);
             set => SetValue(IsSelected, value);
         }
 
@@ -214,7 +214,7 @@ namespace CommonControls
         public Dictionary<int, string> ItemsSource
 
         {
-            get => (Dictionary<int, string>) GetValue(ItemsSourceProperty);
+            get => (Dictionary<int, string>)GetValue(ItemsSourceProperty);
             set => SetValue(ItemsSourceProperty, value);
         }
 
@@ -360,7 +360,7 @@ namespace CommonControls
                 if (ThumbHeight != 1 && ThumbWidth != 1 && pics.Count > 1)
                 {
                     var fraction = new ExtendedMath.Fraction(pics.Count, ThumbHeight);
-                    ThumbWidth = (int) Math.Ceiling(fraction.Decimal);
+                    ThumbWidth = (int)Math.Ceiling(fraction.Decimal);
                 }
             }
 
@@ -449,7 +449,7 @@ namespace CommonControls
                 //http://blog.andreweichacker.com/2008/10/just-a-bit-loading-images-asynchronously-in-wpf/
 
                 _ = images.Dispatcher?.BeginInvoke(DispatcherPriority.Loaded,
-                    (ThreadStart) (() => images.Source = myBitmapCell));
+                    (ThreadStart)(() => images.Source = myBitmapCell));
             }
 
             timer.Stop();
@@ -472,7 +472,7 @@ namespace CommonControls
             var id = Keys[clickedButton.Name];
 
             //create new click Object
-            var args = new ImageEventArgs {Id = id};
+            var args = new ImageEventArgs { Id = id };
             OnImageThumbClicked(args);
         }
 
@@ -492,11 +492,11 @@ namespace CommonControls
 
             var cm = new ContextMenu();
 
-            var menuItem = new MenuItem {Header = ComCtlResources.ContextDeselect};
+            var menuItem = new MenuItem { Header = ComCtlResources.ContextDeselect };
             menuItem.Click += Deselect_Click;
             _ = cm.Items.Add(menuItem);
 
-            menuItem = new MenuItem {Header = ComCtlResources.ContextDeselectAll};
+            menuItem = new MenuItem { Header = ComCtlResources.ContextDeselectAll };
             menuItem.Click += DeselectAll_Click;
             _ = cm.Items.Add(menuItem);
 

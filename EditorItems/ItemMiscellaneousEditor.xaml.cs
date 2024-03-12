@@ -85,7 +85,7 @@ namespace EditorItems
         /// <param name="e">The routed event arguments.</param>
         private void Btn_Click_Save(object sender, RoutedEventArgs e)
         {
-            EditorItemsProcessing.SaveMiscellaneous((Miscellaneous) DataContext);
+            EditorItemsProcessing.SaveMiscellaneous((Miscellaneous)DataContext);
         }
 
         /// <summary>

@@ -293,7 +293,7 @@ namespace CommonControls
         /// <value>
         ///     The alpha percentage.
         /// </value>
-        public int AlphaPercentage => (int) ((double) _alpha / 255 * 100);
+        public int AlphaPercentage => (int)((double)_alpha / 255 * 100);
 
         /// <summary>
         ///     Gets or sets the hexadecimal
@@ -323,7 +323,7 @@ namespace CommonControls
         /// </value>
         public double H
         {
-            get => (double) GetValue(HProperty);
+            get => (double)GetValue(HProperty);
             set => SetValue(HProperty, value);
         }
 
@@ -335,7 +335,7 @@ namespace CommonControls
         /// </value>
         public double S
         {
-            get => (double) GetValue(SProperty);
+            get => (double)GetValue(SProperty);
             set => SetValue(SProperty, value);
         }
 
@@ -347,7 +347,7 @@ namespace CommonControls
         /// </value>
         public double V
         {
-            get => (double) GetValue(VProperty);
+            get => (double)GetValue(VProperty);
             set => SetValue(VProperty, value);
         }
 

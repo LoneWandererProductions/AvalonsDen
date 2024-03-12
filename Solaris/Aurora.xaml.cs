@@ -155,7 +155,7 @@ namespace Solaris
         /// </value>
         public int AuroraHeight
         {
-            get => (int) GetValue(AuroraHeightProperty);
+            get => (int)GetValue(AuroraHeightProperty);
             set => SetValue(AuroraHeightProperty, value);
         }
 
@@ -167,7 +167,7 @@ namespace Solaris
         /// </value>
         public int AuroraWidth
         {
-            get => (int) GetValue(AuroraWidthProperty);
+            get => (int)GetValue(AuroraWidthProperty);
             set => SetValue(AuroraWidthProperty, value);
         }
 
@@ -179,7 +179,7 @@ namespace Solaris
         /// </value>
         public int AuroraTextureSize
         {
-            get => (int) GetValue(AuroraTextureSizeProperty);
+            get => (int)GetValue(AuroraTextureSizeProperty);
             set => SetValue(AuroraTextureSizeProperty, value);
         }
 
@@ -191,7 +191,7 @@ namespace Solaris
         /// </value>
         public Dictionary<int, List<int>> AuroraMap
         {
-            get => (Dictionary<int, List<int>>) GetValue(AuroraMapProperty);
+            get => (Dictionary<int, List<int>>)GetValue(AuroraMapProperty);
             set => SetValue(AuroraMapProperty, value);
         }
 
@@ -203,7 +203,7 @@ namespace Solaris
         /// </value>
         public Bitmap AuroraAvatar
         {
-            get => (Bitmap) GetValue(AuroraAvatarProperty);
+            get => (Bitmap)GetValue(AuroraAvatarProperty);
             set => SetValue(AuroraAvatarProperty, value);
         }
 
@@ -215,7 +215,7 @@ namespace Solaris
         /// </value>
         public Dictionary<int, Texture> AuroraTextures
         {
-            get => (Dictionary<int, Texture>) GetValue(AuroraTexturesProperty);
+            get => (Dictionary<int, Texture>)GetValue(AuroraTexturesProperty);
             set => SetValue(AuroraTexturesProperty, value);
         }
 
@@ -227,7 +227,7 @@ namespace Solaris
         /// </value>
         public KeyValuePair<int, int> AuroraAdd
         {
-            get => (KeyValuePair<int, int>) GetValue(AuroraAddProperty);
+            get => (KeyValuePair<int, int>)GetValue(AuroraAddProperty);
             set
             {
                 SetValue(AuroraAddProperty, value);
@@ -252,7 +252,7 @@ namespace Solaris
         /// </value>
         public KeyValuePair<int, int> AuroraRemove
         {
-            get => (KeyValuePair<int, int>) GetValue(AuroraRemoveProperty);
+            get => (KeyValuePair<int, int>)GetValue(AuroraRemoveProperty);
             set
             {
                 SetValue(AuroraRemoveProperty, value);
@@ -278,7 +278,7 @@ namespace Solaris
         /// </value>
         public KeyValuePair<int, int> AuroraAddDisplay
         {
-            get => (KeyValuePair<int, int>) GetValue(AuroraAddDisplayProperty);
+            get => (KeyValuePair<int, int>)GetValue(AuroraAddDisplayProperty);
             set
             {
                 SetValue(AuroraAddDisplayProperty, value);
@@ -297,7 +297,7 @@ namespace Solaris
         /// </value>
         public int AuroraRemoveDisplay
         {
-            get => (int) GetValue(AuroraRemoveDisplayProperty);
+            get => (int)GetValue(AuroraRemoveDisplayProperty);
             set
             {
                 SetValue(AuroraRemoveDisplayProperty, value);
@@ -315,7 +315,7 @@ namespace Solaris
         /// </value>
         public List<int> AuroraMovement
         {
-            get => (List<int>) GetValue(AuroraMovementProperty);
+            get => (List<int>)GetValue(AuroraMovementProperty);
             set
             {
                 if (value == null) return;
@@ -336,7 +336,7 @@ namespace Solaris
         /// </value>
         public bool AuroraGrid
         {
-            get => (bool) GetValue(AuroraGridProperty);
+            get => (bool)GetValue(AuroraGridProperty);
             set
             {
                 SetValue(AuroraGridProperty, value);
@@ -380,12 +380,12 @@ namespace Solaris
             if (position.X < AuroraTextureSize)
                 _cursor.X = 0;
             else
-                _cursor.X = (int) position.X / AuroraTextureSize;
+                _cursor.X = (int)position.X / AuroraTextureSize;
 
             if (position.Y < AuroraTextureSize)
                 _cursor.Y = 0;
             else
-                _cursor.Y = (int) position.X / AuroraTextureSize;
+                _cursor.Y = (int)position.X / AuroraTextureSize;
         }
     }
 }

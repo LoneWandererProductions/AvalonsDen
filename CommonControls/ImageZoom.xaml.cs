@@ -108,7 +108,7 @@ namespace CommonControls
         /// </value>
         public BitmapImage ItemsSource
         {
-            get => (BitmapImage) GetValue(ImageSourceProperty);
+            get => (BitmapImage)GetValue(ImageSourceProperty);
             set => SetValue(ImageSourceProperty, value);
         }
 
@@ -121,7 +121,7 @@ namespace CommonControls
         /// </value>
         public string ImageGifPath
         {
-            get => (string) GetValue(ImageGifSourceProperty);
+            get => (string)GetValue(ImageGifSourceProperty);
             set => SetValue(ImageSourceProperty, value);
         }
 
@@ -133,7 +133,7 @@ namespace CommonControls
         /// </value>
         public SelectionTools ZoomTool
         {
-            get => (SelectionTools) GetValue(ZoomTools);
+            get => (SelectionTools)GetValue(ZoomTools);
             set => SetValue(ZoomTools, value);
         }
 
@@ -145,7 +145,7 @@ namespace CommonControls
         /// </value>
         public bool AutoplayGifImage
         {
-            get => (bool) GetValue(AutoplayGif);
+            get => (bool)GetValue(AutoplayGif);
             set => SetValue(AutoplayGif, value);
         }
 
@@ -315,24 +315,24 @@ namespace CommonControls
 
                     if (_imageStartPoint.X < endpoint.X)
                     {
-                        frame.X = (int) _imageStartPoint.X;
-                        frame.Width = (int) (endpoint.X - _imageStartPoint.X);
+                        frame.X = (int)_imageStartPoint.X;
+                        frame.Width = (int)(endpoint.X - _imageStartPoint.X);
                     }
                     else
                     {
-                        frame.Y = (int) endpoint.X;
-                        frame.Width = (int) (_imageStartPoint.X - endpoint.X);
+                        frame.Y = (int)endpoint.X;
+                        frame.Width = (int)(_imageStartPoint.X - endpoint.X);
                     }
 
                     if (_startPoint.Y < endpoint.Y)
                     {
-                        frame.Y = (int) _startPoint.Y;
-                        frame.Height = (int) (endpoint.Y - _imageStartPoint.Y);
+                        frame.Y = (int)_startPoint.Y;
+                        frame.Height = (int)(endpoint.Y - _imageStartPoint.Y);
                     }
                     else
                     {
-                        frame.Y = (int) endpoint.Y;
-                        frame.Height = (int) (_imageStartPoint.Y - endpoint.Y);
+                        frame.Y = (int)endpoint.Y;
+                        frame.Height = (int)(_imageStartPoint.Y - endpoint.Y);
                     }
                     //cleanups, In case we overstepped the boundaries
 
@@ -340,9 +340,9 @@ namespace CommonControls
 
                     if (frame.Y < 0) frame.Y = 0;
 
-                    if (frame.Width > ItemsSource.Width) frame.Width = (int) ItemsSource.Width;
+                    if (frame.Width > ItemsSource.Width) frame.Width = (int)ItemsSource.Width;
 
-                    if (frame.Height < 0) frame.Height = (int) ItemsSource.Height;
+                    if (frame.Height < 0) frame.Height = (int)ItemsSource.Height;
 
                     SelectedFrame?.Invoke(frame);
                 }

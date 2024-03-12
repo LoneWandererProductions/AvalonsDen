@@ -66,7 +66,7 @@ namespace CommonControls
         /// </summary>
         public string StartColor
         {
-            get => (string) GetValue(StartColorProperty);
+            get => (string)GetValue(StartColorProperty);
             set
             {
                 SetValue(StartColorProperty, value);
@@ -104,7 +104,7 @@ namespace CommonControls
         {
             if (CmbColor?.SelectedItem is not PropertyInfo property) return;
 
-            var selectedColor = (Color) property.GetValue(null, null);
+            var selectedColor = (Color)property.GetValue(null, null);
             StartColor = _colorDct.FirstOrDefault(x => x.Value == selectedColor).Key;
         }
 
@@ -123,7 +123,7 @@ namespace CommonControls
         private static Dictionary<string, Color> InitiateColors()
         {
             return typeof(Colors).GetProperties().ToDictionary(property => property.Name,
-                property => (Color) ColorConverter.ConvertFromString(property.Name));
+                property => (Color)ColorConverter.ConvertFromString(property.Name));
         }
     }
 }

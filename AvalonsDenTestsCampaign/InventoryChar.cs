@@ -39,7 +39,7 @@ namespace AvalonsDenTestsCampaign
             };
 
             //add some stuff to Inventory
-            var item = new ItemA(null, 3, 3, 1, 1,20);
+            var item = new ItemA(null, 3, 3, 1, 1, 20);
             concept.Inventory.Add(21, item);
 
             //artifact

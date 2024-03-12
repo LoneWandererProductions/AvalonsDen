@@ -49,7 +49,7 @@ namespace CommonControls
             var xDelta = x - Center;
             var yDelta = y - Center;
 
-            var dist = (int) Math.Sqrt(xDelta * xDelta + yDelta * yDelta);
+            var dist = (int)Math.Sqrt(xDelta * xDelta + yDelta * yDelta);
 
             return (ColorPickerRegister.InternSize / 2).Interval(dist, 20);
         }

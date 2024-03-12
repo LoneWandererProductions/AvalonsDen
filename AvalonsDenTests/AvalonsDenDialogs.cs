@@ -87,7 +87,7 @@ namespace AvalonsDenTests
 
             FileHandleDelete.DeleteAllContents(pathMap, false);
 
-            var ddialog = new List<DialogObject> {ResourcesGeneral.DialogStart};
+            var ddialog = new List<DialogObject> { ResourcesGeneral.DialogStart };
 
             _dEdit.InitiateDialog(ddialog);
 
@@ -129,7 +129,7 @@ namespace AvalonsDenTests
             FileHandleDelete.DeleteAllContents(pathAutosave, false);
             FileHandleDelete.DeleteAllContents(pathMap, false);
 
-            var ddialog = new List<DialogObject> {ResourcesGeneral.DialogStart};
+            var ddialog = new List<DialogObject> { ResourcesGeneral.DialogStart };
 
             _dHandler.InitiateDialog(ddialog);
 

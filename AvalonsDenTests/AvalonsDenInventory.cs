@@ -43,7 +43,7 @@ namespace AvalonsDenTests
             };
             inventory.Add(slot.Id, slot);
 
-            var character = new Dictionary<int, string> {{0, "Ed"}, {1, "Mike"}};
+            var character = new Dictionary<int, string> { { 0, "Ed" }, { 1, "Mike" } };
 
             //Got Data in Place
             var view = new InventoryView();

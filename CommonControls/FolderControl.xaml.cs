@@ -132,9 +132,9 @@ namespace CommonControls
 
             //Just get all HD
             foreach (var item in directory.Select(s => new TreeViewItem
-            {
-                Header = s, Tag = s, FontWeight = FontWeights.Normal
-            }))
+                     {
+                         Header = s, Tag = s, FontWeight = FontWeights.Normal
+                     }))
             {
                 //add Method and dummy
                 _ = item.Items.Add(null);
@@ -152,7 +152,7 @@ namespace CommonControls
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private static void Folder_Expanded(object sender, RoutedEventArgs e)
         {
-            var item = (TreeViewItem) sender;
+            var item = (TreeViewItem)sender;
             if (item.Items.Count != 1 || item.Items[0] != null) return;
 
             item.Items.Clear();
@@ -160,12 +160,12 @@ namespace CommonControls
             try
             {
                 foreach (var subItem in Directory.GetDirectories(item.Tag.ToString()!).Select(path => new TreeViewItem
-                {
-                    Header =
-                        path[(path.LastIndexOf(ComCtlResources.Path, StringComparison.Ordinal) + 1)..],
-                    Tag = path,
-                    FontWeight = FontWeights.Normal
-                }))
+                         {
+                             Header =
+                                 path[(path.LastIndexOf(ComCtlResources.Path, StringComparison.Ordinal) + 1)..],
+                             Tag = path,
+                             FontWeight = FontWeights.Normal
+                         }))
                 {
                     //add Method and dummy
                     _ = subItem.Items.Add(null);
@@ -200,7 +200,7 @@ namespace CommonControls
         {
             var tree = sender as TreeView;
 
-            var selection = (TreeViewItem) tree?.SelectedItem;
+            var selection = (TreeViewItem)tree?.SelectedItem;
 
             if (selection != null) Paths = selection.Tag.ToString();
         }

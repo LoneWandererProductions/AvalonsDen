@@ -52,7 +52,7 @@ namespace CommonControls
         /// </value>
         public string PluginPath
         {
-            get => (string) GetValue(TargetPath);
+            get => (string)GetValue(TargetPath);
             set
             {
                 SetValue(TargetPath, value);
@@ -105,13 +105,13 @@ namespace CommonControls
             var lst = new ObservableCollection<PluginItem>();
 
             foreach (var item in PluginLoad.PluginContainer.Select(plugin => new PluginItem
-            {
-                Command = plugin,
-                Name = plugin.Name,
-                Version = plugin.Version,
-                Type = plugin.Type,
-                Description = plugin.Description
-            }))
+                     {
+                         Command = plugin,
+                         Name = plugin.Name,
+                         Version = plugin.Version,
+                         Type = plugin.Type,
+                         Description = plugin.Description
+                     }))
                 lst.Add(item);
 
             ObservablePlugin = new ObservableCollection<PluginItem>(lst);

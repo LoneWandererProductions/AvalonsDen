@@ -36,7 +36,7 @@ namespace CommonControls
         /// </summary>
         public bool AutoScrolling
         {
-            get => (bool) GetValue(IsAutoScrolling);
+            get => (bool)GetValue(IsAutoScrolling);
             set => SetValue(IsAutoScrolling, value);
         }
 
@@ -88,7 +88,7 @@ namespace CommonControls
         /// </summary>
         public bool AutoScrolling
         {
-            get => (bool) GetValue(IsAutoScrolling);
+            get => (bool)GetValue(IsAutoScrolling);
             set => SetValue(IsAutoScrolling, value);
         }
 
