@@ -44,15 +44,23 @@ namespace AvalonsDenTestsCampaign
             {
                 Weight = 1,
                 ItemId = 1,
-                Slot = -1
+                Slot = 20 //inventory
             };
             concept.Inventory.Add(21, item);
 
             item = new ItemA
             {
                 Weight = 1,
-                ItemId = 1,
+                ItemId = 2,
                 Slots = new List<int> { 0, 1, 3, 4, 5 }
+            };
+            concept.Inventory.Add(22, item);
+
+            var helmet = new ItemA
+            {
+                Weight = 1,
+                ItemId = 3,
+                Slot =6
             };
             concept.Inventory.Add(22, item);
 

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,6 +5,39 @@ namespace InventoryHandler
 {
     public class Concept
     {
+        /// <summary>
+        /// The identifier mapping
+        /// </summary>
+        private readonly Dictionary<int, string> idMapping = new()
+        {
+            {0, "Artifact 0"},
+            {1, "Artifact 1"},
+            {2, "Artifact 2"},
+            {3, "Artifact 3"},
+            {4, "Artifact 4"},
+            {5, "Artifact 5"},
+            {6, "Head"},
+            {8, "Shoulder"},
+            {9, "Amulet"},
+            {10, "Left Hand"},
+            {11, "Right Hand"},
+            {12, "Off Hand"},
+            {13, "Ring Left"},
+            {14, "Ring Right"},
+            {15, "Belt"},
+            {16, "Chest"},
+            {17, "Gloves"},
+            {18, "Trousers"},
+            {19, "Shoes"},
+        };
+
+        /// <summary>
+        /// Gets or sets the nameof the character
+        /// Optional Data
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string Name { get; set; }
 
         public int CharacterId { get; set; }
@@ -18,7 +50,7 @@ namespace InventoryHandler
         public List<int> Limitations { get; set; }
 
         /// <summary>
-        ///     First 18 Slots are reserved for the character Slots
+        ///     First 19 Slots are reserved for the character Slots
         ///     All the rest is Inventory Space.
         ///     id: -1 means that stuff is only used in the inventory
         ///     id: 0-5, Artifact 0-5, interchangeable
@@ -69,7 +101,8 @@ namespace InventoryHandler
         /// <returns>Was item added or not, if not, no slot was available.</returns>
         public bool AddItem(ItemA item, int position = -1)
         {
-            if (position != -1 && position > 20)
+            //basic inventory area
+            if (!idMapping.ContainsKey(position))
             {
                 if (Inventory.ContainsKey(position))
                     //slot not empty? well find an empty spot
@@ -81,6 +114,7 @@ namespace InventoryHandler
                 return true;
             }
 
+            //character area
             if (item.SingleSlot)
             {
                 if (item.MultiSlot) return HandleMultiSlot(item);
@@ -274,64 +308,6 @@ namespace InventoryHandler
             return Enumerable.Range(20, int.MaxValue)
                 .Except(lst)
                 .FirstOrDefault();
-        }
-    }
-
-    public sealed class ItemA : ICloneable
-    {
-        /// <summary>
-        ///     List of Slots, that are not allowed by this Character!
-        /// </summary>
-        /// <value>
-        ///     The List of Slots that are allowed
-        ///     2 slots will be used
-        /// </value>
-        public List<int> Slots { get; set; }
-
-        /// <summary>
-        ///     The allowed Slot, that are allowed for this item.
-        /// </summary>
-        /// <value>
-        ///     One Slot per item
-        /// </value>
-        public int Slot { get; set; }
-
-        /// <summary>
-        ///     Determines if this ItemA uses a single Slot or multiple.
-        /// </summary>
-        /// <value>
-        ///     If <c>true</c> this items only use one Slot <c>false</c>.
-        /// </value>
-        public bool SingleSlot { get; set; }
-
-        /// <summary>
-        ///     If SingleSlot, we might ask, if we can dual wield?
-        /// </summary>
-        /// <value>
-        ///     If <c>true</c> this items can be interchanged in the hand slots, ring slots, artifact slots <c>false</c>.
-        /// </value>
-        public bool MultiSlot { get; set; }
-
-        public int Name { get; set; }
-
-        public int Stack { get; set; }
-
-        public int MaxStack { get; set; }
-
-        public int Weight { get; set; }
-
-        public int ItemId { get; set; }
-
-        public string Tooltip { get; set; }
-
-        public object Clone()
-        {
-            var clone = (ItemA) MemberwiseClone();
-
-            // Deep copy for the List<int>
-            if (Slots != null) clone.Slots = new List<int>(Slots);
-
-            return clone;
         }
     }
 }
