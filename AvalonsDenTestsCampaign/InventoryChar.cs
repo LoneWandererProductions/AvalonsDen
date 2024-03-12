@@ -8,6 +8,7 @@
 
 using InventoryHandler;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
 namespace AvalonsDenTestsCampaign
 {
@@ -17,11 +18,24 @@ namespace AvalonsDenTestsCampaign
     [TestClass]
     public sealed class InventoryChar
     {
-        /// <summary>
-        ///     Check our Exceptions
+
+        [TestMethod]
         public void Inventory()
         {
-            var concept = new Concept();
+            var limit = new List<int>
+            {
+                2,
+                3
+            };
+
+            var concept = new Concept
+            {
+                Name = "test",
+                CharacterId = 0,
+                Limitations = limit
+            };
+
+
         }
     }
 }

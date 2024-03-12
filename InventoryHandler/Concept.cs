@@ -6,7 +6,7 @@ namespace InventoryHandler
 {
     public class Concept
     {
-        public int Name { get; set; }
+        public string Name { get; set; }
 
         public int CharacterId { get; set; }
 
