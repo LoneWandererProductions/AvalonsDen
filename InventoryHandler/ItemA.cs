@@ -10,7 +10,10 @@ namespace InventoryHandler
         /// </summary>
         private List<int> _slots = new();
 
-        private int _slot;
+        /// <summary>
+        /// The slot
+        /// </summary>
+        private int _slot = -1;
 
         /// <summary>
         ///     The allowed Slot, that are allowed for this item.
@@ -45,7 +48,7 @@ namespace InventoryHandler
             set
             {
                 // Ensure mutual exclusivity
-                if (Slot != 0)
+                if (Slot != -1)
                 {
                     throw new InvalidOperationException("SingleValue and MultipleValues are mutually exclusive.");
                 }
