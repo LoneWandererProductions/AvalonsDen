@@ -9,15 +9,15 @@ namespace InventoryHandler
         /// <summary>
         ///     Constructor for creating an ItemA with all attributes.
         /// </summary>
-        /// <param name="slot">The allowed slot for this item.</param>
         /// <param name="slots">The list of slots that are allowed.</param>
-        /// <param name="singleSlot">Whether the item uses a single slot.</param>
-        /// <param name="multiSlot">Whether the item can be interchanged in various slots.</param>
-        /// <param name="name">The name of the item.</param>
         /// <param name="stack">The stack size of the item.</param>
         /// <param name="maxStack">The maximum stack size allowed for the item.</param>
         /// <param name="weight">The weight of the item.</param>
         /// <param name="itemId">The ID of the item.</param>
+        /// <param name="slot">The allowed slot for this item.</param>
+        /// <param name="singleSlot">Whether the item uses a single slot.</param>
+        /// <param name="multiSlot">Whether the item can be interchanged in various slots.</param>
+        /// <param name="name">The name of the item.</param>
         /// <param name="tooltip">The tooltip information for the item.</param>
         public ItemA(
             List<int> slots,
@@ -57,9 +57,15 @@ namespace InventoryHandler
 
         }
 
+        public ItemA(int stack, int maxStack, int weight, int itemId) : this(new List<int>(), stack, maxStack, weight, itemId)
+        {
+        }
+
+
         public ItemA()
         {
-            throw new NotImplementedException();
+            Slots = new List<int>();
+            ItemId = -1;
         }
 
         /// <summary>
@@ -103,7 +109,7 @@ namespace InventoryHandler
 
         public int Weight { get; set; }
 
-        public int ItemId { get; set; } = -1;
+        public int ItemId { get; set; } 
 
         public string Tooltip { get; set; }
 
