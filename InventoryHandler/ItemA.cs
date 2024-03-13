@@ -7,16 +7,6 @@ namespace InventoryHandler
     public sealed class ItemA : ICloneable
     {
         /// <summary>
-        ///     The slot
-        /// </summary>
-        private int _slot = -1;
-
-        /// <summary>
-        ///     The slots
-        /// </summary>
-        private List<int> _slots = new();
-
-        /// <summary>
         ///     Constructor for creating an ItemA with all attributes.
         /// </summary>
         /// <param name="slot">The allowed slot for this item.</param>
@@ -30,7 +20,7 @@ namespace InventoryHandler
         /// <param name="itemId">The ID of the item.</param>
         /// <param name="tooltip">The tooltip information for the item.</param>
         public ItemA(
-            List<int>? slots,
+            List<int> slots,
             int stack,
             int maxStack,
             int weight,
@@ -60,7 +50,11 @@ namespace InventoryHandler
             if (maxStack == 0) throw new ArgumentException("RequiredAttribute must be set.", nameof(maxStack));
             if (maxStack < stack)
                 throw new ArgumentException($"Logical Error. {nameof(stack)} must be smaller than {nameof(maxStack)}.");
-            if (itemId == -1) throw new ArgumentException("RequiredAttribute must be set.", nameof(ItemId));
+            if (Slot == -1 && slots.IsNullOrEmpty())
+                throw new ArgumentException("Either Slot or Slots mist be set.");
+            if (Slot != -1 && !slots.IsNullOrEmpty())
+                throw new ArgumentException("Slot and Slots are mutually exclusive.");
+
         }
 
         public ItemA()
@@ -74,17 +68,7 @@ namespace InventoryHandler
         /// <value>
         ///     One Slot per item
         /// </value>
-        public int Slot
-        {
-            get => _slot;
-            set
-            {
-                // Ensure mutual exclusivity
-                if (_slots.Count > 0)
-                    throw new InvalidOperationException("SingleValue and MultipleValues are mutually exclusive.");
-                _slot = value;
-            }
-        }
+        public int Slot { get; set; }
 
         /// <summary>
         ///     List of Slots, that are not allowed by this Character!
@@ -93,18 +77,7 @@ namespace InventoryHandler
         ///     The List of Slots that are allowed
         ///     2 slots will be used
         /// </value>
-        public List<int> Slots
-        {
-            get => _slots;
-            set
-            {
-                // Ensure mutual exclusivity
-                if (Slot != -1)
-                    throw new InvalidOperationException("SingleValue and MultipleValues are mutually exclusive.");
-
-                _slots = value;
-            }
-        }
+        public List<int> Slots { get; set; }
 
         /// <summary>
         ///     Determines if this ItemA uses a single Slot or multiple.
@@ -133,7 +106,6 @@ namespace InventoryHandler
         public int ItemId { get; set; } = -1;
 
         public string Tooltip { get; set; }
-
 
         public object Clone()
         {
