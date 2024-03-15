@@ -131,15 +131,12 @@ namespace InventoryHandler
         /// <returns>The removed item, mull, if none was removed.</returns>
         public ItemA RemoveItem(int position)
         {
-            if (Inventory.ContainsKey(position))
-            {
-                var cache = Inventory[position];
-                Inventory.Remove(position);
-                Weight += cache.Weight;
-                return cache;
-            }
+            if (!Inventory.ContainsKey(position)) return null;
 
-            return null;
+            var cache = Inventory[position];
+            Inventory.Remove(position);
+            Weight += cache.Weight;
+            return cache;
         }
 
         private bool HandleSingleSlot(ItemA item)

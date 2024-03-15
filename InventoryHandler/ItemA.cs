@@ -54,7 +54,6 @@ namespace InventoryHandler
                 throw new ArgumentException("Either Slot or Slots mist be set.");
             if (Slot != -1 && !slots.IsNullOrEmpty())
                 throw new ArgumentException("Slot and Slots are mutually exclusive.");
-
         }
 
         public ItemA(int stack, int maxStack, int weight, int itemId) : this(new List<int>(), stack, maxStack, weight, itemId)

@@ -50,12 +50,16 @@ namespace AvalonsDenTestsCampaign
             concept.Inventory.Add(22, item);
 
             //helmet
-            //invetory slot 3->20 +3
+            //inventory slot 3->20 +3
             var helmet = new ItemA(null, 1, 1, 1, 3, 6);
 
             concept.Inventory.Add(23, helmet);
 
-            //TODO
+            var helmet2 = new ItemA(null, 1, 1, 1, 4, 6);
+            var check = concept.AddItem(helmet2);
+
+            Assert.IsTrue(check, "add item failed");
+
         }
 
         [TestMethod]
